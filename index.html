@@ -758,7 +758,17 @@
             .admin-header { flex-direction: column; gap: 12px; padding: 15px 10px; }
             .admin-header > div:last-child { width: 100%; display: flex; justify-content: space-between; }
             .admin-body { flex-direction: column; overflow-y: auto; }
-            .admin-sidebar { min-height: 35vh; border-right: none; border-bottom: 4px solid #1A1A1A; flex: none; }
+            
+            /* Tamed Sidebar for Mobile */
+            .admin-sidebar { 
+                width: 100%;
+                height: 40vh; /* Quarantine the list */
+                flex: none; 
+                border-right: none; 
+                border-bottom: 4px solid #1A1A1A; 
+            }
+            .admin-search-container { position: sticky; top: 0; background: #F0F0F0; z-index: 10; } /* Sticky search */
+            
             .admin-form-container { height: max-content; overflow: visible; padding: 15px; }
             
             .api-box { box-shadow: 4px 4px 0px #FF00FF, 8px 8px 0px #00FFFF; border-width: 4px; padding: 15px; width: 90%; }
@@ -1449,6 +1459,11 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
                 document.querySelectorAll('.admin-movie-item').forEach(el => el.classList.remove('active'));
                 itemDiv.classList.add('active');
                 loadAdminForm(movie);
+                
+                // AUTOSCROLL INJECTION FOR MOBILE TERMINALS
+                if (window.innerWidth <= 768) {
+                    document.getElementById('admin-workspace').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             };
 
             adminMovieList.appendChild(itemDiv);
@@ -1746,5 +1761,3 @@ Please verify your Google Apps Script Web App is deployed correctly, has access 
 </script>
 </body>
 </html>
-
-```
