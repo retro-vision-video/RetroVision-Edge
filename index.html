@@ -136,12 +136,13 @@
             max-width: 1200px; 
             margin: 0 auto; 
             gap: 20px; 
+            align-items: flex-start;
         }
 
         @media (min-width: 768px) {
             .container { flex-direction: row; }
-            .catalog { flex: 1.2; height: 650px; }
-            .details { flex: 0.8; height: 650px; position: sticky; top: 20px; overflow-y: auto; }
+            .catalog { flex: 1.2; height: 75vh; position: sticky; top: 20px; }
+            .details { flex: 0.8; height: max-content; }
         }
         
         .catalog { 
@@ -151,6 +152,8 @@
             overflow-y: auto; 
             box-shadow: 6px 6px 0px #FF00FF;
             position: relative;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .details { 
@@ -163,6 +166,9 @@
             text-align: center; 
             box-shadow: 6px 6px 0px #FFCC00;
             box-sizing: border-box;
+            width: 100%;
+            height: max-content;
+            overflow: visible;
         }
         
         table { width: 100%; border-collapse: collapse; }
@@ -554,12 +560,6 @@
             box-sizing: border-box;
         }
 
-        @media (max-width: 768px) {
-            .admin-body { flex-direction: column; overflow-y: auto; }
-            .admin-sidebar { height: 250px; border-right: none !important; border-bottom: 4px solid #1A1A1A; }
-            .admin-form-container { height: auto !important; }
-        }
-
         .admin-sidebar {
             width: 35%;
             min-width: 250px;
@@ -750,6 +750,20 @@
         .settings-config-btn:active {
             transform: translate(2px, 2px);
             box-shadow: 0px 0px 0 #FF00FF;
+        }
+
+        /* --- Mobile Overrides to Tame Hostile Architecture --- */
+        @media (max-width: 768px) {
+            .admin-box { max-height: 95vh; margin: 10px; border-width: 4px; box-shadow: 4px 4px 0px #00FFFF, 8px 8px 0px #FFCC00; }
+            .admin-header { flex-direction: column; gap: 12px; padding: 15px 10px; }
+            .admin-header > div:last-child { width: 100%; display: flex; justify-content: space-between; }
+            .admin-body { flex-direction: column; overflow-y: auto; }
+            .admin-sidebar { min-height: 35vh; border-right: none; border-bottom: 4px solid #1A1A1A; flex: none; }
+            .admin-form-container { height: max-content; overflow: visible; padding: 15px; }
+            
+            .api-box { box-shadow: 4px 4px 0px #FF00FF, 8px 8px 0px #00FFFF; border-width: 4px; padding: 15px; width: 90%; }
+            .header-sign { margin: 15px auto; padding: 15px; }
+            .logo-script { font-size: 2.5em; }
         }
     </style>
 </head>
