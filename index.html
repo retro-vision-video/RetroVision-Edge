@@ -404,6 +404,26 @@
             width: 100%;
             box-shadow: 8px 8px 0px #FF00FF, 16px 16px 0px #00FFFF;
             box-sizing: border-box;
+            position: relative;
+        }
+
+        .api-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #FF0044;
+            color: #FFF;
+            border: 2px solid #1A1A1A;
+            padding: 4px 10px;
+            cursor: pointer;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1em;
+            box-shadow: 2px 2px 0 #1A1A1A;
+            transition: all 0.1s;
+        }
+        .api-close-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0 #1A1A1A;
         }
 
         .api-box h2 {
@@ -783,6 +803,7 @@
 
 <div id="api-overlay" style="display:none;">
     <div class="api-box" id="login-box">
+        <button class="api-close-btn" onclick="closeApiOverlay()" title="Abort Configuration">X</button>
         <h2>TERMINAL CONFIGURATION</h2>
         <p>Set up your Google Sheets proxy Web App and OMDb API key.</p>
         
@@ -1424,6 +1445,10 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
         loginBox.style.display = 'block';
         loadingText.style.display = 'none';
         progressBarContainer.style.display = 'none';
+    }
+
+    function closeApiOverlay() {
+        apiOverlay.style.display = 'none';
     }
 
     // Populates sidebar movie catalog inside Employee Terminal
