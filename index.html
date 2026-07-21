@@ -88,6 +88,7 @@
             text-shadow: 2px 2px 0 #00FFFF;
         }
 
+        /* --- UI Elements --- */
         marquee { 
             background-color: #001A5E; 
             color: #FFCC00; 
@@ -196,7 +197,6 @@
             color: #555;
             font-weight: 600;
             margin-top: 4px;
-            text-transform: uppercase;
         }
         .media-row:hover .sub-title-info { color: #1A1A1A; }
         .media-row.active .sub-title-info { color: #FFCC00; }
@@ -225,9 +225,9 @@
         
         /* Vibrant neon vaporwave status indicators */
         .status-instock { background-color: #00FF00; box-shadow: 0 0 8px #00FF00; }
-        .status-checkedout { background-color: #FFCC00; box-shadow: 0 0 8px #FFCC00; } /* yellow dropdown */
-        .status-damaged { background-color: #FF00FF; box-shadow: 0 0 8px #FF00FF; } /* orange/pink dropdown */
-        .status-onorder { background-color: #FF0044; box-shadow: 0 0 8px #FF0044; } /* dark red dropdown */
+        .status-checkedout { background-color: #FFCC00; box-shadow: 0 0 8px #FFCC00; } 
+        .status-damaged { background-color: #FF00FF; box-shadow: 0 0 8px #FF00FF; } 
+        .status-onorder { background-color: #FF0044; box-shadow: 0 0 8px #FF0044; } 
         .status-unavailable { background-color: #888888; box-shadow: 0 0 4px #888888; }
         .status-request { background-color: #00FFFF; box-shadow: 0 0 8px #00FFFF; }
 
@@ -252,8 +252,8 @@
         #detail-cover { 
             width: 180px; 
             height: 270px; 
-            min-height: 270px; /* CRITICAL FIX: Prevent vertical squeezing inside flexbox container */
-            flex-shrink: 0; /* CRITICAL FIX: Stop container from squeezing the poster height */
+            min-height: 270px;
+            flex-shrink: 0; 
             background-color: #EEE; 
             border: 4px solid #1A1A1A; 
             margin-bottom: 15px; 
@@ -313,7 +313,7 @@
             color: #001A5E; 
             letter-spacing: -1px;
         }
-        
+
         #detail-sub-titles {
             font-size: 0.85em;
             font-weight: bold;
@@ -321,7 +321,7 @@
             margin-bottom: 15px;
             text-align: center;
         }
-
+        
         #detail-meta { 
             margin-bottom: 15px; 
             font-weight: bold; 
@@ -343,6 +343,7 @@
             font-weight: 500;
             margin-bottom: 15px;
             width: 100%;
+            white-space: pre-wrap; /* Crucial for preserving paragraph breaks */
         }
 
         /* --- Details Grid Spec Requirements --- */
@@ -382,64 +383,6 @@
         }
         .spec-full-width {
             grid-column: span 2;
-        }
-        
-        .suggestion-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: #001A5E;
-            background: #00FFFF;
-            padding: 5px 15px;
-            border: 2px solid #1A1A1A;
-            cursor: pointer;
-            font-weight: 900;
-            text-decoration: none;
-            box-shadow: 2px 2px 0 #FF00FF;
-            transition: all 0.1s;
-        }
-        .suggestion-link:active {
-            transform: translate(2px, 2px);
-            box-shadow: 0px 0px 0 #FF00FF;
-        }
-
-        /* --- Custom Alert Modal --- */
-        #custom-alert-overlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-        }
-        .custom-alert-box {
-            background: #FAFAFA;
-            border: 6px solid #FF00FF;
-            padding: 25px;
-            max-width: 450px;
-            width: 90%;
-            box-shadow: 8px 8px 0px #00FFFF;
-            text-align: center;
-        }
-        .custom-alert-box p {
-            font-weight: bold;
-            color: #1A1A1A;
-            white-space: pre-wrap;
-            margin-bottom: 20px;
-        }
-        .custom-alert-box button {
-            background: #FFCC00;
-            color: #001A5E;
-            border: 4px solid #1A1A1A;
-            padding: 10px 20px;
-            font-family: 'Arial Black', sans-serif;
-            cursor: pointer;
-            box-shadow: 4px 4px 0px #00FFFF;
-            text-transform: uppercase;
-        }
-        .custom-alert-box button:active {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px #00FFFF;
         }
 
         /* --- API Key & Google Sheet Config Overlay --- */
@@ -746,27 +689,6 @@
             min-height: 80px;
         }
 
-        .quick-presets {
-            display: flex;
-            gap: 5px;
-            margin-top: 5px;
-        }
-
-        .preset-btn {
-            background: #FFF;
-            border: 2px solid #1A1A1A;
-            font-size: 0.7em;
-            font-weight: bold;
-            padding: 3px 6px;
-            cursor: pointer;
-            box-shadow: 1px 1px 0 #FF00FF;
-            text-transform: uppercase;
-        }
-        .preset-btn:active {
-            transform: translate(1px, 1px);
-            box-shadow: 0px 0px 0 #FF00FF;
-        }
-
         .admin-save-btn {
             background: #00FF00;
             color: #1A1A1A;
@@ -839,15 +761,14 @@
             .admin-header > div:last-child { width: 100%; display: flex; justify-content: space-between; }
             .admin-body { flex-direction: column; overflow-y: auto; }
             
-            /* Tamed Sidebar for Mobile */
             .admin-sidebar { 
                 width: 100%;
-                height: 40vh; /* Quarantine the list */
+                height: 40vh;
                 flex: none; 
                 border-right: none; 
                 border-bottom: 4px solid #1A1A1A; 
             }
-            .admin-search-container { position: sticky; top: 0; background: #F0F0F0; z-index: 10; } /* Sticky search */
+            .admin-search-container { position: sticky; top: 0; background: #F0F0F0; z-index: 10; } 
             
             .admin-form-container { height: max-content; overflow: visible; padding: 15px; }
             
@@ -858,14 +779,6 @@
     </style>
 </head>
 <body>
-
-<!-- Custom Alert Overlay -->
-<div id="custom-alert-overlay" style="display:none;">
-    <div class="custom-alert-box">
-        <p id="custom-alert-msg"></p>
-        <button onclick="closeCustomAlert()">ACKNOWLEDGE</button>
-    </div>
-</div>
 
 <a class="admin-link" onclick="openAdminPanel()">[ Employee Portal ]</a>
 
@@ -977,20 +890,20 @@
         
         <!-- WELCOME PANEL DEFAULT -->
         <div id="welcome-panel" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; text-align:center;">
-            <div class="apology-cover" style="width:180px; height:270px; margin-bottom: 20px;">
-                <h4>RETROVISION</h4>
-                <p>SYSTEM READY</p>
+            <div class="apology-cover" style="width:180px; height:270px; border-color:#FFCC00; color:#FFCC00; margin-bottom: 20px; box-shadow: 4px 4px 0 #001A5E; border: 4px solid #1A1A1A;">
+                <h4 style="color:#00FFFF;">SYSTEM READY</h4>
+                <p>INSERT TAPE</p>
                 <span style="font-size:0.7em; margin-top:10px;">PLEASE SELECT A MOVIE<br>FROM THE RACKS</span>
             </div>
             <h2 style="color:#001A5E; font-family:'Arial Black', sans-serif; text-transform:uppercase; margin-bottom: 5px;">WELCOME TO RETROVISION</h2>
-            <p style="font-weight:bold; max-width:400px; color:#333;">Browse our catalog by selecting a tape from the list on the left.</p>
+            <p style="font-weight:bold; max-width:400px; color:#333;">Browse our catalog by selecting a tape from the list. Don't forget to grab some popcorn!</p>
         </div>
 
-        <!-- MOVIE DATA PANEL (HIDDEN BY DEFAULT) -->
+        <!-- MOVIE DETAILS PANEL (HIDDEN BY DEFAULT) -->
         <div id="movie-data-panel" style="display:none; width: 100%; flex-direction: column; align-items: center;">
             <div id="detail-cover">SELECT TAPE</div>
             <div id="detail-title">SELECT TAPE</div>
-            <div id="detail-sub-titles" style="font-size: 0.85em; font-weight: bold; color: #555; margin-bottom: 15px; text-align: center; display: none;"></div>
+            <div id="detail-sub-titles"></div>
             <div id="detail-status"></div>
             <div id="detail-meta"></div>
             <div id="detail-desc">Please select a film from our catalog row to inspect the complete logistical database specs and cover poster.</div>
@@ -1000,9 +913,9 @@
                     <span class="spec-label">Format</span>
                     <span id="spec-format" class="spec-val"></span>
                 </div>
-                <div class="spec-item">
-                    <span class="spec-label">Runtime</span>
-                    <span id="spec-runtime" class="spec-val"></span>
+                <div class="spec-item" id="spec-edition-container" style="display:none;">
+                    <span class="spec-label">Edition</span>
+                    <span id="spec-edition" class="spec-val"></span>
                 </div>
                 <div class="spec-item">
                     <span class="spec-label">Rating</span>
@@ -1012,9 +925,17 @@
                     <span class="spec-label">Type</span>
                     <span id="spec-type" class="spec-val"></span>
                 </div>
-                <div class="spec-item spec-full-width">
+                <div class="spec-item">
+                    <span class="spec-label">Runtime</span>
+                    <span id="spec-runtime" class="spec-val"></span>
+                </div>
+                <div class="spec-item spec-full-width" id="spec-alt-title-container" style="display:none;">
                     <span class="spec-label">Foreign, Alternate, or Additional Title(s)</span>
                     <span id="spec-alt-title" class="spec-val"></span>
+                </div>
+                <div class="spec-item spec-full-width" id="spec-genre-container">
+                    <span class="spec-label">Genre</span>
+                    <span id="spec-genre" class="spec-val"></span>
                 </div>
                 <div class="spec-item spec-full-width">
                     <span class="spec-label">Director</span>
@@ -1027,18 +948,6 @@
                 <div class="spec-item spec-full-width">
                     <span class="spec-label">Actors</span>
                     <span id="spec-actors" class="spec-val"></span>
-                </div>
-                <div class="spec-item spec-full-width" id="spec-genre-container">
-                    <span class="spec-label">Genre</span>
-                    <span id="spec-genre" class="spec-val"></span>
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">Condition</span>
-                    <span id="spec-condition" class="spec-val"></span>
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">Decade Tab</span>
-                    <span id="spec-decade" class="spec-val"></span>
                 </div>
             </div>
         </div>
@@ -1111,16 +1020,15 @@
 
     // Specs elements
     const specFormat = document.getElementById('spec-format');
-    const specRuntime = document.getElementById('spec-runtime');
+    const specEdition = document.getElementById('spec-edition');
     const specRating = document.getElementById('spec-rating');
     const specType = document.getElementById('spec-type');
     const specAltTitle = document.getElementById('spec-alt-title');
+    const specGenre = document.getElementById('spec-genre');
+    const specRuntime = document.getElementById('spec-runtime');
     const specDirector = document.getElementById('spec-director');
     const specWriter = document.getElementById('spec-writer');
     const specActors = document.getElementById('spec-actors');
-    const specCondition = document.getElementById('spec-condition');
-    const specDecade = document.getElementById('spec-decade');
-    const specGenre = document.getElementById('spec-genre');
 
     // Admin Panel Elements
     const adminOverlay = document.getElementById('admin-overlay');
@@ -1129,26 +1037,13 @@
     const adminSearch = document.getElementById('admin-search');
     const adminLoadingScreen = document.getElementById('admin-loading-screen');
 
-    // Custom Alert Function (Replaces native alert)
-    function customAlert(message) {
-        document.getElementById('custom-alert-msg').textContent = message;
-        document.getElementById('custom-alert-overlay').style.display = 'flex';
-    }
-    
-    function closeCustomAlert() {
-        document.getElementById('custom-alert-overlay').style.display = 'none';
-    }
-
     // --- SYSTEM INITIALIZATION ---
     function initSystem() {
-        // Initialize initial marquee string so it shows immediately
         marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// ESTABLISHING COUPLER CHANNELS ///`;
         
-        // Load configurations from LocalStorage or Fallbacks
         webAppUrl = localStorage.getItem(WEB_APP_URL_KEY) || DEFAULT_WEB_APP_URL;
         omdbApiKey = localStorage.getItem(OMDB_API_KEY_KEY) || DEFAULT_OMDB_API_KEY;
         
-        // Load cache globally
         window.omdbCache = JSON.parse(localStorage.getItem(OMDB_METADATA_CACHE_KEY) || "{}");
 
         if (!webAppUrl || !omdbApiKey) {
@@ -1171,7 +1066,7 @@
             apiOverlay.style.display = 'flex';
             loadDatabaseFromSheets();
         } else {
-            customAlert("Please provide both the Google Sheets Apps Script Web App URL and your OMDb API key.");
+            alert("Please provide both the Google Sheets Apps Script Web App URL and your OMDb API key.");
         }
     });
 
@@ -1179,7 +1074,6 @@
     async function loadDatabaseFromSheets() {
         loginBox.style.display = 'none';
         
-        // Setup alternating loading screen text tied to Edward's Control Panel
         const loadingTexts = CUSTOM_LOADING_MESSAGES;
         let textIndex = 0;
         loadingText.textContent = loadingTexts[textIndex];
@@ -1192,7 +1086,6 @@
             textIndex = (textIndex + 1) % loadingTexts.length;
             loadingText.textContent = loadingTexts[textIndex];
             
-            // Advance progress bar a bit retro-style
             let width = parseFloat(progressBar.style.width) || 10;
             if (width < 90) {
                 progressBar.style.width = (width + 12) + '%';
@@ -1200,7 +1093,6 @@
         }, 1200);
 
         try {
-            // EXFILTRATION PATCH: Fetch directly from the static edge network
             const sheetsResponse = await fetch(`catalog.json?v=${new Date().getTime()}`);
             const payload = await sheetsResponse.json();
 
@@ -1209,14 +1101,12 @@
             }
 
             clearInterval(loadingInterval);
-            catalogData = payload.data; // OPEN THE ENVELOPE
+            catalogData = payload.data; 
             progressBar.style.width = '100%';
             loadingText.textContent = "Movie found!";
             
-            // Render list
             renderCatalog(catalogData);
 
-            // Update marquee statistics & merge with Edward's custom news string
             const totalCount = catalogData.length;
             const statusSummary = {};
             catalogData.forEach(m => {
@@ -1225,20 +1115,18 @@
             const statusSummaryStr = Object.keys(statusSummary).map(k => `${k.toUpperCase()}: ${statusSummary[k]}`).join(" /// ");
             marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// DATABANKS SYNCED SECURELY /// TOTAL TAPES: ${totalCount} /// ${statusSummaryStr} /// BE KIND, REWIND ///`;
 
-            // Hide loading overlay
             apiOverlay.style.display = 'none';
 
         } catch (error) {
             clearInterval(loadingInterval);
             console.error("Critical Uplink Error:", error);
-            customAlert(`CRITICAL UPLINK FAILURE:\n${error.message}\n\nPlease verify your Edge Network URL and check that GitHub Pages is broadcasting.`);
+            alert(`CRITICAL UPLINK FAILURE:\n${error.message}\n\nPlease verify your Edge Network URL and check that GitHub Pages is broadcasting.`);
             progressBarContainer.style.display = 'none';
             loginBox.style.display = 'block';
             loadingText.style.display = 'none';
         }
     }
 
-    // Extract IMDb ID from a standard URL link
     function translateOmdbType(type) {
         if (!type) return "Feature Film";
         if (type === "movie") return "Feature Film";
@@ -1253,7 +1141,6 @@
         return match ? match[0] : null;
     }
 
-    // Helper function to strip leading articles for proper catalog sorting
     function stripArticles(title) {
         if (!title) return "";
         return title.replace(/^(a|an|the)\s+/i, "").trim();
@@ -1267,10 +1154,8 @@
         welcomePanel.style.display = 'none';
         movieDataPanel.style.display = 'flex';
 
-        // Render initial data from Sheets immediately! (Instant UI feedback)
         detailTitle.textContent = `${item.title} (${item.year || "????"})`;
         
-        // Render sub-titles natively in the header
         let subHtml = "";
         if (item.alternateTitle || item.edition) {
             if (item.alternateTitle) subHtml += `ALT TITLE: ${item.alternateTitle}<br>`;
@@ -1279,7 +1164,6 @@
         detailSubTitles.innerHTML = subHtml;
         detailSubTitles.style.display = subHtml ? 'block' : 'none';
 
-        // Render detailed status badges matching the dropdown options
         const normStatus = (item.status || "").toLowerCase().trim();
         if (normStatus === "checked out") {
             detailStatus.className = 'text-checkedout';
@@ -1297,80 +1181,83 @@
             detailStatus.className = 'text-request';
             detailStatus.textContent = 'STATUS: AVAILABLE UPON REQUEST';
         } else {
-            // Default "In Stock" fallback
             detailStatus.className = 'text-instock';
             detailStatus.textContent = 'STATUS: IN STOCK - ON SHELF';
         }
 
-        // Render Specs
         specFormat.textContent = item.format;
         specRating.textContent = item.rating || "NR";
         specType.textContent = item.type || "Feature Film";
-        specAltTitle.textContent = item.alternateTitle || "NONE LISTED";
-        specCondition.textContent = (item.condition || "UNSPECIFIED").toUpperCase();
-        specDecade.textContent = item.sheetName; // Decade Tab name!
         
-        // Initialize OMDb fields to syncing state
-        specGenre.textContent = "SYNCING...";
-        specRuntime.textContent = "SYNCING...";
-        specDirector.textContent = "SYNCING...";
-        specWriter.textContent = "SYNCING...";
-        specActors.textContent = "SYNCING...";
+        // Hide Edition entirely if blank
+        if (item.edition) {
+            document.getElementById('spec-edition-container').style.display = 'block';
+            specEdition.textContent = item.edition;
+        } else {
+            document.getElementById('spec-edition-container').style.display = 'none';
+        }
+
+        // Hide Alt title entirely if blank
+        if (item.alternateTitle) {
+            document.getElementById('spec-alt-title-container').style.display = 'block';
+            specAltTitle.textContent = item.alternateTitle;
+        } else {
+            document.getElementById('spec-alt-title-container').style.display = 'none';
+        }
+
+        specGenre.textContent = item.genre || "UNSPECIFIED";
+        specRuntime.textContent = item.runtime || "SYNCING...";
+        specDirector.textContent = item.director || "SYNCING...";
+        specWriter.textContent = item.writer || "SYNCING...";
+        specActors.textContent = item.actors || "SYNCING...";
 
         detailsSpecGrid.style.display = 'grid';
 
-        // Render synopsis from Sheet if available, otherwise clear/show placeholder while we fetch from OMDb
-        detailDesc.textContent = item.synopsis || "Syncing databanks for film details...";
+        // Note: detailDesc uses innerHTML so the Google Sheet bold/italics tags render correctly
+        detailDesc.innerHTML = item.synopsis || "Syncing databanks for film details...";
         
-        // Render Poster Placeholder / Sycing
         detailCover.innerHTML = `<div class="apology-cover"><h4>RETROVISION</h4><p>SYNCING SPECS...</p></div>`;
 
-        // Direct Custom Cover Bypass (Rule: if Column H is a direct image URL instead of an IMDb URL)
         const isDirectImage = item.imdbLink && (item.imdbLink.match(/\.(jpeg|jpg|gif|png|webp)/i) != null || !item.imdbLink.includes("imdb.com") && item.imdbLink.startsWith("http"));
         
         if (isDirectImage) {
             detailCover.innerHTML = `<img src="${item.imdbLink}" alt="${item.title} Poster" onerror="triggerApologyCover(this, '${item.title}');">`;
             detailMeta.textContent = `RATING: ${item.rating || "NR"} | TYPE: ${item.type || "Feature Film"}`;
-            detailDesc.textContent = item.synopsis || "No description provided.";
+            detailDesc.innerHTML = item.synopsis || "No description provided.";
             specGenre.textContent = item.genre || "UNSPECIFIED";
-            specRuntime.textContent = "N/A";
-            specDirector.textContent = "N/A";
-            specWriter.textContent = "N/A";
-            specActors.textContent = "N/A";
+            specRuntime.textContent = item.runtime || "N/A";
+            specDirector.textContent = item.director || "N/A";
+            specWriter.textContent = item.writer || "N/A";
+            specActors.textContent = item.actors || "N/A";
             return;
         }
 
         const imdbId = extractImdbId(item.imdbLink);
         
         if (!imdbId) {
-            // No IMDb ID provided, show the default retrovision apology cover and fallback to Sheets synopsis
             triggerApologyCover(null, item.title);
             detailMeta.textContent = `RATING: ${item.rating || "NR"} | TYPE: ${item.type || "Feature Film"}`;
-            detailDesc.textContent = item.synopsis || "No synopsis available.";
+            detailDesc.innerHTML = item.synopsis || "No synopsis available.";
             specGenre.textContent = item.genre || "UNSPECIFIED";
-            specRuntime.textContent = "N/A";
-            specDirector.textContent = "N/A";
-            specWriter.textContent = "N/A";
-            specActors.textContent = "N/A";
+            specRuntime.textContent = item.runtime || "N/A";
+            specDirector.textContent = item.director || "N/A";
+            specWriter.textContent = item.writer || "N/A";
+            specActors.textContent = item.actors || "N/A";
             return;
         }
 
-        // Check cache first
         if (window.omdbCache[imdbId]) {
             renderOMDbSpecs(item, window.omdbCache[imdbId]);
         } else {
-            // Fetch from OMDb on-demand!
             try {
                 const res = await fetch(`https://www.omdbapi.com/?i=${imdbId}&apikey=${omdbApiKey}&plot=full`);
                 const data = await res.json();
                 
                 if (data.Response === "True") {
                     window.omdbCache[imdbId] = data;
-                    // Safely write to localStorage. If it throws a quota exception, clear some items and try again!
                     try {
                         localStorage.setItem(OMDB_METADATA_CACHE_KEY, JSON.stringify(window.omdbCache));
                     } catch (e) {
-                        // Clear half the cache if full to prevent QuotaExceededError
                         console.warn("Storage quota exceeded. Clearing old cache items...", e);
                         localStorage.removeItem(OMDB_METADATA_CACHE_KEY);
                         window.omdbCache = { [imdbId]: data };
@@ -1392,32 +1279,28 @@
     function renderOMDbSpecs(item, omdbData) {
         const isValid = omdbData && omdbData.Response === "True";
         
-        // Setup Cover Poster
         if (isValid && omdbData.Poster !== "N/A") {
             detailCover.innerHTML = `<img src="${omdbData.Poster}" alt="${item.title} Poster" onerror="triggerApologyCover(this, '${item.title}');">`;
         } else {
             triggerApologyCover(null, item.title);
         }
 
-        // Update Meta Rating & Year fallbacks
         const displayRating = item.rating || (isValid ? omdbData.Rated : "NR");
         const displayType = item.type || (isValid ? translateOmdbType(omdbData.Type) : "Feature Film");
         detailMeta.textContent = `RATING: ${displayRating} | TYPE: ${displayType}`;
         specRating.textContent = displayRating;
         specType.textContent = displayType;
 
-        // Update description fallback
-        detailDesc.textContent = item.synopsis || (isValid ? omdbData.Plot : "No description provided.");
+        // Note: prioritize the sheet synopsis (which now parses rich HTML) over the raw text OMDb plot
+        detailDesc.innerHTML = item.synopsis || (isValid ? omdbData.Plot : "No description provided.");
         
-        // Update extended specs
         specGenre.textContent = item.genre || (isValid ? omdbData.Genre : "UNSPECIFIED");
-        specRuntime.textContent = isValid ? omdbData.Runtime : "N/A";
-        specDirector.textContent = isValid ? omdbData.Director : "N/A";
-        specWriter.textContent = isValid ? omdbData.Writer : "N/A";
-        specActors.textContent = isValid ? omdbData.Actors : "N/A";
+        specRuntime.textContent = item.runtime || (isValid ? omdbData.Runtime : "N/A");
+        specDirector.textContent = item.director || (isValid ? omdbData.Director : "N/A");
+        specWriter.textContent = item.writer || (isValid ? omdbData.Writer : "N/A");
+        specActors.textContent = item.actors || (isValid ? omdbData.Actors : "N/A");
     }
 
-    // Default RetroVision Apology cover trigger if OMDb fails or lacks ID
     function triggerApologyCover(imgElement, title) {
         const apologyHtml = `
             <div class="apology-cover">
@@ -1443,14 +1326,12 @@
             return;
         }
 
-        // Sort data logically by title utilizing stripArticles method
         dataToRender.sort((a, b) => stripArticles(a.title).localeCompare(stripArticles(b.title)));
 
         dataToRender.forEach((item) => {
             const tr = document.createElement('tr');
             tr.className = 'media-row';
             
-            // Dynamic neon dot based on detailed status options from dropdown
             let dotClass = 'status-instock';
             const normStatus = (item.status || "").toLowerCase().trim();
             if (normStatus === "checked out") dotClass = 'status-checkedout';
@@ -1459,10 +1340,8 @@
             else if (normStatus === "unavailable") dotClass = 'status-unavailable';
             else if (normStatus === "request") dotClass = 'status-request';
             
-            // Core requirement: Append Year in parenthesis next to the title (e.g. "The Thing (1982)")
             const displayTitle = `${item.title} (${item.year})`;
             
-            // Subtitles styling requirement
             let subTitleHtml = "";
             if (item.alternateTitle || item.edition) {
                 subTitleHtml = `<div class="sub-title-info">`;
@@ -1495,8 +1374,14 @@
     }
 
     // --- SEARCH INDEXING ENGINE ---
+    // The string normalizer systematically decomposes diacritics (like ñ to n + ~) and strips the accents
+    const normalizeString = (str) => {
+        if (!str) return "";
+        return str.toString().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+    };
+
     searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
+        const query = normalizeString(e.target.value);
         
         if (!query) {
             renderCatalog(catalogData);
@@ -1504,7 +1389,6 @@
         }
 
         const filtered = catalogData.filter(item => {
-            
             let omdbDataString = "";
             const imdbId = extractImdbId(item.imdbLink);
             if (imdbId && window.omdbCache && window.omdbCache[imdbId]) {
@@ -1512,10 +1396,10 @@
                 omdbDataString = [cached.Director, cached.Actors, cached.Writer, cached.Genre, cached.Plot].join(" ");
             }
             
-            const indexString = [
+            const indexString = normalizeString([
                 item.title,
                 item.year,
-                item.sheetName, // Decade Tab (e.g., "90s", "80s")
+                item.sheetName,
                 item.keywords,
                 item.alternateTitle,
                 item.synopsis,
@@ -1526,9 +1410,8 @@
                 item.edition,
                 item.type,
                 item.status,
-                item.condition,
                 omdbDataString
-            ].map(v => (v || "").toLowerCase()).join(" ");
+            ].join(" "));
 
             return indexString.includes(query);
         });
@@ -1542,7 +1425,6 @@
 
     function openAdminPanel() {
         adminOverlay.style.display = 'flex';
-        // Always reset login screen to visible when opening
         document.getElementById('admin-login-container').style.display = 'flex';
         document.getElementById('admin-username-input').value = "";
         document.getElementById('admin-password-input').value = "";
@@ -1569,11 +1451,9 @@
         apiOverlay.style.display = 'none';
     }
 
-    // Populates sidebar movie catalog inside Employee Terminal
     function renderAdminMovieList(movies) {
         adminMovieList.innerHTML = "";
         
-        // Sort alphabetically, ignoring common articles
         const sorted = [...movies].sort((a, b) => stripArticles(a.title).localeCompare(stripArticles(b.title)));
 
         sorted.forEach(movie => {
@@ -1603,7 +1483,6 @@
                 itemDiv.classList.add('active');
                 loadAdminForm(movie);
                 
-                // AUTOSCROLL INJECTION FOR MOBILE TERMINALS
                 if (window.innerWidth <= 768) {
                     document.getElementById('admin-workspace').scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
@@ -1613,7 +1492,6 @@
         });
     }
 
-    // Search bar filter inside employee portal
     adminSearch.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase().trim();
         const filtered = catalogData.filter(movie => 
@@ -1623,7 +1501,6 @@
         renderAdminMovieList(filtered);
     });
 
-    // Renders the interactive logistics form for a chosen film
     function loadAdminForm(movie) {
         adminWorkspace.innerHTML = `
             <div class="admin-form-title">Update Logistics Info</div>
@@ -1699,7 +1576,6 @@
                 userInput.style.backgroundColor = "#FFF";
                 duedateInput.style.backgroundColor = "#FFF";
                 
-                // Auto-suggest return date (3 days from now)
                 if (!duedateInput.value) {
                     const returnDate = new Date();
                     returnDate.setDate(returnDate.getDate() + 3);
@@ -1709,10 +1585,9 @@
         };
 
         statusSelect.onchange = toggleRentalFields;
-        toggleRentalFields(); // Init state
+        toggleRentalFields(); 
     }
 
-    // Submits updates directly to Google Sheets via Apps Script Web App
     window.saveAdminChanges = async function(sheetName, rowIndex) {
         const condition = document.getElementById('admin-form-condition').value;
         const status = document.getElementById('admin-form-status').value;
@@ -1721,7 +1596,6 @@
         
         const originalMovie = catalogData.find(m => m.sheetName === sheetName && m.rowIndex === rowIndex);
         
-        // Formatting today's date in local YYYY-MM-DD
         const now = new Date();
         const year = now.getFullYear();
         const month = String(now.getMonth() + 1).padStart(2, '0');
@@ -1730,14 +1604,12 @@
         
         let newLogEntries = [];
         
-        // 1. Check if there is a new manual note typed by the user
         const newNoteInput = document.getElementById('admin-form-new-note');
         const newNoteVal = newNoteInput ? newNoteInput.value.trim() : "";
         if (newNoteVal) {
             newLogEntries.push(`[${todayStr}] ${newNoteVal}`);
         }
         
-        // 2. Check if status is changed to "In Stock" and there was a previous user to archive
         if (status === "In Stock" && originalMovie && originalMovie.user) {
             let logStr = `[${todayStr}] Rented by: ${originalMovie.user}`;
             if (originalMovie.dueDate) {
@@ -1746,14 +1618,12 @@
             newLogEntries.push(logStr);
         }
         
-        // 3. Combine with historical notes
         let finalDetails = originalMovie ? (originalMovie.details || "") : "";
         if (newLogEntries.length > 0) {
             const logsToPrepend = newLogEntries.join("\n");
             finalDetails = finalDetails ? logsToPrepend + "\n" + finalDetails : logsToPrepend;
         }
         
-        // 4. Handle resetting field names if status is In Stock
         let finalUser = user;
         let finalDueDate = dueDate;
         if (status === "In Stock") {
@@ -1776,12 +1646,9 @@
         adminLoadingScreen.style.display = 'flex';
 
         try {
-            // Send standard POST fetch to Google Sheets Apps Script Web App URL
             const res = await fetch(webAppUrl, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8' // Crucial to prevent standard preflight OPTIONS request failures in Google Sheets API
-                },
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(payload)
             });
 
@@ -1791,7 +1658,6 @@
                 throw new Error(result.error || "Uplink server reported an error writing to cell.");
             }
 
-            // Sync successfully in local memory catalog
             const movieIndex = catalogData.findIndex(m => m.sheetName === sheetName && m.rowIndex === rowIndex);
             if (movieIndex !== -1) {
                 catalogData[movieIndex].condition = condition;
@@ -1802,31 +1668,28 @@
                 catalogData[movieIndex].details = finalDetails;
             }
 
-            // Re-render interfaces
             renderCatalog(catalogData);
             if (selectedMovieIndex !== null) {
                 showDetails(selectedMovieIndex);
             }
 
             adminLoadingScreen.style.display = 'none';
-            customAlert("LOGISTICAL DATABANKS UPDATED SECURELY!");
+            alert("LOGISTICAL DATABANKS UPDATED SECURELY!");
             closeAdminPanel();
 
         } catch (err) {
             console.error("Failed to write updates to Google Sheet:", err);
             adminLoadingScreen.style.display = 'none';
-            customAlert(`UPLINK FAILURE:\n${err.message}\n\nPlease verify your Google Apps Script Web App is deployed correctly, has access enabled for 'Anyone', and that you are connected to the network.`);
+            alert(`UPLINK FAILURE:\n${err.message}\n\nPlease verify your Google Apps Script Web App is deployed correctly, has access enabled for 'Anyone', and that you are connected to the network.`);
         }
     };
 
-
-    // Secure server-side login verification logic
     document.getElementById('admin-login-submit').addEventListener('click', async () => {
         const u = document.getElementById('admin-username-input').value.trim();
         const p = document.getElementById('admin-password-input').value;
         
         if (!u || !p) {
-            customAlert("PLEASE ENTER BOTH USERNAME AND PASSWORD.");
+            alert("PLEASE ENTER BOTH USERNAME AND PASSWORD.");
             return;
         }
 
@@ -1838,23 +1701,15 @@
         try {
             const res = await fetch(webAppUrl, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8'
-                },
-                body: JSON.stringify({
-                    action: "login",
-                    username: u,
-                    password: p
-                })
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify({ action: "login", username: u, password: p })
             });
             const result = await res.json();
 
             if (result.status === "success" && result.authorized) {
-                // Cache credentials in session memory to authorize subsequent writes
                 window.adminUsername = u;
                 window.adminPassword = p;
 
-                // LOGISTICS HANDSHAKE: Merge private data into public UI 
                 if (result.privateLogs) {
                     catalogData.forEach(movie => {
                         let key = movie.sheetName + "_" + movie.rowIndex;
@@ -1869,30 +1724,24 @@
                 document.getElementById('admin-login-container').style.display = 'none';
                 renderAdminMovieList(catalogData);
             } else {
-                customAlert("ACCESS DENIED: INVALID EMPLOYEE CREDENTIALS.");
+                alert("ACCESS DENIED: INVALID EMPLOYEE CREDENTIALS.");
             }
         } catch (err) {
             console.error("Authentication server error:", err);
-            customAlert("UPLINK ERROR: Unable to contact the authentication server. Please check your network and try again.");
+            alert("UPLINK ERROR: Unable to contact the authentication server. Please check your network and try again.");
         } finally {
             submitBtn.textContent = origText;
             submitBtn.disabled = false;
         }
     });
 
-    // Support pressing Enter key for password and username fields
     document.getElementById('admin-password-input').addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') {
-            document.getElementById('admin-login-submit').click();
-        }
+        if (e.key === 'Enter') document.getElementById('admin-login-submit').click();
     });
     document.getElementById('admin-username-input').addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') {
-            document.getElementById('admin-password-input').focus();
-        }
+        if (e.key === 'Enter') document.getElementById('admin-password-input').focus();
     });
 
-    // Start
     initSystem();
 
 </script>
