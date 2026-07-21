@@ -902,7 +902,7 @@
                 <span style="font-size:0.7em; margin-top:10px;">PLEASE SELECT A MOVIE<br>FROM THE RACKS</span>
             </div>
             <h2 style="color:#001A5E; font-family:'Arial Black', sans-serif; text-transform:uppercase; margin-bottom: 5px;">WELCOME TO RETROVISION</h2>
-            <p style="font-weight:bold; max-width:400px; color:#333;">Browse our catalog by selecting a tape from the list. Don't forget to grab some popcorn!</p>
+            <p id="welcome-description-text" style="font-weight:bold; max-width:400px; color:#333;">Loading welcome message...</p>
         </div>
 
         <!-- MOVIE DETAILS PANEL (HIDDEN BY DEFAULT) -->
@@ -962,6 +962,8 @@
     // =========================================================================
     
     const STORE_NEWS_ANNOUNCEMENT = "LATE FEES WAIVED FOR THE WEEKEND /// NEW ARRIVALS IN HORROR ///";
+    
+    const WELCOME_DESCRIPTION = "Browse our catalog by selecting a tape from the list. Don't forget to grab some popcorn!";
     
     const CUSTOM_LOADING_MESSAGES = [
         "Rummaging through tapes...",
@@ -1029,6 +1031,7 @@
 
     function initSystem() {
         marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// REWINDING TAPES ///`;
+        document.getElementById('welcome-description-text').textContent = WELCOME_DESCRIPTION;
         
         webAppUrl = localStorage.getItem(WEB_APP_URL_KEY) || DEFAULT_WEB_APP_URL;
         omdbApiKey = localStorage.getItem(OMDB_API_KEY_KEY) || DEFAULT_OMDB_API_KEY;
@@ -1365,6 +1368,7 @@
                 item.format,
                 item.edition,
                 item.type,
+                item.runtime,
                 omdbDataString
             ].map(v => (v || "")).join(" ");
 
