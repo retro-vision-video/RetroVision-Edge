@@ -9,8 +9,8 @@
         body { 
             background-color: #FAFAFA;
             background-image: 
-                linear-gradient(rgba(0, 26, 94, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 26, 94, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(255, 0, 255, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.07) 1px, transparent 1px);
             background-size: 30px 30px;
             color: #1A1A1A; 
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
@@ -33,7 +33,7 @@
             font-size: 0.8em;
             font-weight: bold;
             text-decoration: none;
-            box-shadow: 3px 3px 0px #FF0000;
+            box-shadow: 3px 3px 0px #FF00FF;
             cursor: pointer;
             z-index: 10;
             text-transform: uppercase;
@@ -42,13 +42,14 @@
         }
         .admin-link:hover {
             background: #00FFFF;
+            box-shadow: 3px 3px 0px #FF00FF;
         }
         .admin-link:active {
             transform: translate(2px, 2px);
-            box-shadow: 1px 1px 0px #FF0000;
+            box-shadow: 1px 1px 0px #FF00FF;
         }
 
-        /* --- Classic Video Store Sign --- */
+        /* ---Vaporwave Sign --- */
         .header-sign {
             position: relative;
             margin: 30px auto 30px auto;
@@ -57,7 +58,7 @@
             text-align: center;
             background: #001A5E; 
             border: 6px solid #FFCC00; 
-            box-shadow: 8px 8px 0px #FF0000, 16px 16px 0px #001A5E;
+            box-shadow: 8px 8px 0px #FF00FF, 16px 16px 0px #00FFFF;
         }
 
         .logo-script { 
@@ -70,7 +71,7 @@
             line-height: 0.8;
             position: relative;
             z-index: 2;
-            text-shadow: 3px 3px 0 #FF0000;
+            text-shadow: 3px 3px 0 #FF00FF;
         }
 
         .logo-video { 
@@ -93,8 +94,8 @@
             color: #FFCC00; 
             padding: 10px; 
             font-size: 1em; 
-            border-top: 3px solid #FF0000; 
-            border-bottom: 3px solid #FF0000; 
+            border-top: 3px solid #FF00FF; 
+            border-bottom: 3px solid #00FFFF; 
             margin: 20px 0; 
             font-weight: 900;
             text-transform: uppercase;
@@ -119,13 +120,13 @@
             text-transform: none;
             outline: none;
             transition: all 0.2s ease;
-            box-shadow: 4px 4px 0px #001A5E;
+            box-shadow: 4px 4px 0px #00FFFF;
             box-sizing: border-box;
         }
 
         #search-input:focus {
-            border-color: #FF0000;
-            box-shadow: 4px 4px 0px #FF0000;
+            border-color: #FF00FF;
+            box-shadow: 4px 4px 0px #FF00FF;
         }
 
         /* Responsive Container */
@@ -149,7 +150,7 @@
             border: 4px solid #1A1A1A; 
             height: 400px; 
             overflow-y: auto; 
-            box-shadow: 6px 6px 0px #FF0000;
+            box-shadow: 6px 6px 0px #FF00FF;
             position: relative;
             width: 100%;
             box-sizing: border-box;
@@ -185,8 +186,8 @@
         
         .media-row { cursor: pointer; transition: background-color 0.1s; font-weight: bold; }
         .media-row:nth-child(even) { background-color: #F9F9F9; }
-        .media-row:hover { background-color: #FFCC00; color: #1A1A1A; }
-        .media-row.active { background-color: #001A5E; color: #FFFFFF; }
+        .media-row:hover { background-color: #00FFFF; color: #1A1A1A; }
+        .media-row.active { background-color: #FF00FF; color: #FFFFFF; }
         
         /* Indented subtitle info for list */
         .sub-title-info {
@@ -222,12 +223,13 @@
             vertical-align: middle;
         }
         
-        .status-instock { background-color: #00FF00; box-shadow: 0 0 4px #00FF00; }
-        .status-checkedout { background-color: #FFCC00; box-shadow: 0 0 4px #FFCC00; } 
-        .status-damaged { background-color: #FF00FF; box-shadow: 0 0 4px #FF00FF; } 
-        .status-onorder { background-color: #FF0044; box-shadow: 0 0 4px #FF0044; } 
-        .status-unavailable { background-color: #888888; }
-        .status-request { background-color: #00FFFF; box-shadow: 0 0 4px #00FFFF; }
+        /* Vibrant neon vaporwave status indicators */
+        .status-instock { background-color: #00FF00; box-shadow: 0 0 8px #00FF00; }
+        .status-checkedout { background-color: #FFCC00; box-shadow: 0 0 8px #FFCC00; } 
+        .status-damaged { background-color: #FF00FF; box-shadow: 0 0 8px #FF00FF; } 
+        .status-onorder { background-color: #FF0044; box-shadow: 0 0 8px #FF0044; } 
+        .status-unavailable { background-color: #888888; box-shadow: 0 0 4px #888888; }
+        .status-request { background-color: #00FFFF; box-shadow: 0 0 8px #00FFFF; }
 
         #detail-status {
             font-family: 'Arial Black', sans-serif;
@@ -261,7 +263,7 @@
             color: #999; 
             font-weight: 900; 
             font-size: 1.1em; 
-            box-shadow: 4px 4px 0px #001A5E;
+            box-shadow: 4px 4px 0px #00FFFF;
             overflow: hidden; 
             position: relative;
         }
@@ -278,7 +280,7 @@
                 #00103E 10px,
                 #00103E 20px
             );
-            border: 2px dashed #FF0000;
+            border: 2px dashed #FF00FF;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -290,17 +292,17 @@
             text-align: center;
         }
         .apology-cover h4 {
-            color: #FFCC00;
+            color: #FF00FF;
             margin: 0 0 10px 0;
             font-size: 1em;
             text-transform: uppercase;
-            text-shadow: 1px 1px 0 #FF0000;
+            text-shadow: 1px 1px 0 #FFCC00;
             letter-spacing: 1px;
         }
         .apology-cover p {
             font-size: 0.8em;
             margin: 5px 0;
-            color: #FFFFFF;
+            color: #FFCC00;
             text-transform: uppercase;
         }
 
@@ -403,7 +405,7 @@
             padding: 25px;
             max-width: 500px;
             width: 100%;
-            box-shadow: 8px 8px 0px #FF0000, 16px 16px 0px #00FFFF;
+            box-shadow: 8px 8px 0px #FF00FF, 16px 16px 0px #00FFFF;
             box-sizing: border-box;
             position: relative;
         }
@@ -461,7 +463,7 @@
         }
 
         #api-submit {
-            background: #001A5E;
+            background: #FF00FF;
             color: #FFFFFF;
             border: 4px solid #1A1A1A;
             padding: 12px 20px;
@@ -469,18 +471,18 @@
             font-size: 1.1em;
             cursor: pointer;
             width: 100%;
-            box-shadow: 4px 4px 0px #FFCC00;
+            box-shadow: 4px 4px 0px #00FFFF;
             text-transform: uppercase;
         }
 
-        #api-submit:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #FFCC00; }
+        #api-submit:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #00FFFF; }
 
         #loading-text {
             color: #FFCC00;
             font-family: 'Arial Black', sans-serif;
             font-size: 1.5em;
             margin-top: 20px;
-            text-shadow: 2px 2px 0 #FF0000;
+            text-shadow: 2px 2px 0 #FF00FF;
             display: none;
             text-transform: uppercase;
         }
@@ -499,7 +501,7 @@
         #progress-bar {
             height: 100%;
             width: 0%;
-            background: #FF0000;
+            background: #FF00FF;
             transition: width 0.1s;
         }
 
@@ -518,7 +520,7 @@
 
         .admin-box {
             background: #FAFAFA;
-            border: 6px solid #001A5E;
+            border: 6px solid #FF00FF;
             max-width: 950px;
             width: 100%;
             height: 90vh;
@@ -548,7 +550,7 @@
             font-size: 2em;
             transform: rotate(-2deg);
             display: inline-block;
-            text-shadow: 2px 2px 0 #FF0000;
+            text-shadow: 2px 2px 0 #FF00FF;
             margin-right: 10px;
         }
 
@@ -572,6 +574,22 @@
         .admin-close-btn:active {
             transform: translate(2px, 2px);
             box-shadow: 0px 0px 0 #FFCC00;
+        }
+        
+        .admin-logout-btn {
+            background: #FFCC00;
+            color: #FF0044;
+            border: 2px solid #1A1A1A;
+            padding: 5px 12px;
+            cursor: pointer;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 0.9em;
+            box-shadow: 2px 2px 0 #FF00FF;
+            margin-right: 10px;
+        }
+        .admin-logout-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0 #FF00FF;
         }
 
         .admin-body {
@@ -622,11 +640,11 @@
             align-items: center;
         }
         .admin-movie-item:hover {
-            background: #FFCC00;
+            background: #00FFFF;
             color: #1A1A1A;
         }
         .admin-movie-item.active {
-            background: #001A5E;
+            background: #FF00FF;
             color: #FFF;
         }
 
@@ -691,18 +709,28 @@
             background: #00FF00;
             color: #1A1A1A;
             border: 4px solid #1A1A1A;
-            padding: 12px 20px;
+            padding: 12px 15px;
             font-family: 'Arial Black', sans-serif;
             font-size: 1em;
             cursor: pointer;
-            box-shadow: 4px 4px 0 #001A5E;
+            box-shadow: 4px 4px 0 #FF00FF;
             text-transform: uppercase;
             flex: 1;
             transition: background-color 0.2s, color 0.2s;
         }
+        .admin-save-btn.secondary {
+            background: #00FFFF;
+        }
         .admin-save-btn:active {
             transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 #001A5E;
+            box-shadow: 2px 2px 0 #FF00FF;
+        }
+        
+        .admin-save-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            width: 100%;
         }
 
         .admin-placeholder {
@@ -730,7 +758,7 @@
             color: #FFCC00;
             font-family: 'Arial Black', sans-serif;
             font-size: 1.5em;
-            text-shadow: 2px 2px 0 #FF0000;
+            text-shadow: 2px 2px 0 #FF00FF;
             text-align: center;
             padding: 20px;
         }
@@ -744,12 +772,13 @@
             font-family: monospace;
             font-size: 0.8em;
             cursor: pointer;
-            box-shadow: 2px 2px 0 #FF0000;
+            box-shadow: 2px 2px 0 #FF00FF;
             text-transform: uppercase;
+            margin-right: 10px;
         }
         .settings-config-btn:active {
             transform: translate(2px, 2px);
-            box-shadow: 0px 0px 0 #FF0000;
+            box-shadow: 0px 0px 0 #FF00FF;
         }
 
         /* --- Mobile Overrides --- */
@@ -761,7 +790,8 @@
             .admin-sidebar { width: 100%; height: 40vh; flex: none; border-right: none; border-bottom: 4px solid #1A1A1A; }
             .admin-search-container { position: sticky; top: 0; background: #F0F0F0; z-index: 10; } 
             .admin-form-container { height: max-content; overflow: visible; padding: 15px; }
-            .api-box { box-shadow: 4px 4px 0px #FF0000, 8px 8px 0px #00FFFF; border-width: 4px; padding: 15px; width: 90%; }
+            .admin-save-container { flex-direction: column; }
+            .api-box { box-shadow: 4px 4px 0px #FF00FF, 8px 8px 0px #00FFFF; border-width: 4px; padding: 15px; width: 90%; }
             .header-sign { margin: 15px auto; padding: 15px; }
             .logo-script { font-size: 2.5em; }
         }
@@ -798,7 +828,7 @@
 <div id="admin-overlay" style="display:none;">
     <div class="admin-box">
         <div id="admin-login-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; width: 100%; position: absolute; top: 0; left: 0; background: #001A5E; z-index: 110; box-sizing: border-box; padding: 20px;">
-            <div class="api-box" style="border-color: #FF0000; width: 100%; max-width: 400px; box-shadow: 6px 6px 0px #FF0000, 12px 12px 0px #00FFFF;">
+            <div class="api-box" style="border-color: #FF00FF; width: 100%; max-width: 400px; box-shadow: 6px 6px 0px #FF00FF, 12px 12px 0px #00FFFF;">
                 <h2 style="color: #001A5E; text-shadow: 2px 2px 0 #FFCC00; font-family: 'Arial Black', sans-serif; text-align: center; margin-top: 0; text-transform: uppercase;">EMPLOYEE ACCESS</h2>
                 <p style="color: #333; font-size: 0.85em; text-align: center; font-weight: bold; margin-bottom: 20px;">AUTHORIZATION REQUIRED FOR LOGISTICS CONTROLS</p>
                 
@@ -812,7 +842,7 @@
                     <label>Password</label>
                     <input type="password" id="admin-password-input" placeholder="Enter password...">
                 </div>
-                <button id="admin-login-submit" style="background: #00FF00; color: #1A1A1A; border: 4px solid #1A1A1A; padding: 12px 20px; font-family: 'Arial Black', sans-serif; font-size: 1.1em; cursor: pointer; width: 100%; box-shadow: 4px 4px 0 #FF0000; text-transform: uppercase; font-weight: 900;">AUTHORIZE</button>
+                <button id="admin-login-submit" style="background: #00FF00; color: #1A1A1A; border: 4px solid #1A1A1A; padding: 12px 20px; font-family: 'Arial Black', sans-serif; font-size: 1.1em; cursor: pointer; width: 100%; box-shadow: 4px 4px 0 #FF00FF; text-transform: uppercase; font-weight: 900;">AUTHORIZE</button>
                 <button onclick="closeAdminPanel()" style="background: #FF0044; color: #FFF; border: 4px solid #1A1A1A; padding: 8px 15px; font-family: 'Arial Black', sans-serif; font-size: 0.9em; cursor: pointer; width: 100%; margin-top: 10px; text-transform: uppercase; font-weight: 900;">EXIT</button>
             </div>
         </div>
@@ -829,7 +859,7 @@
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
                 <button class="settings-config-btn" onclick="openSettingsFromAdmin()">[ Setup ]</button>
-                <button class="admin-close-btn" style="background:#FF0000;" onclick="adminLogout()">LOGOUT</button>
+                <button class="admin-logout-btn" onclick="adminLogout()">LOGOUT</button>
                 <button class="admin-close-btn" onclick="closeAdminPanel()">EXIT TERMINAL</button>
             </div>
         </div>
@@ -956,7 +986,6 @@
     let webAppUrl = "";
     let omdbApiKey = "";
 
-    // DOM Elements
     const apiOverlay = document.getElementById('api-overlay');
     const sheetUrlInput = document.getElementById('sheet-url-input');
     const apiInput = document.getElementById('api-input');
@@ -1334,6 +1363,7 @@
                 item.alternateTitle,
                 item.synopsis,
                 item.director,
+                item.writer,
                 item.actors,
                 item.genre,
                 item.format,
@@ -1377,4 +1407,374 @@
     }
     
     function adminLogout() {
-        localStorage.
+        localStorage.removeItem(ADMIN_CREDS_KEY);
+        window.adminUsername = null;
+        window.adminPassword = null;
+        
+        document.getElementById('admin-login-container').style.display = 'flex';
+        document.getElementById('admin-username-input').value = "";
+        document.getElementById('admin-password-input').value = "";
+        
+        const errBox = document.getElementById('login-error-msg');
+        errBox.textContent = "EMPLOYEE TERMINAL SECURELY LOGGED OUT.";
+        errBox.style.background = "#00FF00"; // Green for success
+        errBox.style.color = "#1A1A1A";
+        errBox.style.display = 'block';
+
+        adminWorkspace.innerHTML = `<div class="admin-placeholder">SELECT A TAPE FROM THE CATALOG SYSTEM<br>TO UPDATE THE LOGISTICS DATA</div>`;
+    }
+
+    function openSettingsFromAdmin() {
+        sheetUrlInput.value = webAppUrl;
+        apiInput.value = omdbApiKey;
+        apiOverlay.style.display = 'flex';
+        loginBox.style.display = 'block';
+        loadingText.style.display = 'none';
+        progressBarContainer.style.display = 'none';
+    }
+
+    function closeApiOverlay() {
+        apiOverlay.style.display = 'none';
+    }
+
+    function renderAdminMovieList(movies) {
+        adminMovieList.innerHTML = "";
+        
+        const sorted = [...movies].sort((a, b) => stripArticles(a.title).localeCompare(stripArticles(b.title)));
+
+        sorted.forEach(movie => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'admin-movie-item';
+            
+            let dotColor = '#00FF00'; 
+            const normStatus = (movie.status || "").toLowerCase().trim();
+            if (normStatus === "checked out") dotColor = '#FFCC00';
+            else if (normStatus === "damaged/lost") dotColor = '#FF00FF';
+            else if (normStatus === "on order") dotColor = '#FF0044';
+            else if (normStatus === "unavailable") dotColor = '#888888';
+            else if (normStatus === "request") dotColor = '#00FFFF';
+            
+            itemDiv.innerHTML = `
+                <div>
+                    <span style="color:${dotColor}; margin-right:8px;">●</span>
+                    ${movie.title} (${movie.year})
+                </div>
+                <span style="font-size:0.7em; background:#1A1A1A; color:#FFCC00; padding:2px 4px; font-family:monospace;">
+                    ${movie.format || "N/A"}
+                </span>
+            `;
+
+            itemDiv.onclick = () => {
+                document.querySelectorAll('.admin-movie-item').forEach(el => el.classList.remove('active'));
+                itemDiv.classList.add('active');
+                loadAdminForm(movie);
+                
+                if (window.innerWidth <= 768) {
+                    document.getElementById('admin-workspace').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            };
+
+            adminMovieList.appendChild(itemDiv);
+        });
+    }
+
+    adminSearch.addEventListener('input', (e) => {
+        const query = normalizeString(e.target.value);
+        const filtered = catalogData.filter(movie => 
+            normalizeString(movie.title).includes(query) || 
+            normalizeString(movie.format).includes(query)
+        );
+        renderAdminMovieList(filtered);
+    });
+
+    function loadAdminForm(movie) {
+        adminWorkspace.innerHTML = `
+            <div class="admin-form-title">Update Logistics Info</div>
+            
+            <div style="background:#001A5E; color:#FFF; padding:10px 15px; border:3px solid #1A1A1A; margin-bottom:20px; font-weight:bold; text-transform:uppercase;">
+                Tape: <span style="color:#FFCC00;">${movie.title} (${movie.year})</span>
+            </div>
+
+            <div class="admin-form-grid">
+                <div class="admin-input-group">
+                    <label>Stock Status</label>
+                    <select id="admin-form-status">
+                        <option value="In Stock" ${movie.status === "In Stock" ? "selected" : ""}>In Stock</option>
+                        <option value="Checked Out" ${movie.status === "Checked Out" ? "selected" : ""}>Checked Out</option>
+                        <option value="Damaged/Lost" ${movie.status === "Damaged/Lost" ? "selected" : ""}>Damaged/Lost</option>
+                        <option value="On Order" ${movie.status === "On Order" ? "selected" : ""}>On Order</option>
+                        <option value="Unavailable" ${movie.status === "Unavailable" ? "selected" : ""}>Unavailable</option>
+                        <option value="Request" ${movie.status === "Request" ? "selected" : ""}>Request</option>
+                    </select>
+                </div>
+                
+                <div class="admin-input-group">
+                    <label>User (Rented By)</label>
+                    <input type="text" id="admin-form-user" value="${movie.user || ""}" placeholder="Customer name...">
+                </div>
+
+                <div class="admin-input-group admin-full-row">
+                    <label>Due Date</label>
+                    <div style="display:flex; align-items:center; gap: 15px;">
+                        <input type="date" id="admin-form-duedate" value="${movie.dueDate || ""}" style="flex:1;">
+                        <label style="display:flex; align-items:center; gap:5px; text-transform:none; font-size:0.9em;">
+                            <input type="checkbox" id="admin-form-noduedate" style="width:auto;"> No Due Date
+                        </label>
+                    </div>
+                </div>
+
+                <div class="admin-input-group admin-full-row">
+                    <label>Private Notes and Log</label>
+                    <textarea id="admin-form-new-note" placeholder="Type a new private note to add at the top..." style="margin-bottom: 10px; text-transform: none; font-weight: normal;"></textarea>
+                    <label style="font-size: 0.75em; color: #666; margin-bottom: 5px; text-transform: uppercase;">Historical Notes</label>
+                    <textarea id="admin-form-details" placeholder="No historical notes." readonly style="background-color: #EEE; min-height: 120px; text-transform: none; font-family: monospace; font-weight: normal;">${movie.details || ""}</textarea>
+                </div>
+            </div>
+
+            <div class="admin-save-container">
+                <button class="admin-save-btn" id="btn-save-continue" onclick="saveAdminChanges('${movie.sheetName}', ${movie.rowIndex}, false)">Save & Continue</button>
+                <button class="admin-save-btn secondary" id="btn-save-close" onclick="saveAdminChanges('${movie.sheetName}', ${movie.rowIndex}, true)">Save & Close</button>
+            </div>
+        `;
+
+        const statusSelect = document.getElementById('admin-form-status');
+        const userInput = document.getElementById('admin-form-user');
+        const duedateInput = document.getElementById('admin-form-duedate');
+        const noDueDateCheck = document.getElementById('admin-form-noduedate');
+
+        const toggleRentalFields = () => {
+            const isRented = statusSelect.value === "Checked Out";
+            if (!isRented) {
+                userInput.value = "";
+                duedateInput.value = "";
+                userInput.disabled = true;
+                duedateInput.disabled = true;
+                noDueDateCheck.disabled = true;
+                noDueDateCheck.checked = false;
+                userInput.style.backgroundColor = "#EEE";
+                duedateInput.style.backgroundColor = "#EEE";
+            } else {
+                userInput.disabled = false;
+                noDueDateCheck.disabled = false;
+                userInput.style.backgroundColor = "#FFF";
+                
+                if (noDueDateCheck.checked) {
+                    duedateInput.value = "";
+                    duedateInput.disabled = true;
+                    duedateInput.style.backgroundColor = "#EEE";
+                } else {
+                    duedateInput.disabled = false;
+                    duedateInput.style.backgroundColor = "#FFF";
+                    
+                    if (!duedateInput.value) {
+                        const returnDate = new Date();
+                        returnDate.setDate(returnDate.getDate() + 7);
+                        duedateInput.value = returnDate.toISOString().split('T')[0];
+                    }
+                }
+            }
+        };
+
+        statusSelect.onchange = toggleRentalFields;
+        noDueDateCheck.onchange = toggleRentalFields;
+        toggleRentalFields(); 
+    }
+
+    window.saveAdminChanges = async function(sheetName, rowIndex, closeAfter) {
+        const status = document.getElementById('admin-form-status').value;
+        const user = document.getElementById('admin-form-user').value.trim();
+        const noDueDate = document.getElementById('admin-form-noduedate').checked;
+        const dueDate = noDueDate ? "" : document.getElementById('admin-form-duedate').value;
+        
+        const originalMovie = catalogData.find(m => m.sheetName === sheetName && m.rowIndex === rowIndex);
+        
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const todayStr = `${year}-${month}-${day}`;
+        
+        let newLogEntries = [];
+        
+        const newNoteInput = document.getElementById('admin-form-new-note');
+        const newNoteVal = newNoteInput ? newNoteInput.value.trim() : "";
+        if (newNoteVal) {
+            newLogEntries.push(`[${todayStr}] ${newNoteVal}`);
+        }
+        
+        if (status === "In Stock" && originalMovie && originalMovie.user) {
+            let logStr = `[${todayStr}] Returned by: ${originalMovie.user}`;
+            if (originalMovie.dueDate) {
+                logStr += ` (Due: ${originalMovie.dueDate})`;
+            }
+            newLogEntries.push(logStr);
+        }
+        
+        let finalDetails = originalMovie ? (originalMovie.details || "") : "";
+        if (newLogEntries.length > 0) {
+            const logsToPrepend = newLogEntries.join("\n");
+            finalDetails = finalDetails ? logsToPrepend + "\n" + finalDetails : logsToPrepend;
+        }
+        
+        let finalUser = user;
+        let finalDueDate = dueDate;
+        if (status === "In Stock") {
+            finalUser = "";
+            finalDueDate = "";
+        }
+
+        const payload = {
+            username: window.adminUsername,
+            password: window.adminPassword,
+            sheetName,
+            rowIndex,
+            status,
+            user: finalUser,
+            dueDate: finalDueDate,
+            details: finalDetails
+        };
+
+        const btnSaveCont = document.getElementById('btn-save-continue');
+        const btnSaveClose = document.getElementById('btn-save-close');
+        if(btnSaveCont) btnSaveCont.textContent = "SAVING...";
+        if(btnSaveClose) btnSaveClose.textContent = "SAVING...";
+
+        try {
+            const res = await fetch(webAppUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(payload)
+            });
+
+            const result = await res.json();
+            
+            if (result.status !== "success") {
+                throw new Error(result.error || "Uplink server reported an error writing to cell.");
+            }
+
+            const movieIndex = catalogData.findIndex(m => m.sheetName === sheetName && m.rowIndex === rowIndex);
+            if (movieIndex !== -1) {
+                catalogData[movieIndex].status = status;
+                catalogData[movieIndex].inStock = (status === "In Stock");
+                catalogData[movieIndex].user = finalUser;
+                catalogData[movieIndex].dueDate = finalDueDate;
+                catalogData[movieIndex].details = finalDetails;
+            }
+
+            renderCatalog(catalogData);
+            if (selectedMovieIndex !== null) {
+                showDetails(selectedMovieIndex);
+            }
+            
+            // In-Place DOM Feedback
+            if (btnSaveCont) {
+                btnSaveCont.textContent = "✔ SAVED!";
+                btnSaveCont.style.backgroundColor = "#00FF00";
+                btnSaveCont.style.color = "#1A1A1A";
+                
+                if (newNoteVal) {
+                    const detailsBox = document.getElementById('admin-form-details');
+                    const existing = detailsBox.value;
+                    detailsBox.value = `[${todayStr}] ${newNoteVal}\n` + existing;
+                    document.getElementById('admin-form-new-note').value = "";
+                }
+                
+                setTimeout(() => {
+                    if (btnSaveCont && btnSaveCont.textContent === "✔ SAVED!") {
+                        btnSaveCont.textContent = "Save & Continue";
+                    }
+                }, 2000);
+            }
+
+            if (closeAfter) {
+                closeAdminPanel();
+            }
+
+        } catch (err) {
+            console.error("Failed to write updates to Google Sheet:", err);
+            
+            // Display error cleanly without alerts
+            const errDiv = document.createElement('div');
+            errDiv.style = "color:#FFF; background:#FF0044; padding:10px; margin-top:15px; font-weight:bold; border:2px solid #1A1A1A; text-align:center;";
+            errDiv.textContent = `UPLINK FAILURE: ${err.message}`;
+            document.querySelector('.admin-save-container').appendChild(errDiv);
+            
+            if(btnSaveCont) btnSaveCont.textContent = "Save & Continue";
+            if(btnSaveClose) btnSaveClose.textContent = "Save & Close";
+        }
+    };
+
+    document.getElementById('admin-login-submit').addEventListener('click', async () => {
+        const u = document.getElementById('admin-username-input').value.trim();
+        const p = document.getElementById('admin-password-input').value;
+        const errBox = document.getElementById('login-error-msg');
+        
+        if (!u || !p) {
+            errBox.textContent = "PLEASE ENTER BOTH USERNAME AND PASSWORD.";
+            errBox.style.background = "#FF0044";
+            errBox.style.display = 'block';
+            return;
+        }
+
+        const submitBtn = document.getElementById('admin-login-submit');
+        const origText = submitBtn.textContent;
+        submitBtn.textContent = "AUTHENTICATING...";
+        submitBtn.disabled = true;
+        errBox.style.display = 'none';
+
+        try {
+            const res = await fetch(webAppUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify({ action: "login", username: u, password: p })
+            });
+            const result = await res.json();
+
+            if (result.status === "success" && result.authorized) {
+                window.adminUsername = u;
+                window.adminPassword = p;
+                
+                // Set persistent local session
+                localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({username: u, password: p}));
+
+                if (result.privateLogs) {
+                    catalogData.forEach(movie => {
+                        let key = movie.sheetName + "_" + movie.rowIndex;
+                        if (result.privateLogs[key]) {
+                            movie.user = result.privateLogs[key].user || "";
+                            movie.dueDate = result.privateLogs[key].dueDate || "";
+                            movie.details = result.privateLogs[key].details || "";
+                        }
+                    });
+                }
+
+                document.getElementById('admin-login-container').style.display = 'none';
+                renderAdminMovieList(catalogData);
+            } else {
+                errBox.textContent = "ACCESS DENIED: INVALID EMPLOYEE CREDENTIALS.";
+                errBox.style.background = "#FF0044";
+                errBox.style.display = 'block';
+            }
+        } catch (err) {
+            console.error("Authentication server error:", err);
+            errBox.textContent = "UPLINK ERROR: Unable to contact the authentication server.";
+            errBox.style.background = "#FF0044";
+            errBox.style.display = 'block';
+        } finally {
+            submitBtn.textContent = origText;
+            submitBtn.disabled = false;
+        }
+    });
+
+    document.getElementById('admin-password-input').addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') document.getElementById('admin-login-submit').click();
+    });
+    document.getElementById('admin-username-input').addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') document.getElementById('admin-password-input').focus();
+    });
+
+    initSystem();
+
+</script>
+</body>
+</html>
