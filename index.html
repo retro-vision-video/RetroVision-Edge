@@ -88,7 +88,6 @@
             text-shadow: 2px 2px 0 #00FFFF;
         }
 
-        /* --- UI Elements --- */
         marquee { 
             background-color: #001A5E; 
             color: #FFCC00; 
@@ -189,6 +188,19 @@
         .media-row:hover { background-color: #00FFFF; color: #1A1A1A; }
         .media-row.active { background-color: #FF00FF; color: #FFFFFF; }
         
+        /* Indented subtitle info for list */
+        .sub-title-info {
+            display: block;
+            margin-left: 20px;
+            font-size: 0.75em;
+            color: #555;
+            font-weight: 600;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
+        .media-row:hover .sub-title-info { color: #1A1A1A; }
+        .media-row.active .sub-title-info { color: #FFCC00; }
+
         .format-badge { 
             border: 2px solid #1A1A1A; 
             padding: 3px 6px; 
@@ -296,12 +308,20 @@
         #detail-title { 
             font-size: 1.6em; 
             font-weight: 900; 
-            margin-bottom: 10px; 
+            margin-bottom: 5px; 
             text-transform: uppercase; 
             color: #001A5E; 
             letter-spacing: -1px;
         }
         
+        #detail-sub-titles {
+            font-size: 0.85em;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
         #detail-meta { 
             margin-bottom: 15px; 
             font-weight: bold; 
@@ -380,6 +400,46 @@
         .suggestion-link:active {
             transform: translate(2px, 2px);
             box-shadow: 0px 0px 0 #FF00FF;
+        }
+
+        /* --- Custom Alert Modal --- */
+        #custom-alert-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .custom-alert-box {
+            background: #FAFAFA;
+            border: 6px solid #FF00FF;
+            padding: 25px;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 8px 8px 0px #00FFFF;
+            text-align: center;
+        }
+        .custom-alert-box p {
+            font-weight: bold;
+            color: #1A1A1A;
+            white-space: pre-wrap;
+            margin-bottom: 20px;
+        }
+        .custom-alert-box button {
+            background: #FFCC00;
+            color: #001A5E;
+            border: 4px solid #1A1A1A;
+            padding: 10px 20px;
+            font-family: 'Arial Black', sans-serif;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px #00FFFF;
+            text-transform: uppercase;
+        }
+        .custom-alert-box button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #00FFFF;
         }
 
         /* --- API Key & Google Sheet Config Overlay --- */
@@ -799,6 +859,14 @@
 </head>
 <body>
 
+<!-- Custom Alert Overlay -->
+<div id="custom-alert-overlay" style="display:none;">
+    <div class="custom-alert-box">
+        <p id="custom-alert-msg"></p>
+        <button onclick="closeCustomAlert()">ACKNOWLEDGE</button>
+    </div>
+</div>
+
 <a class="admin-link" onclick="openAdminPanel()">[ Employee Portal ]</a>
 
 <div id="api-overlay" style="display:none;">
@@ -906,61 +974,87 @@
     </div>
 
     <div class="details" id="details-pane">
-        <div id="detail-cover">SELECT TAPE</div>
-        <div id="detail-title">SELECT TAPE</div>
-        <div id="detail-status"></div>
-        <div id="detail-meta"></div>
-        <div id="detail-desc">Please select a film from our catalog row to inspect the complete logistical database specs and cover poster.</div>
         
-        <div class="details-spec-grid" id="details-spec-grid" style="display:none;">
-            <div class="spec-item">
-                <span class="spec-label">Format</span>
-                <span id="spec-format" class="spec-val"></span>
+        <!-- WELCOME PANEL DEFAULT -->
+        <div id="welcome-panel" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; text-align:center;">
+            <div class="apology-cover" style="width:180px; height:270px; margin-bottom: 20px;">
+                <h4>RETROVISION</h4>
+                <p>SYSTEM READY</p>
+                <span style="font-size:0.7em; margin-top:10px;">PLEASE SELECT A MOVIE<br>FROM THE RACKS</span>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">Edition</span>
-                <span id="spec-edition" class="spec-val"></span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Rating</span>
-                <span id="spec-rating" class="spec-val"></span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Type</span>
-                <span id="spec-type" class="spec-val"></span>
-            </div>
-            <div class="spec-item spec-full-width">
-                <span class="spec-label">Alternate Title</span>
-                <span id="spec-alt-title" class="spec-val"></span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Condition</span>
-                <span id="spec-condition" class="spec-val"></span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Decade Tab</span>
-                <span id="spec-decade" class="spec-val"></span>
-            </div>
-            <div class="spec-item spec-full-width" id="spec-genre-container">
-                <span class="spec-label">Genre</span>
-                <span id="spec-genre" class="spec-val"></span>
-            </div>
-            <div class="spec-item spec-full-width" id="spec-rental-info-container" style="display:none;">
-                <span class="spec-label">Rental Status</span>
-                <span id="spec-rental-info" class="spec-val" style="color:#FFCC00; background:#1A1A1A; border-color:#FFCC00;"></span>
-            </div>
-            <div class="spec-item spec-full-width" id="spec-notes-container" style="display:none;">
-                <span class="spec-label">Notes and Log</span>
-                <span id="spec-notes" class="spec-val" style="display:block; text-transform:none; white-space: pre-wrap;"></span>
+            <h2 style="color:#001A5E; font-family:'Arial Black', sans-serif; text-transform:uppercase; margin-bottom: 5px;">WELCOME TO RETROVISION</h2>
+            <p style="font-weight:bold; max-width:400px; color:#333;">Browse our catalog by selecting a tape from the list on the left.</p>
+        </div>
+
+        <!-- MOVIE DATA PANEL (HIDDEN BY DEFAULT) -->
+        <div id="movie-data-panel" style="display:none; width: 100%; flex-direction: column; align-items: center;">
+            <div id="detail-cover">SELECT TAPE</div>
+            <div id="detail-title">SELECT TAPE</div>
+            <div id="detail-sub-titles" style="font-size: 0.85em; font-weight: bold; color: #555; margin-bottom: 15px; text-align: center; display: none;"></div>
+            <div id="detail-status"></div>
+            <div id="detail-meta"></div>
+            <div id="detail-desc">Please select a film from our catalog row to inspect the complete logistical database specs and cover poster.</div>
+            
+            <div class="details-spec-grid" id="details-spec-grid">
+                <div class="spec-item">
+                    <span class="spec-label">Format</span>
+                    <span id="spec-format" class="spec-val"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Runtime</span>
+                    <span id="spec-runtime" class="spec-val"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Rating</span>
+                    <span id="spec-rating" class="spec-val"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Type</span>
+                    <span id="spec-type" class="spec-val"></span>
+                </div>
+                <div class="spec-item spec-full-width">
+                    <span class="spec-label">Foreign, Alternate, or Additional Title(s)</span>
+                    <span id="spec-alt-title" class="spec-val"></span>
+                </div>
+                <div class="spec-item spec-full-width">
+                    <span class="spec-label">Director</span>
+                    <span id="spec-director" class="spec-val"></span>
+                </div>
+                <div class="spec-item spec-full-width">
+                    <span class="spec-label">Writer</span>
+                    <span id="spec-writer" class="spec-val"></span>
+                </div>
+                <div class="spec-item spec-full-width">
+                    <span class="spec-label">Actors</span>
+                    <span id="spec-actors" class="spec-val"></span>
+                </div>
+                <div class="spec-item spec-full-width" id="spec-genre-container">
+                    <span class="spec-label">Genre</span>
+                    <span id="spec-genre" class="spec-val"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Condition</span>
+                    <span id="spec-condition" class="spec-val"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Decade Tab</span>
+                    <span id="spec-decade" class="spec-val"></span>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    // =========================================================================
-    // ADMIN CONTROL PANEL (Edit text between the quotes below!)
-    // =========================================================================
+    // ███████████████████████████████████████████████████████████████████████████████████████
+    // ███████████████████████████████████████████████████████████████████████████████████████
+    // ██                                                                                   ██
+    // ██                           E D W A R D ' S   Z O N E                               ██
+    // ██                           -----------------------                                 ██
+    // ██                  ONLY EDIT THE TEXT INSIDE THE QUOTATION MARKS                    ██
+    // ██                                                                                   ██
+    // ███████████████████████████████████████████████████████████████████████████████████████
+    // ███████████████████████████████████████████████████████████████████████████████████████
     
     // This text displays in the scrolling news bar at the top of the site.
     const STORE_NEWS_ANNOUNCEMENT = "LATE FEES WAIVED FOR THE WEEKEND /// NEW ARRIVALS IN HORROR ///";
@@ -982,7 +1076,6 @@
     // LocalStorage Keys
     const WEB_APP_URL_KEY = "retrovision_sheets_url";
     const OMDB_API_KEY_KEY = "retrovision_omdb_key_v2";
-    const SHEETS_DATA_CACHE_KEY = "retrovision_sheets_cache_v4";
     const OMDB_METADATA_CACHE_KEY = "retrovision_omdb_metadata_cache_v4";
 
     // Application Variables
@@ -1004,8 +1097,13 @@
 
     const catalogBody = document.getElementById('catalog-body');
     const searchInput = document.getElementById('search-input');
+    
+    const welcomePanel = document.getElementById('welcome-panel');
+    const movieDataPanel = document.getElementById('movie-data-panel');
+    
     const detailCover = document.getElementById('detail-cover');
     const detailTitle = document.getElementById('detail-title');
+    const detailSubTitles = document.getElementById('detail-sub-titles');
     const detailStatus = document.getElementById('detail-status');
     const detailMeta = document.getElementById('detail-meta');
     const detailDesc = document.getElementById('detail-desc');
@@ -1013,17 +1111,16 @@
 
     // Specs elements
     const specFormat = document.getElementById('spec-format');
-    const specEdition = document.getElementById('spec-edition');
+    const specRuntime = document.getElementById('spec-runtime');
     const specRating = document.getElementById('spec-rating');
     const specType = document.getElementById('spec-type');
     const specAltTitle = document.getElementById('spec-alt-title');
+    const specDirector = document.getElementById('spec-director');
+    const specWriter = document.getElementById('spec-writer');
+    const specActors = document.getElementById('spec-actors');
     const specCondition = document.getElementById('spec-condition');
     const specDecade = document.getElementById('spec-decade');
     const specGenre = document.getElementById('spec-genre');
-    const specRentalInfoContainer = document.getElementById('spec-rental-info-container');
-    const specRentalInfo = document.getElementById('spec-rental-info');
-    const specNotesContainer = document.getElementById('spec-notes-container');
-    const specNotes = document.getElementById('spec-notes');
 
     // Admin Panel Elements
     const adminOverlay = document.getElementById('admin-overlay');
@@ -1031,6 +1128,16 @@
     const adminWorkspace = document.getElementById('admin-workspace');
     const adminSearch = document.getElementById('admin-search');
     const adminLoadingScreen = document.getElementById('admin-loading-screen');
+
+    // Custom Alert Function (Replaces native alert)
+    function customAlert(message) {
+        document.getElementById('custom-alert-msg').textContent = message;
+        document.getElementById('custom-alert-overlay').style.display = 'flex';
+    }
+    
+    function closeCustomAlert() {
+        document.getElementById('custom-alert-overlay').style.display = 'none';
+    }
 
     // --- SYSTEM INITIALIZATION ---
     function initSystem() {
@@ -1040,6 +1147,9 @@
         // Load configurations from LocalStorage or Fallbacks
         webAppUrl = localStorage.getItem(WEB_APP_URL_KEY) || DEFAULT_WEB_APP_URL;
         omdbApiKey = localStorage.getItem(OMDB_API_KEY_KEY) || DEFAULT_OMDB_API_KEY;
+        
+        // Load cache globally
+        window.omdbCache = JSON.parse(localStorage.getItem(OMDB_METADATA_CACHE_KEY) || "{}");
 
         if (!webAppUrl || !omdbApiKey) {
             sheetUrlInput.value = webAppUrl;
@@ -1061,7 +1171,7 @@
             apiOverlay.style.display = 'flex';
             loadDatabaseFromSheets();
         } else {
-            alert("Please provide both the Google Sheets Apps Script Web App URL and your OMDb API key.");
+            customAlert("Please provide both the Google Sheets Apps Script Web App URL and your OMDb API key.");
         }
     });
 
@@ -1115,25 +1225,13 @@
             const statusSummaryStr = Object.keys(statusSummary).map(k => `${k.toUpperCase()}: ${statusSummary[k]}`).join(" /// ");
             marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// DATABANKS SYNCED SECURELY /// TOTAL TAPES: ${totalCount} /// ${statusSummaryStr} /// BE KIND, REWIND ///`;
 
-            // Display first film if available
-            if (catalogData.length > 0) {
-                showDetails(0);
-                setTimeout(() => {
-                    const firstRow = document.querySelector('.media-row');
-                    if (firstRow) firstRow.classList.add('active');
-                }, 50);
-            }
-
             // Hide loading overlay
             apiOverlay.style.display = 'none';
 
         } catch (error) {
             clearInterval(loadingInterval);
             console.error("Critical Uplink Error:", error);
-            alert(`CRITICAL UPLINK FAILURE:
-${error.message}
-
-Please verify your Edge Network URL and check that GitHub Pages is broadcasting.`);
+            customAlert(`CRITICAL UPLINK FAILURE:\n${error.message}\n\nPlease verify your Edge Network URL and check that GitHub Pages is broadcasting.`);
             progressBarContainer.style.display = 'none';
             loginBox.style.display = 'block';
             loadingText.style.display = 'none';
@@ -1166,9 +1264,21 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
         selectedMovieIndex = index;
         const item = catalogData[index];
         
+        welcomePanel.style.display = 'none';
+        movieDataPanel.style.display = 'flex';
+
         // Render initial data from Sheets immediately! (Instant UI feedback)
         detailTitle.textContent = `${item.title} (${item.year || "????"})`;
         
+        // Render sub-titles natively in the header
+        let subHtml = "";
+        if (item.alternateTitle || item.edition) {
+            if (item.alternateTitle) subHtml += `ALT TITLE: ${item.alternateTitle}<br>`;
+            if (item.edition) subHtml += `EDITION: ${item.edition}`;
+        }
+        detailSubTitles.innerHTML = subHtml;
+        detailSubTitles.style.display = subHtml ? 'block' : 'none';
+
         // Render detailed status badges matching the dropdown options
         const normStatus = (item.status || "").toLowerCase().trim();
         if (normStatus === "checked out") {
@@ -1194,34 +1304,18 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
 
         // Render Specs
         specFormat.textContent = item.format;
-        specEdition.textContent = item.edition || "STANDARD RELEASE";
         specRating.textContent = item.rating || "NR";
         specType.textContent = item.type || "Feature Film";
         specAltTitle.textContent = item.alternateTitle || "NONE LISTED";
         specCondition.textContent = (item.condition || "UNSPECIFIED").toUpperCase();
         specDecade.textContent = item.sheetName; // Decade Tab name!
-        specGenre.textContent = item.genre || "UNSPECIFIED";
         
-        // Added columns K (user), L (dueDate), M (details) to details pane
-        if (item.status === "Checked Out" && (item.user || item.dueDate)) {
-            specRentalInfoContainer.style.display = 'block';
-            let rentalText = "";
-            if (item.user) rentalText += `RENTED BY: ${item.user.toUpperCase()}`;
-            if (item.dueDate) {
-                if (rentalText) rentalText += " | ";
-                rentalText += `DUE DATE: ${item.dueDate}`;
-            }
-            specRentalInfo.textContent = rentalText;
-        } else {
-            specRentalInfoContainer.style.display = 'none';
-        }
-
-        if (item.details) {
-            specNotesContainer.style.display = 'block';
-            specNotes.textContent = item.details;
-        } else {
-            specNotesContainer.style.display = 'none';
-        }
+        // Initialize OMDb fields to syncing state
+        specGenre.textContent = "SYNCING...";
+        specRuntime.textContent = "SYNCING...";
+        specDirector.textContent = "SYNCING...";
+        specWriter.textContent = "SYNCING...";
+        specActors.textContent = "SYNCING...";
 
         detailsSpecGrid.style.display = 'grid';
 
@@ -1238,6 +1332,11 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
             detailCover.innerHTML = `<img src="${item.imdbLink}" alt="${item.title} Poster" onerror="triggerApologyCover(this, '${item.title}');">`;
             detailMeta.textContent = `RATING: ${item.rating || "NR"} | TYPE: ${item.type || "Feature Film"}`;
             detailDesc.textContent = item.synopsis || "No description provided.";
+            specGenre.textContent = item.genre || "UNSPECIFIED";
+            specRuntime.textContent = "N/A";
+            specDirector.textContent = "N/A";
+            specWriter.textContent = "N/A";
+            specActors.textContent = "N/A";
             return;
         }
 
@@ -1248,15 +1347,17 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
             triggerApologyCover(null, item.title);
             detailMeta.textContent = `RATING: ${item.rating || "NR"} | TYPE: ${item.type || "Feature Film"}`;
             detailDesc.textContent = item.synopsis || "No synopsis available.";
+            specGenre.textContent = item.genre || "UNSPECIFIED";
+            specRuntime.textContent = "N/A";
+            specDirector.textContent = "N/A";
+            specWriter.textContent = "N/A";
+            specActors.textContent = "N/A";
             return;
         }
 
-        // Load OMDb Cache
-        let omdbCache = JSON.parse(localStorage.getItem(OMDB_METADATA_CACHE_KEY) || "{}");
-
-        if (omdbCache[imdbId]) {
-            // Load instantly from Cache!
-            renderOMDbSpecs(item, omdbCache[imdbId]);
+        // Check cache first
+        if (window.omdbCache[imdbId]) {
+            renderOMDbSpecs(item, window.omdbCache[imdbId]);
         } else {
             // Fetch from OMDb on-demand!
             try {
@@ -1264,16 +1365,16 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
                 const data = await res.json();
                 
                 if (data.Response === "True") {
-                    omdbCache[imdbId] = data;
+                    window.omdbCache[imdbId] = data;
                     // Safely write to localStorage. If it throws a quota exception, clear some items and try again!
                     try {
-                        localStorage.setItem(OMDB_METADATA_CACHE_KEY, JSON.stringify(omdbCache));
+                        localStorage.setItem(OMDB_METADATA_CACHE_KEY, JSON.stringify(window.omdbCache));
                     } catch (e) {
                         // Clear half the cache if full to prevent QuotaExceededError
                         console.warn("Storage quota exceeded. Clearing old cache items...", e);
                         localStorage.removeItem(OMDB_METADATA_CACHE_KEY);
-                        omdbCache = { [imdbId]: data };
-                        localStorage.setItem(OMDB_METADATA_CACHE_KEY, JSON.stringify(omdbCache));
+                        window.omdbCache = { [imdbId]: data };
+                        localStorage.setItem(OMDB_METADATA_CACHE_KEY, JSON.stringify(window.omdbCache));
                     }
                     renderOMDbSpecs(item, data);
                 } else {
@@ -1307,6 +1408,13 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
 
         // Update description fallback
         detailDesc.textContent = item.synopsis || (isValid ? omdbData.Plot : "No description provided.");
+        
+        // Update extended specs
+        specGenre.textContent = item.genre || (isValid ? omdbData.Genre : "UNSPECIFIED");
+        specRuntime.textContent = isValid ? omdbData.Runtime : "N/A";
+        specDirector.textContent = isValid ? omdbData.Director : "N/A";
+        specWriter.textContent = isValid ? omdbData.Writer : "N/A";
+        specActors.textContent = isValid ? omdbData.Actors : "N/A";
     }
 
     // Default RetroVision Apology cover trigger if OMDb fails or lacks ID
@@ -1331,14 +1439,7 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
         catalogBody.innerHTML = ''; 
         
         if (dataToRender.length === 0) {
-            let suggestionHtml = "";
-            if (query.trim().length > 1) {
-                const suggestion = getSuggestion(query);
-                if (suggestion) {
-                    suggestionHtml = `<br><a class="suggestion-link" onclick="applySuggestion('${suggestion.replace(/'/g, "\'")}')">DID YOU MEAN: ${suggestion.toUpperCase()}?</a>`;
-                }
-            }
-            catalogBody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding: 40px 20px; font-weight:900; color:#FF0044; font-size:1.1em;">NO TAPES FOUND${suggestionHtml}</td></tr>`;
+            catalogBody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding: 40px 20px; font-weight:900; color:#FF0044; font-size:1.1em;">NO TAPES FOUND</td></tr>`;
             return;
         }
 
@@ -1361,9 +1462,21 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
             // Core requirement: Append Year in parenthesis next to the title (e.g. "The Thing (1982)")
             const displayTitle = `${item.title} (${item.year})`;
             
+            // Subtitles styling requirement
+            let subTitleHtml = "";
+            if (item.alternateTitle || item.edition) {
+                subTitleHtml = `<div class="sub-title-info">`;
+                if (item.alternateTitle) subTitleHtml += `ALT: ${item.alternateTitle}<br>`;
+                if (item.edition) subTitleHtml += `EDITION: ${item.edition}`;
+                subTitleHtml += `</div>`;
+            }
+            
             tr.innerHTML = `
-                <td><span class="status-dot ${dotClass}"></span>${displayTitle}</td>
-                <td><span class="format-badge">${item.format}</span></td>
+                <td>
+                    <span class="status-dot ${dotClass}"></span>${displayTitle}
+                    ${subTitleHtml}
+                </td>
+                <td style="vertical-align: top;"><span class="format-badge">${item.format}</span></td>
             `;
             
             const originalIndex = catalogData.indexOf(item);
@@ -1382,7 +1495,6 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
     }
 
     // --- SEARCH INDEXING ENGINE ---
-    // Search is indexed by decade, keywords, title, director, actor, genre, alt title, synopsis, format, edition, type
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase().trim();
         
@@ -1392,6 +1504,14 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
         }
 
         const filtered = catalogData.filter(item => {
+            
+            let omdbDataString = "";
+            const imdbId = extractImdbId(item.imdbLink);
+            if (imdbId && window.omdbCache && window.omdbCache[imdbId]) {
+                const cached = window.omdbCache[imdbId];
+                omdbDataString = [cached.Director, cached.Actors, cached.Writer, cached.Genre, cached.Plot].join(" ");
+            }
+            
             const indexString = [
                 item.title,
                 item.year,
@@ -1407,8 +1527,7 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
                 item.type,
                 item.status,
                 item.condition,
-                item.user,
-                item.details
+                omdbDataString
             ].map(v => (v || "").toLowerCase()).join(" ");
 
             return indexString.includes(query);
@@ -1416,7 +1535,6 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
 
         renderCatalog(filtered, query);
     });
-
 
     // =========================================================================
     // TERMINAL ADMIN PORTAL & LOGISTICS CONTROLS
@@ -1682,9 +1800,6 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
                 catalogData[movieIndex].user = finalUser;
                 catalogData[movieIndex].dueDate = finalDueDate;
                 catalogData[movieIndex].details = finalDetails;
-                
-                // (Intentionally disabled to avoid Browser LocalStorage 5MB Quota crashes with 11,000 tapes)
-                // localStorage.setItem(SHEETS_DATA_CACHE_KEY, JSON.stringify(catalogData));
             }
 
             // Re-render interfaces
@@ -1694,16 +1809,13 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
             }
 
             adminLoadingScreen.style.display = 'none';
-            alert("LOGISTICAL DATABANKS UPDATED SECURELY!");
+            customAlert("LOGISTICAL DATABANKS UPDATED SECURELY!");
             closeAdminPanel();
 
         } catch (err) {
             console.error("Failed to write updates to Google Sheet:", err);
             adminLoadingScreen.style.display = 'none';
-            alert(`UPLINK FAILURE:
-${err.message}
-
-Please verify your Google Apps Script Web App is deployed correctly, has access enabled for 'Anyone', and that you are connected to the network.`);
+            customAlert(`UPLINK FAILURE:\n${err.message}\n\nPlease verify your Google Apps Script Web App is deployed correctly, has access enabled for 'Anyone', and that you are connected to the network.`);
         }
     };
 
@@ -1714,7 +1826,7 @@ Please verify your Google Apps Script Web App is deployed correctly, has access 
         const p = document.getElementById('admin-password-input').value;
         
         if (!u || !p) {
-            alert("PLEASE ENTER BOTH USERNAME AND PASSWORD.");
+            customAlert("PLEASE ENTER BOTH USERNAME AND PASSWORD.");
             return;
         }
 
@@ -1757,11 +1869,11 @@ Please verify your Google Apps Script Web App is deployed correctly, has access 
                 document.getElementById('admin-login-container').style.display = 'none';
                 renderAdminMovieList(catalogData);
             } else {
-                alert("ACCESS DENIED: INVALID EMPLOYEE CREDENTIALS.");
+                customAlert("ACCESS DENIED: INVALID EMPLOYEE CREDENTIALS.");
             }
         } catch (err) {
             console.error("Authentication server error:", err);
-            alert("UPLINK ERROR: Unable to contact the authentication server. Please check your network and try again.");
+            customAlert("UPLINK ERROR: Unable to contact the authentication server. Please check your network and try again.");
         } finally {
             submitBtn.textContent = origText;
             submitBtn.disabled = false;
