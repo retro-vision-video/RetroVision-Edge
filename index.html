@@ -1354,10 +1354,10 @@
             const imdbId = extractImdbId(item.imdbLink);
             if (imdbId && window.omdbCache && window.omdbCache[imdbId]) {
                 const cached = window.omdbCache[imdbId];
-                omdbDataString = [cached.Director, cached.Actors, cached.Writer, cached.Genre, cached.Plot].join(" ");
+                omdbDataString = [cached.Director, cached.Actors, cached.Writer, cached.Genre, cached.Runtime, cached.Plot].join(" ");
             }
 
-            const indexString = [
+            // Scrubbed private tracking fields (condition, user, details, sheetName/location)
                 item.title,
                 item.year,
                 item.alternateTitle,
