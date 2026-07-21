@@ -18,8 +18,11 @@
             padding: 15px; 
             min-height: 100vh;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
+        /* ---Vaporwave Sign --- */
         .header-sign {
             position: relative;
             margin: 30px auto 30px auto;
@@ -58,6 +61,7 @@
             text-shadow: 2px 2px 0 #00FFFF;
         }
 
+        /* --- UI Elements --- */
         marquee { 
             background-color: #001A5E; 
             color: #FFCC00; 
@@ -105,6 +109,7 @@
             margin: 0 auto; 
             gap: 20px; 
             align-items: flex-start;
+            flex: 1;
         }
 
         @media (min-width: 768px) {
@@ -344,9 +349,7 @@
             word-break: break-word;
             min-height: 14px;
         }
-        .spec-full-width {
-            grid-column: span 2;
-        }
+        .spec-full-width { grid-column: span 2; }
 
         #api-overlay {
             position: fixed;
@@ -401,10 +404,7 @@
 
         .api-box p { font-weight: bold; color: #333; margin-bottom: 20px; font-size: 0.9em; }
 
-        .form-group {
-            text-align: left;
-            margin-bottom: 15px;
-        }
+        .form-group { text-align: left; margin-bottom: 15px; }
         .form-group label {
             display: block;
             font-family: 'Arial Black', sans-serif;
@@ -436,7 +436,6 @@
             box-shadow: 4px 4px 0px #00FFFF;
             text-transform: uppercase;
         }
-
         #api-submit:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #00FFFF; }
 
         #loading-text {
@@ -460,12 +459,7 @@
             position: relative;
         }
         
-        #progress-bar {
-            height: 100%;
-            width: 0%;
-            background: #FF00FF;
-            transition: width 0.1s;
-        }
+        #progress-bar { height: 100%; width: 0%; background: #FF00FF; transition: width 0.1s; }
 
         #admin-overlay {
             position: fixed;
@@ -532,10 +526,7 @@
             font-size: 0.9em;
             box-shadow: 2px 2px 0 #FFCC00;
         }
-        .admin-close-btn:active {
-            transform: translate(2px, 2px);
-            box-shadow: 0px 0px 0 #FFCC00;
-        }
+        .admin-close-btn:active { transform: translate(2px, 2px); box-shadow: 0px 0px 0 #FFCC00; }
         
         .admin-logout-btn {
             background: #FFCC00;
@@ -548,17 +539,9 @@
             box-shadow: 2px 2px 0 #FF00FF;
             margin-right: 10px;
         }
-        .admin-logout-btn:active {
-            transform: translate(2px, 2px);
-            box-shadow: 0px 0px 0 #FF00FF;
-        }
+        .admin-logout-btn:active { transform: translate(2px, 2px); box-shadow: 0px 0px 0 #FF00FF; }
 
-        .admin-body {
-            display: flex;
-            flex: 1;
-            overflow: hidden;
-            box-sizing: border-box;
-        }
+        .admin-body { display: flex; flex: 1; overflow: hidden; box-sizing: border-box; }
 
         .admin-sidebar {
             width: 35%;
@@ -570,11 +553,7 @@
             box-sizing: border-box;
         }
 
-        .admin-search-container {
-            padding: 10px;
-            border-bottom: 2px solid #1A1A1A;
-        }
-
+        .admin-search-container { padding: 10px; border-bottom: 2px solid #1A1A1A; }
         .admin-search-input {
             width: 100%;
             padding: 8px;
@@ -585,11 +564,7 @@
             text-transform: uppercase;
         }
 
-        .admin-movie-list {
-            flex: 1;
-            overflow-y: auto;
-        }
-
+        .admin-movie-list { flex: 1; overflow-y: auto; }
         .admin-movie-item {
             padding: 10px 15px;
             border-bottom: 1px solid #DDD;
@@ -600,14 +575,8 @@
             justify-content: space-between;
             align-items: center;
         }
-        .admin-movie-item:hover {
-            background: #00FFFF;
-            color: #1A1A1A;
-        }
-        .admin-movie-item.active {
-            background: #FF00FF;
-            color: #FFF;
-        }
+        .admin-movie-item:hover { background: #00FFFF; color: #1A1A1A; }
+        .admin-movie-item.active { background: #FF00FF; color: #FFF; }
 
         .admin-form-container {
             flex: 1;
@@ -628,21 +597,10 @@
             padding-bottom: 5px;
         }
 
-        .admin-form-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
+        .admin-form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .admin-full-row { grid-column: span 2; }
 
-        .admin-full-row {
-            grid-column: span 2;
-        }
-
-        .admin-input-group {
-            display: flex;
-            flex-direction: column;
-        }
-
+        .admin-input-group { display: flex; flex-direction: column; }
         .admin-input-group label {
             font-family: 'Arial Black', sans-serif;
             font-size: 0.8em;
@@ -651,20 +609,14 @@
             text-transform: uppercase;
         }
 
-        .admin-input-group input, 
-        .admin-input-group select, 
-        .admin-input-group textarea {
+        .admin-input-group input, .admin-input-group select, .admin-input-group textarea {
             padding: 10px;
             border: 3px solid #1A1A1A;
             font-weight: bold;
             box-sizing: border-box;
             font-family: sans-serif;
         }
-
-        .admin-input-group textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
+        .admin-input-group textarea { resize: vertical; min-height: 80px; }
 
         .admin-save-btn {
             background: #00FF00;
@@ -679,20 +631,10 @@
             flex: 1;
             transition: background-color 0.2s, color 0.2s;
         }
-        .admin-save-btn.secondary {
-            background: #00FFFF;
-        }
-        .admin-save-btn:active {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 #FF00FF;
-        }
+        .admin-save-btn.secondary { background: #00FFFF; }
+        .admin-save-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #FF00FF; }
         
-        .admin-save-container {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-            width: 100%;
-        }
+        .admin-save-container { display: flex; gap: 15px; margin-top: 25px; width: 100%; }
 
         .admin-placeholder {
             flex: 1;
@@ -736,39 +678,37 @@
             text-transform: uppercase;
             margin-right: 10px;
         }
-        .settings-config-btn:active {
-            transform: translate(2px, 2px);
-            box-shadow: 0px 0px 0 #FF00FF;
-        }
+        .settings-config-btn:active { transform: translate(2px, 2px); box-shadow: 0px 0px 0 #FF00FF; }
 
-        .footer-info {
+        .footer-container {
             text-align: center;
             margin-top: 40px;
             padding: 20px;
-            font-family: 'Arial Black', sans-serif;
+            font-weight: bold;
             color: #1A1A1A;
-            font-size: 0.9em;
-        }
-        
-        .footer-info p {
-            margin: 0 0 10px 0;
-            text-transform: uppercase;
-        }
-        
-        .innocuous-admin-link {
-            color: #999;
-            font-family: monospace;
-            text-decoration: none;
-            cursor: pointer;
-            font-size: 0.8em;
-            transition: color 0.2s;
-        }
-        
-        .innocuous-admin-link:hover {
-            color: #FF00FF;
-            text-decoration: underline;
+            border-top: 4px dashed #FF00FF;
+            background: rgba(255, 255, 255, 0.7);
         }
 
+        .footer-admin-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #001A5E;
+            background: #FFCC00;
+            border: 2px solid #1A1A1A;
+            padding: 5px 10px;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 0.8em;
+            text-decoration: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 2px 2px 0px #00FFFF;
+            transition: all 0.1s;
+        }
+        .footer-admin-link:hover { background: #00FFFF; box-shadow: 2px 2px 0px #FF00FF; }
+        .footer-admin-link:active { transform: translate(2px, 2px); box-shadow: 0px 0px 0px #FF00FF; }
+
+        /* --- Mobile Overrides --- */
         @media (max-width: 768px) {
             .admin-box { max-height: 95vh; margin: 10px; border-width: 4px; box-shadow: 4px 4px 0px #00FFFF, 8px 8px 0px #FFCC00; }
             .admin-header { flex-direction: column; gap: 12px; padding: 15px 10px; }
@@ -840,7 +780,7 @@
         <div class="admin-header">
             <div>
                 <span class="admin-title-sign">RetroVision</span>
-                <span class="admin-subtitle">Admin Terminal v4.1</span>
+                <span class="admin-subtitle">Admin Terminal v4.2</span>
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
                 <button class="settings-config-btn" onclick="openSettingsFromAdmin()">[ Setup ]</button>
@@ -901,8 +841,8 @@
                 <p>INSERT TAPE</p>
                 <span style="font-size:0.7em; margin-top:10px;">PLEASE SELECT A MOVIE<br>FROM THE RACKS</span>
             </div>
-            <h2 style="color:#001A5E; font-family:'Arial Black', sans-serif; text-transform:uppercase; margin-bottom: 5px;">WELCOME TO RETROVISION</h2>
-            <p style="font-weight:bold; max-width:400px; color:#333;">Browse our catalog by selecting a tape from the list. Don't forget to grab some popcorn!</p>
+            <h2 id="welcome-title" style="color:#001A5E; font-family:'Arial Black', sans-serif; text-transform:uppercase; margin-bottom: 5px;"></h2>
+            <p id="welcome-desc" style="font-weight:bold; max-width:400px; color:#333;"></p>
         </div>
 
         <!-- MOVIE DETAILS PANEL (HIDDEN BY DEFAULT) -->
@@ -948,35 +888,37 @@
     </div>
 </div>
 
-<div class="footer-info">
-    <p>Browse the collection in person at 492 East 13th Avenue, Suite 101, Eugene, Or.</p>
-    <a class="innocuous-admin-link" onclick="openAdminPanel()">Admin Portal</a>
+<div class="footer-container">
+    Browse the collection in person at 492 East 13th Avenue, Suite 101, Eugene, Or.<br>
+    <a class="footer-admin-link" onclick="openAdminPanel()">[ Admin Portal ]</a>
 </div>
 
 <script>
     // =========================================================================
     // =========================================================================
-    //                    !!! ATTENTION EDWARD !!!
-    //           EDIT THE SCROLLING TEXT AND MESSAGES BELOW
+    //       BOSSES SECTION - EDIT TEXT HERE (DO NOT DELETE THE QUOTES!)
     // =========================================================================
     // =========================================================================
-    
+
     const STORE_NEWS_ANNOUNCEMENT = "LATE FEES WAIVED FOR THE WEEKEND /// NEW ARRIVALS IN HORROR ///";
-    
+
+    const WELCOME_TITLE = "WELCOME TO RETROVISION";
+
+    const WELCOME_TEXT = "Browse our catalog by selecting a tape from the list. Don't forget to grab some popcorn!";
+
+    // =========================================================================
+    // =========================================================================
+    //       END OF BOSSES SECTION - DO NOT EDIT BELOW THIS LINE!
+    // =========================================================================
+    // =========================================================================
+
     const CUSTOM_LOADING_MESSAGES = [
         "Rummaging through tapes...",
         "Climbing over racks...",
         "Dusting off the VCR...",
         "Checking returned videos..."
     ];
-
-    // =========================================================================
-    // =========================================================================
-    //                   END OF EDWARD'S SETTINGS
-    //               PLEASE DO NOT EDIT BELOW THIS LINE
-    // =========================================================================
-    // =========================================================================
-
+    
     const DEFAULT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz7O52_OZXbRaFvVaNfOfk3IkFfwTut5A0pgLdFcuYDC_CewG9rUAPN5t3hEGBRnqgkgw/exec"; 
     const DEFAULT_OMDB_API_KEY = "ceb2a6ff";
 
@@ -1029,6 +971,10 @@
 
     function initSystem() {
         marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// REWINDING TAPES ///`;
+        
+        // Populate the boss config settings directly into the UI
+        document.getElementById('welcome-title').textContent = WELCOME_TITLE;
+        document.getElementById('welcome-desc').textContent = WELCOME_TEXT;
         
         webAppUrl = localStorage.getItem(WEB_APP_URL_KEY) || DEFAULT_WEB_APP_URL;
         omdbApiKey = localStorage.getItem(OMDB_API_KEY_KEY) || DEFAULT_OMDB_API_KEY;
@@ -1192,6 +1138,7 @@
         specActors.textContent = item.actors || "N/A";
         
         detailDesc.innerHTML = item.synopsis || "Syncing databanks for film details...";
+        
         detailCover.innerHTML = `<div class="apology-cover"><h4>RETROVISION</h4><p>SYNCING SPECS...</p></div>`;
 
         const isDirectImage = item.imdbLink && (item.imdbLink.match(/\.(jpeg|jpg|gif|png|webp)/i) != null || !item.imdbLink.includes("imdb.com") && item.imdbLink.startsWith("http"));
@@ -1345,12 +1292,16 @@
             return;
         }
 
+        // Split query into multiple terms to support loose matching (e.g. "Lloyd Bacon" or "86 min")
+        const queryParts = query.split(/\s+/).filter(p => p.length > 0);
+
         const filtered = catalogData.filter(item => {
             let omdbDataString = "";
             const imdbId = extractImdbId(item.imdbLink);
             if (imdbId && window.omdbCache && window.omdbCache[imdbId]) {
                 const cached = window.omdbCache[imdbId];
-                omdbDataString = [cached.Director, cached.Actors, cached.Writer, cached.Genre, cached.Plot].join(" ");
+                // Include cached.Runtime here so lazy-loaded metadata is fully searchable
+                omdbDataString = [cached.Director, cached.Actors, cached.Writer, cached.Genre, cached.Plot, cached.Runtime].join(" ");
             }
 
             const indexString = [
@@ -1365,10 +1316,14 @@
                 item.format,
                 item.edition,
                 item.type,
+                item.runtime,
                 omdbDataString
             ].map(v => (v || "")).join(" ");
 
-            return normalizeString(indexString).includes(query);
+            const normalizedIndex = normalizeString(indexString);
+            
+            // Verify ALL words typed into the search bar appear SOMEWHERE in the data string
+            return queryParts.every(part => normalizedIndex.includes(part));
         });
 
         renderCatalog(filtered, query);
@@ -1742,7 +1697,7 @@
                 document.getElementById('admin-login-container').style.display = 'none';
                 renderAdminMovieList(catalogData);
             } else {
-                errBox.textContent = "ACCESS DENIED: INVALID ADMIN CREDENTIALS.";
+                errBox.textContent = "ACCESS DENIED: INVALID AUTHORIZATION.";
                 errBox.style.background = "#FF0044";
                 errBox.style.display = 'block';
             }
