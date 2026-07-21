@@ -9,8 +9,8 @@
         body { 
             background-color: #FAFAFA;
             background-image: 
-                linear-gradient(rgba(255, 0, 255, 0.07) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 255, 0.07) 1px, transparent 1px);
+                linear-gradient(rgba(0, 26, 94, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 26, 94, 0.05) 1px, transparent 1px);
             background-size: 30px 30px;
             color: #1A1A1A; 
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
@@ -33,7 +33,7 @@
             font-size: 0.8em;
             font-weight: bold;
             text-decoration: none;
-            box-shadow: 3px 3px 0px #FF00FF;
+            box-shadow: 3px 3px 0px #FF0000;
             cursor: pointer;
             z-index: 10;
             text-transform: uppercase;
@@ -42,14 +42,13 @@
         }
         .admin-link:hover {
             background: #00FFFF;
-            box-shadow: 3px 3px 0px #FF00FF;
         }
         .admin-link:active {
             transform: translate(2px, 2px);
-            box-shadow: 1px 1px 0px #FF00FF;
+            box-shadow: 1px 1px 0px #FF0000;
         }
 
-        /* ---Vaporwave Sign --- */
+        /* --- Classic Video Store Sign --- */
         .header-sign {
             position: relative;
             margin: 30px auto 30px auto;
@@ -58,7 +57,7 @@
             text-align: center;
             background: #001A5E; 
             border: 6px solid #FFCC00; 
-            box-shadow: 8px 8px 0px #FF00FF, 16px 16px 0px #00FFFF;
+            box-shadow: 8px 8px 0px #FF0000, 16px 16px 0px #001A5E;
         }
 
         .logo-script { 
@@ -71,7 +70,7 @@
             line-height: 0.8;
             position: relative;
             z-index: 2;
-            text-shadow: 3px 3px 0 #FF00FF;
+            text-shadow: 3px 3px 0 #FF0000;
         }
 
         .logo-video { 
@@ -94,8 +93,8 @@
             color: #FFCC00; 
             padding: 10px; 
             font-size: 1em; 
-            border-top: 3px solid #FF00FF; 
-            border-bottom: 3px solid #00FFFF; 
+            border-top: 3px solid #FF0000; 
+            border-bottom: 3px solid #FF0000; 
             margin: 20px 0; 
             font-weight: 900;
             text-transform: uppercase;
@@ -120,13 +119,13 @@
             text-transform: none;
             outline: none;
             transition: all 0.2s ease;
-            box-shadow: 4px 4px 0px #00FFFF;
+            box-shadow: 4px 4px 0px #001A5E;
             box-sizing: border-box;
         }
 
         #search-input:focus {
-            border-color: #FF00FF;
-            box-shadow: 4px 4px 0px #FF00FF;
+            border-color: #FF0000;
+            box-shadow: 4px 4px 0px #FF0000;
         }
 
         /* Responsive Container */
@@ -150,7 +149,7 @@
             border: 4px solid #1A1A1A; 
             height: 400px; 
             overflow-y: auto; 
-            box-shadow: 6px 6px 0px #FF00FF;
+            box-shadow: 6px 6px 0px #FF0000;
             position: relative;
             width: 100%;
             box-sizing: border-box;
@@ -186,8 +185,8 @@
         
         .media-row { cursor: pointer; transition: background-color 0.1s; font-weight: bold; }
         .media-row:nth-child(even) { background-color: #F9F9F9; }
-        .media-row:hover { background-color: #00FFFF; color: #1A1A1A; }
-        .media-row.active { background-color: #FF00FF; color: #FFFFFF; }
+        .media-row:hover { background-color: #FFCC00; color: #1A1A1A; }
+        .media-row.active { background-color: #001A5E; color: #FFFFFF; }
         
         /* Indented subtitle info for list */
         .sub-title-info {
@@ -223,13 +222,12 @@
             vertical-align: middle;
         }
         
-        /* Vibrant neon vaporwave status indicators */
-        .status-instock { background-color: #00FF00; box-shadow: 0 0 8px #00FF00; }
-        .status-checkedout { background-color: #FFCC00; box-shadow: 0 0 8px #FFCC00; } 
-        .status-damaged { background-color: #FF00FF; box-shadow: 0 0 8px #FF00FF; } 
-        .status-onorder { background-color: #FF0044; box-shadow: 0 0 8px #FF0044; } 
-        .status-unavailable { background-color: #888888; box-shadow: 0 0 4px #888888; }
-        .status-request { background-color: #00FFFF; box-shadow: 0 0 8px #00FFFF; }
+        .status-instock { background-color: #00FF00; box-shadow: 0 0 4px #00FF00; }
+        .status-checkedout { background-color: #FFCC00; box-shadow: 0 0 4px #FFCC00; } 
+        .status-damaged { background-color: #FF00FF; box-shadow: 0 0 4px #FF00FF; } 
+        .status-onorder { background-color: #FF0044; box-shadow: 0 0 4px #FF0044; } 
+        .status-unavailable { background-color: #888888; }
+        .status-request { background-color: #00FFFF; box-shadow: 0 0 4px #00FFFF; }
 
         #detail-status {
             font-family: 'Arial Black', sans-serif;
@@ -263,7 +261,7 @@
             color: #999; 
             font-weight: 900; 
             font-size: 1.1em; 
-            box-shadow: 4px 4px 0px #00FFFF;
+            box-shadow: 4px 4px 0px #001A5E;
             overflow: hidden; 
             position: relative;
         }
@@ -280,7 +278,7 @@
                 #00103E 10px,
                 #00103E 20px
             );
-            border: 2px dashed #FF00FF;
+            border: 2px dashed #FF0000;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -289,19 +287,20 @@
             padding: 10px;
             color: #00FFFF;
             font-family: 'Arial Black', sans-serif;
+            text-align: center;
         }
         .apology-cover h4 {
-            color: #FF00FF;
+            color: #FFCC00;
             margin: 0 0 10px 0;
-            font-size: 0.9em;
+            font-size: 1em;
             text-transform: uppercase;
-            text-shadow: 1px 1px 0 #FFCC00;
+            text-shadow: 1px 1px 0 #FF0000;
             letter-spacing: 1px;
         }
         .apology-cover p {
-            font-size: 0.7em;
+            font-size: 0.8em;
             margin: 5px 0;
-            color: #FFCC00;
+            color: #FFFFFF;
             text-transform: uppercase;
         }
 
@@ -343,7 +342,6 @@
             font-weight: 500;
             margin-bottom: 15px;
             width: 100%;
-            white-space: pre-wrap; /* Crucial for preserving paragraph breaks */
         }
 
         /* --- Details Grid Spec Requirements --- */
@@ -405,7 +403,7 @@
             padding: 25px;
             max-width: 500px;
             width: 100%;
-            box-shadow: 8px 8px 0px #FF00FF, 16px 16px 0px #00FFFF;
+            box-shadow: 8px 8px 0px #FF0000, 16px 16px 0px #00FFFF;
             box-sizing: border-box;
             position: relative;
         }
@@ -463,7 +461,7 @@
         }
 
         #api-submit {
-            background: #FF00FF;
+            background: #001A5E;
             color: #FFFFFF;
             border: 4px solid #1A1A1A;
             padding: 12px 20px;
@@ -471,18 +469,18 @@
             font-size: 1.1em;
             cursor: pointer;
             width: 100%;
-            box-shadow: 4px 4px 0px #00FFFF;
+            box-shadow: 4px 4px 0px #FFCC00;
             text-transform: uppercase;
         }
 
-        #api-submit:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #00FFFF; }
+        #api-submit:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #FFCC00; }
 
         #loading-text {
             color: #FFCC00;
             font-family: 'Arial Black', sans-serif;
             font-size: 1.5em;
             margin-top: 20px;
-            text-shadow: 2px 2px 0 #FF00FF;
+            text-shadow: 2px 2px 0 #FF0000;
             display: none;
             text-transform: uppercase;
         }
@@ -501,7 +499,7 @@
         #progress-bar {
             height: 100%;
             width: 0%;
-            background: #FF00FF;
+            background: #FF0000;
             transition: width 0.1s;
         }
 
@@ -520,7 +518,7 @@
 
         .admin-box {
             background: #FAFAFA;
-            border: 6px solid #FF00FF;
+            border: 6px solid #001A5E;
             max-width: 950px;
             width: 100%;
             height: 90vh;
@@ -550,7 +548,7 @@
             font-size: 2em;
             transform: rotate(-2deg);
             display: inline-block;
-            text-shadow: 2px 2px 0 #FF00FF;
+            text-shadow: 2px 2px 0 #FF0000;
             margin-right: 10px;
         }
 
@@ -624,11 +622,11 @@
             align-items: center;
         }
         .admin-movie-item:hover {
-            background: #00FFFF;
+            background: #FFCC00;
             color: #1A1A1A;
         }
         .admin-movie-item.active {
-            background: #FF00FF;
+            background: #001A5E;
             color: #FFF;
         }
 
@@ -698,14 +696,26 @@
             font-size: 1.1em;
             cursor: pointer;
             margin-top: 25px;
-            box-shadow: 4px 4px 0 #FF00FF;
+            box-shadow: 4px 4px 0 #001A5E;
             text-transform: uppercase;
             align-self: flex-start;
+            transition: all 0.1s;
         }
         .admin-save-btn:active {
             transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 #FF00FF;
+            box-shadow: 2px 2px 0 #001A5E;
         }
+        
+        /* New styling for the dual save buttons */
+        .admin-save-buttons-wrapper {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-continue { background: #00FF00; }
+        .btn-close { background: #00FFFF; }
 
         .admin-placeholder {
             flex: 1;
@@ -732,7 +742,7 @@
             color: #FFCC00;
             font-family: 'Arial Black', sans-serif;
             font-size: 1.5em;
-            text-shadow: 2px 2px 0 #FF00FF;
+            text-shadow: 2px 2px 0 #FF0000;
             text-align: center;
             padding: 20px;
         }
@@ -746,33 +756,24 @@
             font-family: monospace;
             font-size: 0.8em;
             cursor: pointer;
-            box-shadow: 2px 2px 0 #FF00FF;
+            box-shadow: 2px 2px 0 #FF0000;
             text-transform: uppercase;
         }
         .settings-config-btn:active {
             transform: translate(2px, 2px);
-            box-shadow: 0px 0px 0 #FF00FF;
+            box-shadow: 0px 0px 0 #FF0000;
         }
 
-        /* --- Mobile Overrides to Tame Hostile Architecture --- */
+        /* --- Mobile Overrides --- */
         @media (max-width: 768px) {
             .admin-box { max-height: 95vh; margin: 10px; border-width: 4px; box-shadow: 4px 4px 0px #00FFFF, 8px 8px 0px #FFCC00; }
             .admin-header { flex-direction: column; gap: 12px; padding: 15px 10px; }
-            .admin-header > div:last-child { width: 100%; display: flex; justify-content: space-between; }
+            .admin-header > div:last-child { width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
             .admin-body { flex-direction: column; overflow-y: auto; }
-            
-            .admin-sidebar { 
-                width: 100%;
-                height: 40vh;
-                flex: none; 
-                border-right: none; 
-                border-bottom: 4px solid #1A1A1A; 
-            }
+            .admin-sidebar { width: 100%; height: 40vh; flex: none; border-right: none; border-bottom: 4px solid #1A1A1A; }
             .admin-search-container { position: sticky; top: 0; background: #F0F0F0; z-index: 10; } 
-            
             .admin-form-container { height: max-content; overflow: visible; padding: 15px; }
-            
-            .api-box { box-shadow: 4px 4px 0px #FF00FF, 8px 8px 0px #00FFFF; border-width: 4px; padding: 15px; width: 90%; }
+            .api-box { box-shadow: 4px 4px 0px #FF0000, 8px 8px 0px #00FFFF; border-width: 4px; padding: 15px; width: 90%; }
             .header-sign { margin: 15px auto; padding: 15px; }
             .logo-script { font-size: 2.5em; }
         }
@@ -809,8 +810,8 @@
 <div id="admin-overlay" style="display:none;">
     <div class="admin-box">
         <div id="admin-login-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; width: 100%; position: absolute; top: 0; left: 0; background: #001A5E; z-index: 110; box-sizing: border-box; padding: 20px;">
-            <div class="api-box" style="border-color: #FF00FF; width: 100%; max-width: 400px; box-shadow: 6px 6px 0px #FF00FF, 12px 12px 0px #00FFFF;">
-                <h2 style="color: #001A5E; text-shadow: 2px 2px 0 #FF00FF; font-family: 'Arial Black', sans-serif; text-align: center; margin-top: 0; text-transform: uppercase;">EMPLOYEE ACCESS</h2>
+            <div class="api-box" style="border-color: #FF0000; width: 100%; max-width: 400px; box-shadow: 6px 6px 0px #FF0000, 12px 12px 0px #00FFFF;">
+                <h2 style="color: #001A5E; text-shadow: 2px 2px 0 #FFCC00; font-family: 'Arial Black', sans-serif; text-align: center; margin-top: 0; text-transform: uppercase;">EMPLOYEE ACCESS</h2>
                 <p style="color: #333; font-size: 0.85em; text-align: center; font-weight: bold; margin-bottom: 20px;">AUTHORIZATION REQUIRED FOR LOGISTICS CONTROLS</p>
                 
                 <div class="form-group">
@@ -821,7 +822,7 @@
                     <label>Password</label>
                     <input type="password" id="admin-password-input" placeholder="Enter password...">
                 </div>
-                <button id="admin-login-submit" style="background: #00FF00; color: #1A1A1A; border: 4px solid #1A1A1A; padding: 12px 20px; font-family: 'Arial Black', sans-serif; font-size: 1.1em; cursor: pointer; width: 100%; box-shadow: 4px 4px 0 #FF00FF; text-transform: uppercase; font-weight: 900;">AUTHORIZE</button>
+                <button id="admin-login-submit" style="background: #00FF00; color: #1A1A1A; border: 4px solid #1A1A1A; padding: 12px 20px; font-family: 'Arial Black', sans-serif; font-size: 1.1em; cursor: pointer; width: 100%; box-shadow: 4px 4px 0 #FF0000; text-transform: uppercase; font-weight: 900;">AUTHORIZE</button>
                 <button onclick="closeAdminPanel()" style="background: #FF0044; color: #FFF; border: 4px solid #1A1A1A; padding: 8px 15px; font-family: 'Arial Black', sans-serif; font-size: 0.9em; cursor: pointer; width: 100%; margin-top: 10px; text-transform: uppercase; font-weight: 900;">EXIT</button>
             </div>
         </div>
@@ -838,6 +839,7 @@
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
                 <button class="settings-config-btn" onclick="openSettingsFromAdmin()">[ Setup ]</button>
+                <button class="admin-close-btn" style="background:#FFCC00; color:#001A5E; box-shadow: 2px 2px 0 #FF0000;" onclick="logoutAdmin()">LOGOUT</button>
                 <button class="admin-close-btn" onclick="closeAdminPanel()">EXIT TERMINAL</button>
             </div>
         </div>
@@ -865,7 +867,7 @@
     <span class="logo-video">Video</span>
 </header>
 
-<marquee id="system-marquee">/// INITIALIZING... /// ESTABLISHING COUPLER CHANNELS /// BE KIND, REWIND ///</marquee>
+<marquee id="system-marquee">/// INITIALIZING... /// REWINDING TAPES /// GRABBING POPCORN ///</marquee>
 
 <div class="search-container">
     <input type="text" id="search-input" placeholder="SEARCH INVENTORY..." autocomplete="off">
@@ -887,7 +889,6 @@
     </div>
 
     <div class="details" id="details-pane">
-        
         <!-- WELCOME PANEL DEFAULT -->
         <div id="welcome-panel" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; text-align:center;">
             <div class="apology-cover" style="width:180px; height:270px; border-color:#FFCC00; color:#FFCC00; margin-bottom: 20px; box-shadow: 4px 4px 0 #001A5E; border: 4px solid #1A1A1A;">
@@ -901,39 +902,23 @@
 
         <!-- MOVIE DETAILS PANEL (HIDDEN BY DEFAULT) -->
         <div id="movie-data-panel" style="display:none; width: 100%; flex-direction: column; align-items: center;">
-            <div id="detail-cover">SELECT TAPE</div>
-            <div id="detail-title">SELECT TAPE</div>
+            <div id="detail-cover"></div>
+            <div id="detail-title"></div>
             <div id="detail-sub-titles"></div>
             <div id="detail-status"></div>
             <div id="detail-meta"></div>
-            <div id="detail-desc">Please select a film from our catalog row to inspect the complete logistical database specs and cover poster.</div>
+            <div id="detail-desc"></div>
             
             <div class="details-spec-grid" id="details-spec-grid">
                 <div class="spec-item">
                     <span class="spec-label">Format</span>
                     <span id="spec-format" class="spec-val"></span>
                 </div>
-                <div class="spec-item" id="spec-edition-container" style="display:none;">
-                    <span class="spec-label">Edition</span>
-                    <span id="spec-edition" class="spec-val"></span>
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">Rating</span>
-                    <span id="spec-rating" class="spec-val"></span>
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">Type</span>
-                    <span id="spec-type" class="spec-val"></span>
-                </div>
                 <div class="spec-item">
                     <span class="spec-label">Runtime</span>
                     <span id="spec-runtime" class="spec-val"></span>
                 </div>
-                <div class="spec-item spec-full-width" id="spec-alt-title-container" style="display:none;">
-                    <span class="spec-label">Foreign, Alternate, or Additional Title(s)</span>
-                    <span id="spec-alt-title" class="spec-val"></span>
-                </div>
-                <div class="spec-item spec-full-width" id="spec-genre-container">
+                <div class="spec-item spec-full-width">
                     <span class="spec-label">Genre</span>
                     <span id="spec-genre" class="spec-val"></span>
                 </div>
@@ -972,8 +957,8 @@
     const CUSTOM_LOADING_MESSAGES = [
         "Rummaging through tapes...",
         "Climbing over racks...",
-        "Looking through logs...",
-        "Dusting off the VCR..."
+        "Dusting off the VCR...",
+        "Checking returned videos..."
     ];
     
     // =========================================================================
@@ -1007,23 +992,18 @@
     const catalogBody = document.getElementById('catalog-body');
     const searchInput = document.getElementById('search-input');
     
+    // Details pane elements
     const welcomePanel = document.getElementById('welcome-panel');
     const movieDataPanel = document.getElementById('movie-data-panel');
-    
     const detailCover = document.getElementById('detail-cover');
     const detailTitle = document.getElementById('detail-title');
     const detailSubTitles = document.getElementById('detail-sub-titles');
     const detailStatus = document.getElementById('detail-status');
     const detailMeta = document.getElementById('detail-meta');
     const detailDesc = document.getElementById('detail-desc');
-    const detailsSpecGrid = document.getElementById('details-spec-grid');
-
+    
     // Specs elements
     const specFormat = document.getElementById('spec-format');
-    const specEdition = document.getElementById('spec-edition');
-    const specRating = document.getElementById('spec-rating');
-    const specType = document.getElementById('spec-type');
-    const specAltTitle = document.getElementById('spec-alt-title');
     const specGenre = document.getElementById('spec-genre');
     const specRuntime = document.getElementById('spec-runtime');
     const specDirector = document.getElementById('spec-director');
@@ -1039,11 +1019,12 @@
 
     // --- SYSTEM INITIALIZATION ---
     function initSystem() {
-        marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// ESTABLISHING COUPLER CHANNELS ///`;
+        marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// REWINDING TAPES ///`;
         
         webAppUrl = localStorage.getItem(WEB_APP_URL_KEY) || DEFAULT_WEB_APP_URL;
         omdbApiKey = localStorage.getItem(OMDB_API_KEY_KEY) || DEFAULT_OMDB_API_KEY;
-        
+
+        // Initialize cache globally for search indexing
         window.omdbCache = JSON.parse(localStorage.getItem(OMDB_METADATA_CACHE_KEY) || "{}");
 
         if (!webAppUrl || !omdbApiKey) {
@@ -1065,9 +1046,7 @@
             omdbApiKey = key;
             apiOverlay.style.display = 'flex';
             loadDatabaseFromSheets();
-        } else {
-            alert("Please provide both the Google Sheets Apps Script Web App URL and your OMDb API key.");
-        }
+        } 
     });
 
     // --- MAIN DATA LOADER ---
@@ -1093,7 +1072,10 @@
         }, 1200);
 
         try {
+            // Fetch directly from the static edge network
             const sheetsResponse = await fetch(`catalog.json?v=${new Date().getTime()}`);
+            if (!sheetsResponse.ok) throw new Error("HTTP error " + sheetsResponse.status);
+            
             const payload = await sheetsResponse.json();
 
             if (payload.status !== "success" || !payload.data) {
@@ -1103,28 +1085,29 @@
             clearInterval(loadingInterval);
             catalogData = payload.data; 
             progressBar.style.width = '100%';
-            loadingText.textContent = "Movie found!";
+            loadingText.textContent = "Movies found!";
             
             renderCatalog(catalogData);
 
             const totalCount = catalogData.length;
-            const statusSummary = {};
-            catalogData.forEach(m => {
-                statusSummary[m.status] = (statusSummary[m.status] || 0) + 1;
-            });
-            const statusSummaryStr = Object.keys(statusSummary).map(k => `${k.toUpperCase()}: ${statusSummary[k]}`).join(" /// ");
-            marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// DATABANKS SYNCED SECURELY /// TOTAL TAPES: ${totalCount} /// ${statusSummaryStr} /// BE KIND, REWIND ///`;
+            marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// DATABANKS SYNCED SECURELY /// TOTAL TAPES: ${totalCount} /// GRABBING POPCORN ///`;
 
             apiOverlay.style.display = 'none';
 
         } catch (error) {
+            console.warn("Fetch failed.", error);
             clearInterval(loadingInterval);
-            console.error("Critical Uplink Error:", error);
-            alert(`CRITICAL UPLINK FAILURE:\n${error.message}\n\nPlease verify your Edge Network URL and check that GitHub Pages is broadcasting.`);
             progressBarContainer.style.display = 'none';
             loginBox.style.display = 'block';
             loadingText.style.display = 'none';
+            document.getElementById('api-overlay').innerHTML = `<div style="background:#FFF; padding:20px; border:4px solid #FF0000; color:#FF0000;"><h2>Uplink Error</h2><p>Cannot reach edge network to download catalog.</p></div>`;
         }
+    }
+
+    // Helper function to strip diacritics/accents for robust search (e.g. ñ -> n, é -> e)
+    function normalizeString(str) {
+        if (!str) return "";
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
     }
 
     function translateOmdbType(type) {
@@ -1151,19 +1134,23 @@
         selectedMovieIndex = index;
         const item = catalogData[index];
         
+        // Hide welcome panel, show movie panel
         welcomePanel.style.display = 'none';
         movieDataPanel.style.display = 'flex';
-
+        
+        // Render initial data
         detailTitle.textContent = `${item.title} (${item.year || "????"})`;
         
+        // Render sub-titles directly beneath main title if they exist
         let subHtml = "";
         if (item.alternateTitle || item.edition) {
-            if (item.alternateTitle) subHtml += `ALT TITLE: ${item.alternateTitle}<br>`;
+            if (item.alternateTitle) subHtml += `FOREIGN, ALTERNATE, OR ADDITIONAL TITLE(S): ${item.alternateTitle}<br>`;
             if (item.edition) subHtml += `EDITION: ${item.edition}`;
         }
         detailSubTitles.innerHTML = subHtml;
         detailSubTitles.style.display = subHtml ? 'block' : 'none';
 
+        // Render status badges
         const normStatus = (item.status || "").toLowerCase().trim();
         if (normStatus === "checked out") {
             detailStatus.className = 'text-checkedout';
@@ -1185,45 +1172,32 @@
             detailStatus.textContent = 'STATUS: IN STOCK - ON SHELF';
         }
 
+        // Render Default Specs
         specFormat.textContent = item.format;
-        specRating.textContent = item.rating || "NR";
-        specType.textContent = item.type || "Feature Film";
         
-        // Hide Edition entirely if blank
-        if (item.edition) {
-            document.getElementById('spec-edition-container').style.display = 'block';
-            specEdition.textContent = item.edition;
+        // Clear OMDb fields pending fetch
+        specGenre.textContent = "SYNCING...";
+        specRuntime.textContent = "SYNCING...";
+        specDirector.textContent = "SYNCING...";
+        specWriter.textContent = "SYNCING...";
+        specActors.textContent = "SYNCING...";
+        
+        // Render synopsis (innerHTML to support the bold/italics tags sent from sheet)
+        if (item.synopsis) {
+            detailDesc.innerHTML = item.synopsis;
         } else {
-            document.getElementById('spec-edition-container').style.display = 'none';
+            detailDesc.textContent = "Syncing databanks for film details...";
         }
-
-        // Hide Alt title entirely if blank
-        if (item.alternateTitle) {
-            document.getElementById('spec-alt-title-container').style.display = 'block';
-            specAltTitle.textContent = item.alternateTitle;
-        } else {
-            document.getElementById('spec-alt-title-container').style.display = 'none';
-        }
-
-        specGenre.textContent = item.genre || "UNSPECIFIED";
-        specRuntime.textContent = item.runtime || "SYNCING...";
-        specDirector.textContent = item.director || "SYNCING...";
-        specWriter.textContent = item.writer || "SYNCING...";
-        specActors.textContent = item.actors || "SYNCING...";
-
-        detailsSpecGrid.style.display = 'grid';
-
-        // Note: detailDesc uses innerHTML so the Google Sheet bold/italics tags render correctly
-        detailDesc.innerHTML = item.synopsis || "Syncing databanks for film details...";
         
         detailCover.innerHTML = `<div class="apology-cover"><h4>RETROVISION</h4><p>SYNCING SPECS...</p></div>`;
 
+        // Direct Custom Cover Bypass 
         const isDirectImage = item.imdbLink && (item.imdbLink.match(/\.(jpeg|jpg|gif|png|webp)/i) != null || !item.imdbLink.includes("imdb.com") && item.imdbLink.startsWith("http"));
         
         if (isDirectImage) {
             detailCover.innerHTML = `<img src="${item.imdbLink}" alt="${item.title} Poster" onerror="triggerApologyCover(this, '${item.title}');">`;
             detailMeta.textContent = `RATING: ${item.rating || "NR"} | TYPE: ${item.type || "Feature Film"}`;
-            detailDesc.innerHTML = item.synopsis || "No description provided.";
+            if (!item.synopsis) detailDesc.textContent = "No description provided.";
             specGenre.textContent = item.genre || "UNSPECIFIED";
             specRuntime.textContent = item.runtime || "N/A";
             specDirector.textContent = item.director || "N/A";
@@ -1237,7 +1211,7 @@
         if (!imdbId) {
             triggerApologyCover(null, item.title);
             detailMeta.textContent = `RATING: ${item.rating || "NR"} | TYPE: ${item.type || "Feature Film"}`;
-            detailDesc.innerHTML = item.synopsis || "No synopsis available.";
+            if (!item.synopsis) detailDesc.textContent = "No synopsis available.";
             specGenre.textContent = item.genre || "UNSPECIFIED";
             specRuntime.textContent = item.runtime || "N/A";
             specDirector.textContent = item.director || "N/A";
@@ -1288,11 +1262,10 @@
         const displayRating = item.rating || (isValid ? omdbData.Rated : "NR");
         const displayType = item.type || (isValid ? translateOmdbType(omdbData.Type) : "Feature Film");
         detailMeta.textContent = `RATING: ${displayRating} | TYPE: ${displayType}`;
-        specRating.textContent = displayRating;
-        specType.textContent = displayType;
-
-        // Note: prioritize the sheet synopsis (which now parses rich HTML) over the raw text OMDb plot
-        detailDesc.innerHTML = item.synopsis || (isValid ? omdbData.Plot : "No description provided.");
+        
+        if (!item.synopsis) {
+            detailDesc.textContent = isValid ? omdbData.Plot : "No description provided.";
+        }
         
         specGenre.textContent = item.genre || (isValid ? omdbData.Genre : "UNSPECIFIED");
         specRuntime.textContent = item.runtime || (isValid ? omdbData.Runtime : "N/A");
@@ -1307,7 +1280,7 @@
                 <h4>RETROVISION</h4>
                 <p>--- APOLOGY ---</p>
                 <span style="font-size:0.7em; font-weight:900; letter-spacing:1px; line-height:1.3; display:block; margin: 10px 0;">COVER ART<br>NOT FOUND</span>
-                <p style="font-size:0.55em; color:#FF00FF; margin-top:10px;">BE KIND, REWIND</p>
+                <p style="font-size:0.55em; color:#FFFFFF; margin-top:10px;">BE KIND, REWIND</p>
             </div>
         `;
         if (imgElement) {
@@ -1342,6 +1315,7 @@
             
             const displayTitle = `${item.title} (${item.year})`;
             
+            // Compile indented subtitle info
             let subTitleHtml = "";
             if (item.alternateTitle || item.edition) {
                 subTitleHtml = `<div class="sub-title-info">`;
@@ -1374,12 +1348,6 @@
     }
 
     // --- SEARCH INDEXING ENGINE ---
-    // The string normalizer systematically decomposes diacritics (like ñ to n + ~) and strips the accents
-    const normalizeString = (str) => {
-        if (!str) return "";
-        return str.toString().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
-    };
-
     searchInput.addEventListener('input', (e) => {
         const query = normalizeString(e.target.value);
         
@@ -1389,31 +1357,31 @@
         }
 
         const filtered = catalogData.filter(item => {
-            let omdbDataString = "";
+            // Include backend populated fields
+            let additionalData = [item.director, item.actors, item.writer, item.genre].join(" ");
+            
+            // Also include locally cached omdb data if it exists
             const imdbId = extractImdbId(item.imdbLink);
             if (imdbId && window.omdbCache && window.omdbCache[imdbId]) {
                 const cached = window.omdbCache[imdbId];
-                omdbDataString = [cached.Director, cached.Actors, cached.Writer, cached.Genre, cached.Plot].join(" ");
+                additionalData += " " + [cached.Director, cached.Actors, cached.Writer, cached.Genre, cached.Plot].join(" ");
             }
-            
-            const indexString = normalizeString([
+
+            const rawIndex = [
                 item.title,
                 item.year,
-                item.sheetName,
-                item.keywords,
                 item.alternateTitle,
                 item.synopsis,
-                item.director,
-                item.actors,
-                item.genre,
                 item.format,
                 item.edition,
                 item.type,
-                item.status,
-                omdbDataString
-            ].join(" "));
+                item.genre,
+                additionalData
+            ].map(v => (v || "")).join(" ");
+            
+            const normalizedIndexString = normalizeString(rawIndex);
 
-            return indexString.includes(query);
+            return normalizedIndexString.includes(query);
         });
 
         renderCatalog(filtered, query);
@@ -1425,17 +1393,53 @@
 
     function openAdminPanel() {
         adminOverlay.style.display = 'flex';
-        document.getElementById('admin-login-container').style.display = 'flex';
-        document.getElementById('admin-username-input').value = "";
-        document.getElementById('admin-password-input').value = "";
-        document.getElementById('admin-username-input').focus();
         adminSearch.value = "";
+        
+        const savedUser = localStorage.getItem('retrovision_admin_user');
+        const savedPass = localStorage.getItem('retrovision_admin_pass');
+        
+        if (savedUser && savedPass && window.adminUsername === savedUser) {
+            // Already authorized in memory
+            document.getElementById('admin-login-container').style.display = 'none';
+        } else if (savedUser && savedPass) {
+            // Credentials exist in storage but need backend verification
+            performAdminLogin(savedUser, savedPass, true);
+        } else {
+            // Need fresh manual login
+            document.getElementById('admin-login-container').style.display = 'flex';
+            document.getElementById('admin-username-input').value = "";
+            document.getElementById('admin-password-input').value = "";
+            document.getElementById('admin-username-input').focus();
+        }
     }
 
     function closeAdminPanel() {
         adminOverlay.style.display = 'none';
+    }
+
+    function logoutAdmin() {
+        localStorage.removeItem('retrovision_admin_user');
+        localStorage.removeItem('retrovision_admin_pass');
+        window.adminUsername = null;
+        window.adminPassword = null;
+        
+        // Scrub private data from local memory array upon logout
+        catalogData.forEach(movie => {
+            movie.user = "";
+            movie.dueDate = "";
+            movie.details = "";
+        });
+
+        document.getElementById('admin-login-container').style.display = 'flex';
         document.getElementById('admin-username-input').value = "";
         document.getElementById('admin-password-input').value = "";
+        
+        adminWorkspace.innerHTML = `
+            <div class="admin-placeholder">
+                SELECT A TAPE FROM THE CATALOG SYSTEM<br>TO UPDATE THE LOGISTICS DATA
+            </div>
+        `;
+        closeAdminPanel();
     }
 
     function openSettingsFromAdmin() {
@@ -1460,7 +1464,7 @@
             const itemDiv = document.createElement('div');
             itemDiv.className = 'admin-movie-item';
             
-            let dotColor = '#00FF00'; // In stock
+            let dotColor = '#00FF00'; 
             const normStatus = (movie.status || "").toLowerCase().trim();
             if (normStatus === "checked out") dotColor = '#FFCC00';
             else if (normStatus === "damaged/lost") dotColor = '#FF00FF';
@@ -1474,7 +1478,7 @@
                     ${movie.title} (${movie.year})
                 </div>
                 <span style="font-size:0.7em; background:#1A1A1A; color:#FFCC00; padding:2px 4px; font-family:monospace;">
-                    ${movie.sheetName}
+                    ${movie.format}
                 </span>
             `;
 
@@ -1493,37 +1497,27 @@
     }
 
     adminSearch.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
-        const filtered = catalogData.filter(movie => 
-            movie.title.toLowerCase().includes(query) || 
-            movie.sheetName.toLowerCase().includes(query)
-        );
+        const query = normalizeString(e.target.value);
+        const filtered = catalogData.filter(movie => {
+            const indexStr = normalizeString(movie.title + " " + movie.format);
+            return indexStr.includes(query);
+        });
         renderAdminMovieList(filtered);
     });
 
     function loadAdminForm(movie) {
+        
+        const isCheckedOut = movie.status === "Checked Out";
+        const noDueDate = isCheckedOut && !movie.dueDate;
+
         adminWorkspace.innerHTML = `
             <div class="admin-form-title">Update Logistics Info</div>
             
             <div style="background:#001A5E; color:#FFF; padding:10px 15px; border:3px solid #1A1A1A; margin-bottom:20px; font-weight:bold; text-transform:uppercase;">
-                Tape: <span style="color:#FFCC00;">${movie.title} (${movie.year})</span><br>
-                Shelf Location: <span style="color:#00FFFF;">${movie.sheetName} Tab, Row ${movie.rowIndex}</span>
+                Tape: <span style="color:#FFCC00;">${movie.title} (${movie.year})</span> <span style="color:#00FFFF; margin-left:10px;">[${movie.format}]</span>
             </div>
 
             <div class="admin-form-grid">
-                <div class="admin-input-group">
-                    <label>Shelf Condition</label>
-                    <select id="admin-form-condition">
-                        <option value="Mint" ${movie.condition === "Mint" ? "selected" : ""}>Mint</option>
-                        <option value="Excellent" ${movie.condition === "Excellent" ? "selected" : ""}>Excellent</option>
-                        <option value="Good" ${movie.condition === "Good" ? "selected" : ""}>Good</option>
-                        <option value="Fair" ${movie.condition === "Fair" ? "selected" : ""}>Fair</option>
-                        <option value="Poor" ${movie.condition === "Poor" ? "selected" : ""}>Poor</option>
-                        <option value="Unplayable" ${movie.condition === "Unplayable" ? "selected" : ""}>Unplayable</option>
-                        <option value="Unspecified" ${movie.condition === "Unspecified" ? "selected" : ""}>Unspecified</option>
-                    </select>
-                </div>
-
                 <div class="admin-input-group">
                     <label>Stock Status</label>
                     <select id="admin-form-status">
@@ -1537,29 +1531,37 @@
                 </div>
 
                 <div class="admin-input-group">
-                    <label>User</label>
+                    <label>User (Rented By)</label>
                     <input type="text" id="admin-form-user" value="${movie.user || ""}" placeholder="Customer name...">
                 </div>
 
                 <div class="admin-input-group">
                     <label>Due Date</label>
                     <input type="date" id="admin-form-duedate" value="${movie.dueDate || ""}">
+                    <div style="margin-top: 5px; display: flex; align-items: center; gap: 5px;">
+                        <input type="checkbox" id="admin-form-no-duedate" ${noDueDate ? 'checked' : ''}>
+                        <label for="admin-form-no-duedate" style="text-transform: none; font-size: 0.9em; margin: 0; color: #333; font-weight: bold;">No specified due date</label>
+                    </div>
                 </div>
 
                 <div class="admin-input-group admin-full-row">
-                    <label>Notes and Log</label>
-                    <textarea id="admin-form-new-note" placeholder="Type a new note/log to add at the top..." style="margin-bottom: 10px; text-transform: none; font-weight: normal;"></textarea>
-                    <label style="font-size: 0.75em; color: #666; margin-bottom: 5px; text-transform: uppercase;">Historical Notes & Logs</label>
+                    <label>Private Notes and Log</label>
+                    <textarea id="admin-form-new-note" placeholder="Type a new private note to add at the top..." style="margin-bottom: 10px; text-transform: none; font-weight: normal;"></textarea>
+                    <label style="font-size: 0.75em; color: #666; margin-bottom: 5px; text-transform: uppercase;">Historical Notes</label>
                     <textarea id="admin-form-details" placeholder="No historical notes." readonly style="background-color: #EEE; min-height: 120px; text-transform: none; font-family: monospace; font-weight: normal;">${movie.details || ""}</textarea>
                 </div>
             </div>
 
-            <button class="admin-save-btn" onclick="saveAdminChanges('${movie.sheetName}', ${movie.rowIndex})">Save Changes to Cloud</button>
+            <div class="admin-save-buttons-wrapper">
+                <button class="admin-save-btn btn-continue" onclick="saveAdminChanges('${movie.sheetName}', ${movie.rowIndex}, false, this)">Save & Continue</button>
+                <button class="admin-save-btn btn-close" onclick="saveAdminChanges('${movie.sheetName}', ${movie.rowIndex}, true, this)">Save & Close</button>
+            </div>
         `;
 
         const statusSelect = document.getElementById('admin-form-status');
         const userInput = document.getElementById('admin-form-user');
         const duedateInput = document.getElementById('admin-form-duedate');
+        const noDuedateCheckbox = document.getElementById('admin-form-no-duedate');
 
         const toggleRentalFields = () => {
             const isRented = statusSelect.value === "Checked Out";
@@ -1568,31 +1570,53 @@
                 duedateInput.value = "";
                 userInput.disabled = true;
                 duedateInput.disabled = true;
+                noDuedateCheckbox.disabled = true;
+                noDuedateCheckbox.checked = false;
                 userInput.style.backgroundColor = "#EEE";
                 duedateInput.style.backgroundColor = "#EEE";
             } else {
                 userInput.disabled = false;
-                duedateInput.disabled = false;
+                noDuedateCheckbox.disabled = false;
                 userInput.style.backgroundColor = "#FFF";
-                duedateInput.style.backgroundColor = "#FFF";
                 
-                if (!duedateInput.value) {
-                    const returnDate = new Date();
-                    returnDate.setDate(returnDate.getDate() + 3);
-                    duedateInput.value = returnDate.toISOString().split('T')[0];
+                if (noDuedateCheckbox.checked) {
+                    duedateInput.value = "";
+                    duedateInput.disabled = true;
+                    duedateInput.style.backgroundColor = "#EEE";
+                } else {
+                    duedateInput.disabled = false;
+                    duedateInput.style.backgroundColor = "#FFF";
+                    if (!duedateInput.value) {
+                        // Autofill 7 days for rentals
+                        const returnDate = new Date();
+                        returnDate.setDate(returnDate.getDate() + 7);
+                        duedateInput.value = returnDate.toISOString().split('T')[0];
+                    }
                 }
             }
         };
 
         statusSelect.onchange = toggleRentalFields;
+        noDuedateCheckbox.onchange = toggleRentalFields;
         toggleRentalFields(); 
     }
 
-    window.saveAdminChanges = async function(sheetName, rowIndex) {
-        const condition = document.getElementById('admin-form-condition').value;
+    window.saveAdminChanges = async function(sheetName, rowIndex, closeAfter, btnElement) {
+        
+        const origBtnText = btnElement.textContent;
+        const origBtnBg = btnElement.style.backgroundColor;
+        
+        btnElement.textContent = "SAVING...";
+        btnElement.style.backgroundColor = "#FFCC00";
+        btnElement.disabled = true;
+
         const status = document.getElementById('admin-form-status').value;
         const user = document.getElementById('admin-form-user').value.trim();
-        const dueDate = document.getElementById('admin-form-duedate').value;
+        
+        let dueDate = "";
+        if (status === "Checked Out" && !document.getElementById('admin-form-no-duedate').checked) {
+            dueDate = document.getElementById('admin-form-duedate').value;
+        }
         
         const originalMovie = catalogData.find(m => m.sheetName === sheetName && m.rowIndex === rowIndex);
         
@@ -1611,7 +1635,7 @@
         }
         
         if (status === "In Stock" && originalMovie && originalMovie.user) {
-            let logStr = `[${todayStr}] Rented by: ${originalMovie.user}`;
+            let logStr = `[${todayStr}] Returned by: ${originalMovie.user}`;
             if (originalMovie.dueDate) {
                 logStr += ` (Due: ${originalMovie.dueDate})`;
             }
@@ -1636,7 +1660,6 @@
             password: window.adminPassword,
             sheetName,
             rowIndex,
-            condition,
             status,
             user: finalUser,
             dueDate: finalDueDate,
@@ -1660,7 +1683,6 @@
 
             const movieIndex = catalogData.findIndex(m => m.sheetName === sheetName && m.rowIndex === rowIndex);
             if (movieIndex !== -1) {
-                catalogData[movieIndex].condition = condition;
                 catalogData[movieIndex].status = status;
                 catalogData[movieIndex].inStock = (status === "In Stock");
                 catalogData[movieIndex].user = finalUser;
@@ -1672,31 +1694,64 @@
             if (selectedMovieIndex !== null) {
                 showDetails(selectedMovieIndex);
             }
+            
+            // Re-render admin list so color dots update immediately
+            const query = normalizeString(adminSearch.value);
+            if (query) {
+                const filtered = catalogData.filter(movie => normalizeString(movie.title + " " + movie.format).includes(query));
+                renderAdminMovieList(filtered);
+            } else {
+                renderAdminMovieList(catalogData);
+            }
+            // Keep the active row styled
+            const newAdminRows = document.querySelectorAll('.admin-movie-item');
+            newAdminRows.forEach(row => {
+                if(row.innerText.includes(catalogData[movieIndex].title)) {
+                    row.classList.add('active');
+                }
+            });
 
             adminLoadingScreen.style.display = 'none';
-            alert("LOGISTICAL DATABANKS UPDATED SECURELY!");
-            closeAdminPanel();
+            
+            if (closeAfter) {
+                closeAdminPanel();
+            } else {
+                btnElement.textContent = "SAVED!";
+                btnElement.style.backgroundColor = "#00FF00";
+                setTimeout(() => {
+                    // Reload form to inject new historic notes cleanly
+                    loadAdminForm(catalogData[movieIndex]);
+                }, 1000);
+            }
 
         } catch (err) {
             console.error("Failed to write updates to Google Sheet:", err);
             adminLoadingScreen.style.display = 'none';
-            alert(`UPLINK FAILURE:\n${err.message}\n\nPlease verify your Google Apps Script Web App is deployed correctly, has access enabled for 'Anyone', and that you are connected to the network.`);
+            btnElement.textContent = "UPLINK ERROR!";
+            btnElement.style.backgroundColor = "#FF0044";
+            btnElement.style.color = "#FFF";
+            setTimeout(() => {
+                btnElement.textContent = origBtnText;
+                btnElement.style.backgroundColor = origBtnBg;
+                btnElement.style.color = "#1A1A1A";
+                btnElement.disabled = false;
+            }, 3000);
         }
     };
 
-    document.getElementById('admin-login-submit').addEventListener('click', async () => {
-        const u = document.getElementById('admin-username-input').value.trim();
-        const p = document.getElementById('admin-password-input').value;
-        
-        if (!u || !p) {
-            alert("PLEASE ENTER BOTH USERNAME AND PASSWORD.");
-            return;
-        }
-
+    async function performAdminLogin(u, p, isAutoLogin = false) {
         const submitBtn = document.getElementById('admin-login-submit');
-        const origText = submitBtn.textContent;
-        submitBtn.textContent = "AUTHENTICATING...";
-        submitBtn.disabled = true;
+        let origText = "AUTHORIZE";
+        
+        if (submitBtn) {
+            origText = submitBtn.textContent;
+            submitBtn.textContent = "AUTHENTICATING...";
+            submitBtn.disabled = true;
+        }
+        
+        if (isAutoLogin) {
+            adminLoadingScreen.style.display = 'flex';
+        }
 
         try {
             const res = await fetch(webAppUrl, {
@@ -1709,6 +1764,8 @@
             if (result.status === "success" && result.authorized) {
                 window.adminUsername = u;
                 window.adminPassword = p;
+                localStorage.setItem('retrovision_admin_user', u);
+                localStorage.setItem('retrovision_admin_pass', p);
 
                 if (result.privateLogs) {
                     catalogData.forEach(movie => {
@@ -1724,15 +1781,44 @@
                 document.getElementById('admin-login-container').style.display = 'none';
                 renderAdminMovieList(catalogData);
             } else {
-                alert("ACCESS DENIED: INVALID EMPLOYEE CREDENTIALS.");
+                if (isAutoLogin) {
+                    logoutAdmin(); // Purge bad credentials if auto-login fails
+                } else if (submitBtn) {
+                    const origColor = submitBtn.style.backgroundColor;
+                    submitBtn.style.backgroundColor = "#FF0044";
+                    submitBtn.textContent = "INVALID CREDENTIALS";
+                    setTimeout(() => {
+                        submitBtn.style.backgroundColor = origColor;
+                        submitBtn.textContent = "AUTHORIZE";
+                        submitBtn.disabled = false;
+                    }, 3000);
+                }
             }
         } catch (err) {
             console.error("Authentication server error:", err);
-            alert("UPLINK ERROR: Unable to contact the authentication server. Please check your network and try again.");
+            if (submitBtn && !isAutoLogin) {
+                const origColor = submitBtn.style.backgroundColor;
+                submitBtn.style.backgroundColor = "#FF0044";
+                submitBtn.textContent = "UPLINK FAILURE";
+                setTimeout(() => {
+                    submitBtn.style.backgroundColor = origColor;
+                    submitBtn.textContent = "AUTHORIZE";
+                    submitBtn.disabled = false;
+                }, 3000);
+            }
         } finally {
-            submitBtn.textContent = origText;
-            submitBtn.disabled = false;
+            if (submitBtn && submitBtn.textContent !== "INVALID CREDENTIALS" && submitBtn.textContent !== "UPLINK FAILURE") {
+                submitBtn.textContent = origText;
+                submitBtn.disabled = false;
+            }
+            adminLoadingScreen.style.display = 'none';
         }
+    }
+
+    document.getElementById('admin-login-submit').addEventListener('click', () => {
+        const u = document.getElementById('admin-username-input').value.trim();
+        const p = document.getElementById('admin-password-input').value;
+        if (u && p) performAdminLogin(u, p);
     });
 
     document.getElementById('admin-password-input').addEventListener('keyup', (e) => {
