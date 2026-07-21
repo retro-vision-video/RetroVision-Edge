@@ -20,36 +20,6 @@
             position: relative;
         }
 
-        /* Subtle Admin Link Floating at Top */
-        .admin-link {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            color: #001A5E;
-            background: #FFCC00;
-            border: 2px solid #1A1A1A;
-            padding: 6px 12px;
-            font-family: 'Arial Black', sans-serif;
-            font-size: 0.8em;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 3px 3px 0px #FF00FF;
-            cursor: pointer;
-            z-index: 10;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.1s;
-        }
-        .admin-link:hover {
-            background: #00FFFF;
-            box-shadow: 3px 3px 0px #FF00FF;
-        }
-        .admin-link:active {
-            transform: translate(2px, 2px);
-            box-shadow: 1px 1px 0px #FF00FF;
-        }
-
-        /* ---Vaporwave Sign --- */
         .header-sign {
             position: relative;
             margin: 30px auto 30px auto;
@@ -88,7 +58,6 @@
             text-shadow: 2px 2px 0 #00FFFF;
         }
 
-        /* --- UI Elements --- */
         marquee { 
             background-color: #001A5E; 
             color: #FFCC00; 
@@ -117,7 +86,7 @@
             color: #1A1A1A;
             font-family: 'Arial Black', sans-serif;
             font-size: 1.1em;
-            text-transform: uppercase;
+            text-transform: none;
             outline: none;
             transition: all 0.2s ease;
             box-shadow: 4px 4px 0px #00FFFF;
@@ -129,19 +98,19 @@
             box-shadow: 4px 4px 0px #FF00FF;
         }
 
-        /* Responsive Container */
         .container { 
             display: flex; 
             flex-direction: column; 
             max-width: 1200px; 
             margin: 0 auto; 
             gap: 20px; 
+            align-items: flex-start;
         }
 
         @media (min-width: 768px) {
             .container { flex-direction: row; }
-            .catalog { flex: 1.2; height: 650px; }
-            .details { flex: 0.8; height: 650px; position: sticky; top: 20px; overflow-y: auto; }
+            .catalog { flex: 1.2; height: 75vh; position: sticky; top: 20px; }
+            .details { flex: 0.8; height: max-content; }
         }
         
         .catalog { 
@@ -151,6 +120,8 @@
             overflow-y: auto; 
             box-shadow: 6px 6px 0px #FF00FF;
             position: relative;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .details { 
@@ -163,6 +134,9 @@
             text-align: center; 
             box-shadow: 6px 6px 0px #FFCC00;
             box-sizing: border-box;
+            width: 100%;
+            height: max-content;
+            overflow: visible;
         }
         
         table { width: 100%; border-collapse: collapse; }
@@ -183,6 +157,17 @@
         .media-row:hover { background-color: #00FFFF; color: #1A1A1A; }
         .media-row.active { background-color: #FF00FF; color: #FFFFFF; }
         
+        .sub-title-info {
+            display: block;
+            margin-left: 20px;
+            font-size: 0.75em;
+            color: #555;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+        .media-row:hover .sub-title-info { color: #1A1A1A; }
+        .media-row.active .sub-title-info { color: #FFCC00; }
+
         .format-badge { 
             border: 2px solid #1A1A1A; 
             padding: 3px 6px; 
@@ -194,7 +179,6 @@
             white-space: nowrap;
         }
 
-        /* --- Stock Status Indicators --- */
         .status-dot {
             display: inline-block;
             width: 12px;
@@ -205,11 +189,10 @@
             vertical-align: middle;
         }
         
-        /* Vibrant neon vaporwave status indicators */
         .status-instock { background-color: #00FF00; box-shadow: 0 0 8px #00FF00; }
-        .status-checkedout { background-color: #FFCC00; box-shadow: 0 0 8px #FFCC00; } /* yellow dropdown */
-        .status-damaged { background-color: #FF00FF; box-shadow: 0 0 8px #FF00FF; } /* orange/pink dropdown */
-        .status-onorder { background-color: #FF0044; box-shadow: 0 0 8px #FF0044; } /* dark red dropdown */
+        .status-checkedout { background-color: #FFCC00; box-shadow: 0 0 8px #FFCC00; } 
+        .status-damaged { background-color: #FF00FF; box-shadow: 0 0 8px #FF00FF; } 
+        .status-onorder { background-color: #FF0044; box-shadow: 0 0 8px #FF0044; } 
         .status-unavailable { background-color: #888888; box-shadow: 0 0 4px #888888; }
         .status-request { background-color: #00FFFF; box-shadow: 0 0 8px #00FFFF; }
 
@@ -234,8 +217,8 @@
         #detail-cover { 
             width: 180px; 
             height: 270px; 
-            min-height: 270px; /* CRITICAL FIX: Prevent vertical squeezing inside flexbox container */
-            flex-shrink: 0; /* CRITICAL FIX: Stop container from squeezing the poster height */
+            min-height: 270px;
+            flex-shrink: 0; 
             background-color: #EEE; 
             border: 4px solid #1A1A1A; 
             margin-bottom: 15px; 
@@ -251,7 +234,6 @@
         }
         #detail-cover img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* Styled Apology Cover for missing posters */
         .apology-cover {
             width: 100%;
             height: 100%;
@@ -271,17 +253,18 @@
             padding: 10px;
             color: #00FFFF;
             font-family: 'Arial Black', sans-serif;
+            text-align: center;
         }
         .apology-cover h4 {
             color: #FF00FF;
             margin: 0 0 10px 0;
-            font-size: 0.9em;
+            font-size: 1em;
             text-transform: uppercase;
             text-shadow: 1px 1px 0 #FFCC00;
             letter-spacing: 1px;
         }
         .apology-cover p {
-            font-size: 0.7em;
+            font-size: 0.8em;
             margin: 5px 0;
             color: #FFCC00;
             text-transform: uppercase;
@@ -290,10 +273,18 @@
         #detail-title { 
             font-size: 1.6em; 
             font-weight: 900; 
-            margin-bottom: 10px; 
+            margin-bottom: 5px; 
             text-transform: uppercase; 
             color: #001A5E; 
             letter-spacing: -1px;
+        }
+
+        #detail-sub-titles {
+            font-size: 0.85em;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 15px;
+            text-align: center;
         }
         
         #detail-meta { 
@@ -319,7 +310,6 @@
             width: 100%;
         }
 
-        /* --- Details Grid Spec Requirements --- */
         .details-spec-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -357,26 +347,7 @@
         .spec-full-width {
             grid-column: span 2;
         }
-        
-        .suggestion-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: #001A5E;
-            background: #00FFFF;
-            padding: 5px 15px;
-            border: 2px solid #1A1A1A;
-            cursor: pointer;
-            font-weight: 900;
-            text-decoration: none;
-            box-shadow: 2px 2px 0 #FF00FF;
-            transition: all 0.1s;
-        }
-        .suggestion-link:active {
-            transform: translate(2px, 2px);
-            box-shadow: 0px 0px 0 #FF00FF;
-        }
 
-        /* --- API Key & Google Sheet Config Overlay --- */
         #api-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -398,6 +369,26 @@
             width: 100%;
             box-shadow: 8px 8px 0px #FF00FF, 16px 16px 0px #00FFFF;
             box-sizing: border-box;
+            position: relative;
+        }
+
+        .api-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #FF0044;
+            color: #FFF;
+            border: 2px solid #1A1A1A;
+            padding: 4px 10px;
+            cursor: pointer;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1em;
+            box-shadow: 2px 2px 0 #1A1A1A;
+            transition: all 0.1s;
+        }
+        .api-close-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0 #1A1A1A;
         }
 
         .api-box h2 {
@@ -476,7 +467,6 @@
             transition: width 0.1s;
         }
 
-        /* --- Admin Panel Modal (Employee Portal) --- */
         #admin-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -546,18 +536,28 @@
             transform: translate(2px, 2px);
             box-shadow: 0px 0px 0 #FFCC00;
         }
+        
+        .admin-logout-btn {
+            background: #FFCC00;
+            color: #FF0044;
+            border: 2px solid #1A1A1A;
+            padding: 5px 12px;
+            cursor: pointer;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 0.9em;
+            box-shadow: 2px 2px 0 #FF00FF;
+            margin-right: 10px;
+        }
+        .admin-logout-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0 #FF00FF;
+        }
 
         .admin-body {
             display: flex;
             flex: 1;
             overflow: hidden;
             box-sizing: border-box;
-        }
-
-        @media (max-width: 768px) {
-            .admin-body { flex-direction: column; overflow-y: auto; }
-            .admin-sidebar { height: 250px; border-right: none !important; border-bottom: 4px solid #1A1A1A; }
-            .admin-form-container { height: auto !important; }
         }
 
         .admin-sidebar {
@@ -666,43 +666,32 @@
             min-height: 80px;
         }
 
-        .quick-presets {
-            display: flex;
-            gap: 5px;
-            margin-top: 5px;
-        }
-
-        .preset-btn {
-            background: #FFF;
-            border: 2px solid #1A1A1A;
-            font-size: 0.7em;
-            font-weight: bold;
-            padding: 3px 6px;
-            cursor: pointer;
-            box-shadow: 1px 1px 0 #FF00FF;
-            text-transform: uppercase;
-        }
-        .preset-btn:active {
-            transform: translate(1px, 1px);
-            box-shadow: 0px 0px 0 #FF00FF;
-        }
-
         .admin-save-btn {
             background: #00FF00;
             color: #1A1A1A;
             border: 4px solid #1A1A1A;
-            padding: 12px 25px;
+            padding: 12px 15px;
             font-family: 'Arial Black', sans-serif;
-            font-size: 1.1em;
+            font-size: 1em;
             cursor: pointer;
-            margin-top: 25px;
             box-shadow: 4px 4px 0 #FF00FF;
             text-transform: uppercase;
-            align-self: flex-start;
+            flex: 1;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .admin-save-btn.secondary {
+            background: #00FFFF;
         }
         .admin-save-btn:active {
             transform: translate(2px, 2px);
             box-shadow: 2px 2px 0 #FF00FF;
+        }
+        
+        .admin-save-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            width: 100%;
         }
 
         .admin-placeholder {
@@ -735,7 +724,6 @@
             padding: 20px;
         }
 
-        /* Settings Icon in Admin Panel */
         .settings-config-btn {
             background: #FFCC00;
             color: #001A5E;
@@ -746,21 +734,61 @@
             cursor: pointer;
             box-shadow: 2px 2px 0 #FF00FF;
             text-transform: uppercase;
+            margin-right: 10px;
         }
         .settings-config-btn:active {
             transform: translate(2px, 2px);
             box-shadow: 0px 0px 0 #FF00FF;
         }
+
+        .footer-info {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-family: 'Arial Black', sans-serif;
+            color: #1A1A1A;
+            font-size: 0.9em;
+        }
+        
+        .footer-info p {
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        
+        .innocuous-admin-link {
+            color: #999;
+            font-family: monospace;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 0.8em;
+            transition: color 0.2s;
+        }
+        
+        .innocuous-admin-link:hover {
+            color: #FF00FF;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .admin-box { max-height: 95vh; margin: 10px; border-width: 4px; box-shadow: 4px 4px 0px #00FFFF, 8px 8px 0px #FFCC00; }
+            .admin-header { flex-direction: column; gap: 12px; padding: 15px 10px; }
+            .admin-header > div:last-child { width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; }
+            .admin-body { flex-direction: column; overflow-y: auto; }
+            .admin-sidebar { width: 100%; height: 40vh; flex: none; border-right: none; border-bottom: 4px solid #1A1A1A; }
+            .admin-search-container { position: sticky; top: 0; background: #F0F0F0; z-index: 10; } 
+            .admin-form-container { height: max-content; overflow: visible; padding: 15px; }
+            .admin-save-container { flex-direction: column; }
+            .api-box { box-shadow: 4px 4px 0px #FF00FF, 8px 8px 0px #00FFFF; border-width: 4px; padding: 15px; width: 90%; }
+            .header-sign { margin: 15px auto; padding: 15px; }
+            .logo-script { font-size: 2.5em; }
+        }
     </style>
 </head>
 <body>
 
-<!-- Subtle Employee Link at Top of the Page -->
-<a class="admin-link" onclick="openAdminPanel()">[ Employee Portal ]</a>
-
-<!-- Main Setup Overlay (Configs for Sheets URL + OMDb API Key) -->
 <div id="api-overlay" style="display:none;">
     <div class="api-box" id="login-box">
+        <button class="api-close-btn" onclick="closeApiOverlay()" title="Abort Configuration">X</button>
         <h2>TERMINAL CONFIGURATION</h2>
         <p>Set up your Google Sheets proxy Web App and OMDb API key.</p>
         
@@ -782,15 +810,15 @@
     </div>
 </div>
 
-<!-- Admin Panel Overlay (Employee Rental & Stock Terminal) -->
 <div id="admin-overlay" style="display:none;">
     <div class="admin-box">
-        <!-- Admin Login Screen Overlay -->
         <div id="admin-login-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; width: 100%; position: absolute; top: 0; left: 0; background: #001A5E; z-index: 110; box-sizing: border-box; padding: 20px;">
             <div class="api-box" style="border-color: #FF00FF; width: 100%; max-width: 400px; box-shadow: 6px 6px 0px #FF00FF, 12px 12px 0px #00FFFF;">
-                <h2 style="color: #001A5E; text-shadow: 2px 2px 0 #FF00FF; font-family: 'Arial Black', sans-serif; text-align: center; margin-top: 0; text-transform: uppercase;">EMPLOYEE ACCESS</h2>
+                <h2 style="color: #001A5E; text-shadow: 2px 2px 0 #FFCC00; font-family: 'Arial Black', sans-serif; text-align: center; margin-top: 0; text-transform: uppercase;">ADMIN ACCESS</h2>
                 <p style="color: #333; font-size: 0.85em; text-align: center; font-weight: bold; margin-bottom: 20px;">AUTHORIZATION REQUIRED FOR LOGISTICS CONTROLS</p>
                 
+                <div id="login-error-msg" style="display:none; color: #FFF; background: #FF0044; padding: 8px; font-weight: bold; font-size: 0.8em; margin-bottom: 15px; border: 2px solid #1A1A1A;"></div>
+
                 <div class="form-group">
                     <label>Username</label>
                     <input type="text" id="admin-username-input" placeholder="Enter username..." style="text-transform: none; font-weight: bold;">
@@ -812,26 +840,24 @@
         <div class="admin-header">
             <div>
                 <span class="admin-title-sign">RetroVision</span>
-                <span class="admin-subtitle">Employee Terminal v4.1</span>
+                <span class="admin-subtitle">Admin Terminal v4.1</span>
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
                 <button class="settings-config-btn" onclick="openSettingsFromAdmin()">[ Setup ]</button>
+                <button class="admin-logout-btn" onclick="adminLogout()">LOGOUT</button>
                 <button class="admin-close-btn" onclick="closeAdminPanel()">EXIT TERMINAL</button>
             </div>
         </div>
 
         <div class="admin-body">
-            <!-- Sidebar for Movie List -->
             <div class="admin-sidebar">
                 <div class="admin-search-container">
                     <input type="text" id="admin-search" class="admin-search-input" placeholder="Quick Search Tape..." autocomplete="off">
                 </div>
                 <div class="admin-movie-list" id="admin-movie-list">
-                    <!-- Populated dynamically -->
-                </div>
+                    </div>
             </div>
 
-            <!-- Form Workspace -->
             <div class="admin-form-container" id="admin-workspace">
                 <div class="admin-placeholder">
                     SELECT A TAPE FROM THE CATALOG SYSTEM<br>TO UPDATE THE LOGISTICS DATA
@@ -846,7 +872,7 @@
     <span class="logo-video">Video</span>
 </header>
 
-<marquee id="system-marquee">/// INITIALIZING... /// ESTABLISHING COUPLER CHANNELS /// BE KIND, REWIND ///</marquee>
+<marquee id="system-marquee">/// INITIALIZING... /// REWINDING TAPES /// GRABBING POPCORN ///</marquee>
 
 <div class="search-container">
     <input type="text" id="search-input" placeholder="SEARCH INVENTORY..." autocomplete="off">
@@ -868,93 +894,102 @@
     </div>
 
     <div class="details" id="details-pane">
-        <div id="detail-cover">SELECT TAPE</div>
-        <div id="detail-title">SELECT TAPE</div>
-        <div id="detail-status"></div>
-        <div id="detail-meta"></div>
-        <div id="detail-desc">Please select a film from our catalog row to inspect the complete logistical database specs and cover poster.</div>
-        
-        <!-- Film Specs details listed under Description exactly as requested -->
-        <div class="details-spec-grid" id="details-spec-grid" style="display:none;">
-            <div class="spec-item">
-                <span class="spec-label">Format</span>
-                <span id="spec-format" class="spec-val"></span>
+        <!-- WELCOME PANEL DEFAULT -->
+        <div id="welcome-panel" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; text-align:center;">
+            <div class="apology-cover" style="width:180px; height:270px; border-color:#FFCC00; color:#FFCC00; margin-bottom: 20px; box-shadow: 4px 4px 0 #001A5E; border: 4px solid #1A1A1A;">
+                <h4 style="color:#00FFFF;">SYSTEM READY</h4>
+                <p>INSERT TAPE</p>
+                <span style="font-size:0.7em; margin-top:10px;">PLEASE SELECT A MOVIE<br>FROM THE RACKS</span>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">Edition</span>
-                <span id="spec-edition" class="spec-val"></span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Rating</span>
-                <span id="spec-rating" class="spec-val"></span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Type</span>
-                <span id="spec-type" class="spec-val"></span>
-            </div>
-            <div class="spec-item spec-full-width">
-                <span class="spec-label">Alternate Title</span>
-                <span id="spec-alt-title" class="spec-val"></span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Condition</span>
-                <span id="spec-condition" class="spec-val"></span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Decade Tab</span>
-                <span id="spec-decade" class="spec-val"></span>
-            </div>
-            <div class="spec-item spec-full-width" id="spec-genre-container">
-                <span class="spec-label">Genre</span>
-                <span id="spec-genre" class="spec-val"></span>
-            </div>
-            <div class="spec-item spec-full-width" id="spec-rental-info-container" style="display:none;">
-                <span class="spec-label">Rental Status</span>
-                <span id="spec-rental-info" class="spec-val" style="color:#FFCC00; background:#1A1A1A; border-color:#FFCC00;"></span>
-            </div>
-            <div class="spec-item spec-full-width" id="spec-notes-container" style="display:none;">
-                <span class="spec-label">Notes and Log</span>
-                <span id="spec-notes" class="spec-val" style="display:block; text-transform:none; white-space: pre-wrap;"></span>
+            <h2 style="color:#001A5E; font-family:'Arial Black', sans-serif; text-transform:uppercase; margin-bottom: 5px;">WELCOME TO RETROVISION</h2>
+            <p style="font-weight:bold; max-width:400px; color:#333;">Browse our catalog by selecting a tape from the list. Don't forget to grab some popcorn!</p>
+        </div>
+
+        <!-- MOVIE DETAILS PANEL (HIDDEN BY DEFAULT) -->
+        <div id="movie-data-panel" style="display:none; width: 100%; flex-direction: column; align-items: center;">
+            <div id="detail-cover"></div>
+            <div id="detail-title"></div>
+            <div id="detail-sub-titles"></div>
+            <div id="detail-status"></div>
+            <div id="detail-meta"></div>
+            <div id="detail-desc"></div>
+            
+            <div class="details-spec-grid" id="details-spec-grid">
+                <div class="spec-item">
+                    <span class="spec-label">Format</span>
+                    <span id="spec-format" class="spec-val"></span>
+                </div>
+                <div class="spec-item" id="spec-edition-container">
+                    <span class="spec-label">Edition</span>
+                    <span id="spec-edition" class="spec-val"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Runtime</span>
+                    <span id="spec-runtime" class="spec-val"></span>
+                </div>
+                <div class="spec-item spec-full-width">
+                    <span class="spec-label">Genre</span>
+                    <span id="spec-genre" class="spec-val"></span>
+                </div>
+                <div class="spec-item spec-full-width">
+                    <span class="spec-label">Director</span>
+                    <span id="spec-director" class="spec-val"></span>
+                </div>
+                <div class="spec-item spec-full-width">
+                    <span class="spec-label">Writer</span>
+                    <span id="spec-writer" class="spec-val"></span>
+                </div>
+                <div class="spec-item spec-full-width">
+                    <span class="spec-label">Actors</span>
+                    <span id="spec-actors" class="spec-val"></span>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+<div class="footer-info">
+    <p>Browse the collection in person at 492 East 13th Avenue, Suite 101, Eugene, Or.</p>
+    <a class="innocuous-admin-link" onclick="openAdminPanel()">Admin Portal</a>
+</div>
+
 <script>
     // =========================================================================
-    // ADMIN CONTROL PANEL (Edit text between the quotes below!)
+    // =========================================================================
+    //                    !!! ATTENTION EDWARD !!!
+    //           EDIT THE SCROLLING TEXT AND MESSAGES BELOW
+    // =========================================================================
     // =========================================================================
     
-    // This text displays in the scrolling news bar at the top of the site.
     const STORE_NEWS_ANNOUNCEMENT = "LATE FEES WAIVED FOR THE WEEKEND /// NEW ARRIVALS IN HORROR ///";
     
-    // These messages display one-by-one while the terminal initially connects.
     const CUSTOM_LOADING_MESSAGES = [
         "Rummaging through tapes...",
         "Climbing over racks...",
-        "Looking through logs...",
-        "Dusting off the VCR..."
+        "Dusting off the VCR...",
+        "Checking returned videos..."
     ];
-    
+
     // =========================================================================
-    // PLUGGABLE CONFIGURATION FALLBACKS (DO NOT DELETE)
     // =========================================================================
+    //                   END OF EDWARD'S SETTINGS
+    //               PLEASE DO NOT EDIT BELOW THIS LINE
+    // =========================================================================
+    // =========================================================================
+
     const DEFAULT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz7O52_OZXbRaFvVaNfOfk3IkFfwTut5A0pgLdFcuYDC_CewG9rUAPN5t3hEGBRnqgkgw/exec"; 
     const DEFAULT_OMDB_API_KEY = "ceb2a6ff";
 
-    // LocalStorage Keys
     const WEB_APP_URL_KEY = "retrovision_sheets_url";
     const OMDB_API_KEY_KEY = "retrovision_omdb_key_v2";
-    const SHEETS_DATA_CACHE_KEY = "retrovision_sheets_cache_v4";
     const OMDB_METADATA_CACHE_KEY = "retrovision_omdb_metadata_cache_v4";
+    const ADMIN_CREDS_KEY = "retrovision_admin_creds";
 
-    // Application Variables
     let catalogData = []; 
     let selectedMovieIndex = null;
     let webAppUrl = "";
     let omdbApiKey = "";
 
-    // DOM Elements
     const apiOverlay = document.getElementById('api-overlay');
     const sheetUrlInput = document.getElementById('sheet-url-input');
     const apiInput = document.getElementById('api-input');
@@ -967,42 +1002,38 @@
 
     const catalogBody = document.getElementById('catalog-body');
     const searchInput = document.getElementById('search-input');
+    
+    const welcomePanel = document.getElementById('welcome-panel');
+    const movieDataPanel = document.getElementById('movie-data-panel');
     const detailCover = document.getElementById('detail-cover');
     const detailTitle = document.getElementById('detail-title');
+    const detailSubTitles = document.getElementById('detail-sub-titles');
     const detailStatus = document.getElementById('detail-status');
     const detailMeta = document.getElementById('detail-meta');
     const detailDesc = document.getElementById('detail-desc');
-    const detailsSpecGrid = document.getElementById('details-spec-grid');
-
-    // Specs elements
+    
     const specFormat = document.getElementById('spec-format');
+    const specEditionContainer = document.getElementById('spec-edition-container');
     const specEdition = document.getElementById('spec-edition');
-    const specRating = document.getElementById('spec-rating');
-    const specType = document.getElementById('spec-type');
-    const specAltTitle = document.getElementById('spec-alt-title');
-    const specCondition = document.getElementById('spec-condition');
-    const specDecade = document.getElementById('spec-decade');
     const specGenre = document.getElementById('spec-genre');
-    const specRentalInfoContainer = document.getElementById('spec-rental-info-container');
-    const specRentalInfo = document.getElementById('spec-rental-info');
-    const specNotesContainer = document.getElementById('spec-notes-container');
-    const specNotes = document.getElementById('spec-notes');
+    const specRuntime = document.getElementById('spec-runtime');
+    const specDirector = document.getElementById('spec-director');
+    const specWriter = document.getElementById('spec-writer');
+    const specActors = document.getElementById('spec-actors');
 
-    // Admin Panel Elements
     const adminOverlay = document.getElementById('admin-overlay');
     const adminMovieList = document.getElementById('admin-movie-list');
     const adminWorkspace = document.getElementById('admin-workspace');
     const adminSearch = document.getElementById('admin-search');
     const adminLoadingScreen = document.getElementById('admin-loading-screen');
 
-    // --- SYSTEM INITIALIZATION ---
     function initSystem() {
-        // Initialize initial marquee string so it shows immediately
-        marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// ESTABLISHING COUPLER CHANNELS ///`;
+        marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// REWINDING TAPES ///`;
         
-        // Load configurations from LocalStorage or Fallbacks
         webAppUrl = localStorage.getItem(WEB_APP_URL_KEY) || DEFAULT_WEB_APP_URL;
         omdbApiKey = localStorage.getItem(OMDB_API_KEY_KEY) || DEFAULT_OMDB_API_KEY;
+
+        window.omdbCache = JSON.parse(localStorage.getItem(OMDB_METADATA_CACHE_KEY) || "{}");
 
         if (!webAppUrl || !omdbApiKey) {
             sheetUrlInput.value = webAppUrl;
@@ -1023,16 +1054,17 @@
             omdbApiKey = key;
             apiOverlay.style.display = 'flex';
             loadDatabaseFromSheets();
-        } else {
-            alert("Please provide both the Google Sheets Apps Script Web App URL and your OMDb API key.");
         }
     });
 
-    // --- MAIN DATA LOADER ---
+    function normalizeString(str) {
+        if (!str) return "";
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+    }
+
     async function loadDatabaseFromSheets() {
         loginBox.style.display = 'none';
         
-        // Setup alternating loading screen text tied to Edward's Control Panel
         const loadingTexts = CUSTOM_LOADING_MESSAGES;
         let textIndex = 0;
         loadingText.textContent = loadingTexts[textIndex];
@@ -1045,7 +1077,6 @@
             textIndex = (textIndex + 1) % loadingTexts.length;
             loadingText.textContent = loadingTexts[textIndex];
             
-            // Advance progress bar a bit retro-style
             let width = parseFloat(progressBar.style.width) || 10;
             if (width < 90) {
                 progressBar.style.width = (width + 12) + '%';
@@ -1053,8 +1084,9 @@
         }, 1200);
 
         try {
-            // EXFILTRATION PATCH: Fetch directly from the static edge network
-            const sheetsResponse = await fetch(`https://retro-vision-video.github.io/RetroVision-Edge/catalog.json?v=${new Date().getTime()}`);
+            const sheetsResponse = await fetch(`catalog.json?v=${new Date().getTime()}`);
+            if (!sheetsResponse.ok) throw new Error("HTTP error " + sheetsResponse.status);
+            
             const payload = await sheetsResponse.json();
 
             if (payload.status !== "success" || !payload.data) {
@@ -1062,48 +1094,32 @@
             }
 
             clearInterval(loadingInterval);
-            catalogData = payload.data; // OPEN THE ENVELOPE
+            catalogData = payload.data; 
             progressBar.style.width = '100%';
-            loadingText.textContent = "Movie found!";
+            loadingText.textContent = "Movies found!";
             
-            // Render list
             renderCatalog(catalogData);
 
-            // Update marquee statistics & merge with Edward's custom news string
             const totalCount = catalogData.length;
-            const statusSummary = {};
-            catalogData.forEach(m => {
-                statusSummary[m.status] = (statusSummary[m.status] || 0) + 1;
-            });
-            const statusSummaryStr = Object.keys(statusSummary).map(k => `${k.toUpperCase()}: ${statusSummary[k]}`).join(" /// ");
-            marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// DATABANKS SYNCED SECURELY /// TOTAL TAPES: ${totalCount} /// ${statusSummaryStr} /// BE KIND, REWIND ///`;
+            marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// DATABANKS SYNCED SECURELY /// TOTAL TAPES: ${totalCount} /// GRABBING POPCORN ///`;
 
-            // Display first film if available
-            if (catalogData.length > 0) {
-                showDetails(0);
-                setTimeout(() => {
-                    const firstRow = document.querySelector('.media-row');
-                    if (firstRow) firstRow.classList.add('active');
-                }, 50);
-            }
-
-            // Hide loading overlay
             apiOverlay.style.display = 'none';
 
         } catch (error) {
             clearInterval(loadingInterval);
             console.error("Critical Uplink Error:", error);
-            alert(`CRITICAL UPLINK FAILURE:
-${error.message}
-
-Please verify your Edge Network URL and check that GitHub Pages is broadcasting.`);
+            
+            const errBox = document.createElement('div');
+            errBox.style = "color:#FF0000; background:#FFF; border:4px solid #FF0000; padding:15px; margin-top:20px; font-weight:bold;";
+            errBox.innerHTML = `CRITICAL UPLINK FAILURE<br><br>${error.message}`;
+            loginBox.appendChild(errBox);
+            
             progressBarContainer.style.display = 'none';
             loginBox.style.display = 'block';
             loadingText.style.display = 'none';
         }
     }
 
-    // Extract IMDb ID from a standard URL link
     function translateOmdbType(type) {
         if (!type) return "Feature Film";
         if (type === "movie") return "Feature Film";
@@ -1118,15 +1134,27 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
         return match ? match[0] : null;
     }
 
-    // --- ON-DEMAND FETCHING ON CLICK ---
+    function stripArticles(title) {
+        if (!title) return "";
+        return title.replace(/^(a|an|the)\s+/i, "").trim();
+    }
+
     async function showDetails(index) {
         selectedMovieIndex = index;
         const item = catalogData[index];
         
-        // Render initial data from Sheets immediately! (Instant UI feedback)
+        welcomePanel.style.display = 'none';
+        movieDataPanel.style.display = 'flex';
+        
         detailTitle.textContent = `${item.title} (${item.year || "????"})`;
         
-        // Render detailed status badges matching the dropdown options
+        let subHtml = "";
+        if (item.alternateTitle || item.edition) {
+            if (item.alternateTitle) subHtml += `FOREIGN / ALT TITLE: ${item.alternateTitle}<br>`;
+        }
+        detailSubTitles.innerHTML = subHtml;
+        detailSubTitles.style.display = subHtml ? 'block' : 'none';
+
         const normStatus = (item.status || "").toLowerCase().trim();
         if (normStatus === "checked out") {
             detailStatus.className = 'text-checkedout';
@@ -1144,93 +1172,62 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
             detailStatus.className = 'text-request';
             detailStatus.textContent = 'STATUS: AVAILABLE UPON REQUEST';
         } else {
-            // Default "In Stock" fallback
             detailStatus.className = 'text-instock';
             detailStatus.textContent = 'STATUS: IN STOCK - ON SHELF';
         }
 
-        // Render Specs
         specFormat.textContent = item.format;
-        specEdition.textContent = item.edition || "STANDARD RELEASE";
-        specRating.textContent = item.rating || "NR";
-        specType.textContent = item.type || "Feature Film";
-        specAltTitle.textContent = item.alternateTitle || "NONE LISTED";
-        specCondition.textContent = (item.condition || "UNSPECIFIED").toUpperCase();
-        specDecade.textContent = item.sheetName; // Decade Tab name!
+        
+        if (item.edition) {
+            specEdition.textContent = item.edition;
+            specEditionContainer.style.display = 'block';
+        } else {
+            specEditionContainer.style.display = 'none';
+        }
+
         specGenre.textContent = item.genre || "UNSPECIFIED";
+        specRuntime.textContent = item.runtime || "N/A";
+        specDirector.textContent = item.director || "N/A";
+        specWriter.textContent = item.writer || "N/A";
+        specActors.textContent = item.actors || "N/A";
         
-        // Added columns K (user), L (dueDate), M (details) to details pane
-        if (item.status === "Checked Out" && (item.user || item.dueDate)) {
-            specRentalInfoContainer.style.display = 'block';
-            let rentalText = "";
-            if (item.user) rentalText += `RENTED BY: ${item.user.toUpperCase()}`;
-            if (item.dueDate) {
-                if (rentalText) rentalText += " | ";
-                rentalText += `DUE DATE: ${item.dueDate}`;
-            }
-            specRentalInfo.textContent = rentalText;
-        } else {
-            specRentalInfoContainer.style.display = 'none';
-        }
-
-        if (item.details) {
-            specNotesContainer.style.display = 'block';
-            specNotes.textContent = item.details;
-        } else {
-            specNotesContainer.style.display = 'none';
-        }
-
-        detailsSpecGrid.style.display = 'grid';
-
-        // Render synopsis from Sheet if available, otherwise clear/show placeholder while we fetch from OMDb
-        detailDesc.textContent = item.synopsis || "Syncing databanks for film details...";
-        
-        // Render Poster Placeholder / Sycing
+        detailDesc.innerHTML = item.synopsis || "Syncing databanks for film details...";
         detailCover.innerHTML = `<div class="apology-cover"><h4>RETROVISION</h4><p>SYNCING SPECS...</p></div>`;
 
-        // Direct Custom Cover Bypass (Rule: if Column H is a direct image URL instead of an IMDb URL)
         const isDirectImage = item.imdbLink && (item.imdbLink.match(/\.(jpeg|jpg|gif|png|webp)/i) != null || !item.imdbLink.includes("imdb.com") && item.imdbLink.startsWith("http"));
         
         if (isDirectImage) {
             detailCover.innerHTML = `<img src="${item.imdbLink}" alt="${item.title} Poster" onerror="triggerApologyCover(this, '${item.title}');">`;
             detailMeta.textContent = `RATING: ${item.rating || "NR"} | TYPE: ${item.type || "Feature Film"}`;
-            detailDesc.textContent = item.synopsis || "No description provided.";
+            detailDesc.innerHTML = item.synopsis || "No description provided.";
             return;
         }
 
         const imdbId = extractImdbId(item.imdbLink);
         
         if (!imdbId) {
-            // No IMDb ID provided, show the default retrovision apology cover and fallback to Sheets synopsis
             triggerApologyCover(null, item.title);
             detailMeta.textContent = `RATING: ${item.rating || "NR"} | TYPE: ${item.type || "Feature Film"}`;
-            detailDesc.textContent = item.synopsis || "No synopsis available.";
+            detailDesc.innerHTML = item.synopsis || "No synopsis available.";
             return;
         }
 
-        // Load OMDb Cache
-        let omdbCache = JSON.parse(localStorage.getItem(OMDB_METADATA_CACHE_KEY) || "{}");
-
-        if (omdbCache[imdbId]) {
-            // Load instantly from Cache!
-            renderOMDbSpecs(item, omdbCache[imdbId]);
+        if (window.omdbCache[imdbId]) {
+            renderOMDbSpecs(item, window.omdbCache[imdbId]);
         } else {
-            // Fetch from OMDb on-demand!
             try {
                 const res = await fetch(`https://www.omdbapi.com/?i=${imdbId}&apikey=${omdbApiKey}&plot=full`);
                 const data = await res.json();
                 
                 if (data.Response === "True") {
-                    omdbCache[imdbId] = data;
-                    // Safely write to localStorage. If it throws a quota exception, clear some items and try again!
+                    window.omdbCache[imdbId] = data;
                     try {
-                        localStorage.setItem(OMDB_METADATA_CACHE_KEY, JSON.stringify(omdbCache));
+                        localStorage.setItem(OMDB_METADATA_CACHE_KEY, JSON.stringify(window.omdbCache));
                     } catch (e) {
-                        // Clear half the cache if full to prevent QuotaExceededError
-                        console.warn("Storage quota exceeded. Clearing old cache items...", e);
+                        console.warn("Storage quota exceeded. Clearing old cache...", e);
                         localStorage.removeItem(OMDB_METADATA_CACHE_KEY);
-                        omdbCache = { [imdbId]: data };
-                        localStorage.setItem(OMDB_METADATA_CACHE_KEY, JSON.stringify(omdbCache));
+                        window.omdbCache = { [imdbId]: data };
+                        localStorage.setItem(OMDB_METADATA_CACHE_KEY, JSON.stringify(window.omdbCache));
                     }
                     renderOMDbSpecs(item, data);
                 } else {
@@ -1248,32 +1245,34 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
     function renderOMDbSpecs(item, omdbData) {
         const isValid = omdbData && omdbData.Response === "True";
         
-        // Setup Cover Poster
         if (isValid && omdbData.Poster !== "N/A") {
             detailCover.innerHTML = `<img src="${omdbData.Poster}" alt="${item.title} Poster" onerror="triggerApologyCover(this, '${item.title}');">`;
         } else {
             triggerApologyCover(null, item.title);
         }
 
-        // Update Meta Rating & Year fallbacks
         const displayRating = item.rating || (isValid ? omdbData.Rated : "NR");
         const displayType = item.type || (isValid ? translateOmdbType(omdbData.Type) : "Feature Film");
         detailMeta.textContent = `RATING: ${displayRating} | TYPE: ${displayType}`;
-        specRating.textContent = displayRating;
-        specType.textContent = displayType;
-
-        // Update description fallback
-        detailDesc.textContent = item.synopsis || (isValid ? omdbData.Plot : "No description provided.");
+        
+        if (!item.synopsis && isValid) {
+            detailDesc.innerHTML = omdbData.Plot;
+        }
+        
+        if (!item.genre && isValid) specGenre.textContent = omdbData.Genre;
+        if (!item.runtime && isValid) specRuntime.textContent = omdbData.Runtime;
+        if (!item.director && isValid) specDirector.textContent = omdbData.Director;
+        if (!item.writer && isValid) specWriter.textContent = omdbData.Writer;
+        if (!item.actors && isValid) specActors.textContent = omdbData.Actors;
     }
 
-    // Default RetroVision Apology cover trigger if OMDb fails or lacks ID
     function triggerApologyCover(imgElement, title) {
         const apologyHtml = `
             <div class="apology-cover">
                 <h4>RETROVISION</h4>
                 <p>--- APOLOGY ---</p>
                 <span style="font-size:0.7em; font-weight:900; letter-spacing:1px; line-height:1.3; display:block; margin: 10px 0;">COVER ART<br>NOT FOUND</span>
-                <p style="font-size:0.55em; color:#FF00FF; margin-top:10px;">BE KIND, REWIND</p>
+                <p style="font-size:0.55em; color:#FFFFFF; margin-top:10px;">BE KIND, REWIND</p>
             </div>
         `;
         if (imgElement) {
@@ -1283,30 +1282,20 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
         }
     }
 
-    // --- UI CATALOG RENDERING ---
     function renderCatalog(dataToRender, query = "") {
         catalogBody.innerHTML = ''; 
         
         if (dataToRender.length === 0) {
-            let suggestionHtml = "";
-            if (query.trim().length > 1) {
-                const suggestion = getSuggestion(query);
-                if (suggestion) {
-                    suggestionHtml = `<br><a class="suggestion-link" onclick="applySuggestion('${suggestion.replace(/'/g, "\'")}')">DID YOU MEAN: ${suggestion.toUpperCase()}?</a>`;
-                }
-            }
-            catalogBody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding: 40px 20px; font-weight:900; color:#FF0044; font-size:1.1em;">NO TAPES FOUND${suggestionHtml}</td></tr>`;
+            catalogBody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding: 40px 20px; font-weight:900; color:#FF0044; font-size:1.1em;">NO TAPES FOUND</td></tr>`;
             return;
         }
 
-        // Sort data logically by title
-        dataToRender.sort((a, b) => a.title.localeCompare(b.title));
+        dataToRender.sort((a, b) => stripArticles(a.title).localeCompare(stripArticles(b.title)));
 
         dataToRender.forEach((item) => {
             const tr = document.createElement('tr');
             tr.className = 'media-row';
             
-            // Dynamic neon dot based on detailed status options from dropdown
             let dotClass = 'status-instock';
             const normStatus = (item.status || "").toLowerCase().trim();
             if (normStatus === "checked out") dotClass = 'status-checkedout';
@@ -1315,12 +1304,22 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
             else if (normStatus === "unavailable") dotClass = 'status-unavailable';
             else if (normStatus === "request") dotClass = 'status-request';
             
-            // Core requirement: Append Year in parenthesis next to the title (e.g. "The Thing (1982)")
             const displayTitle = `${item.title} (${item.year})`;
             
+            let subTitleHtml = "";
+            if (item.alternateTitle || item.edition) {
+                subTitleHtml = `<div class="sub-title-info">`;
+                if (item.alternateTitle) subTitleHtml += `ALT: ${item.alternateTitle}<br>`;
+                if (item.edition) subTitleHtml += `EDITION: ${item.edition}`;
+                subTitleHtml += `</div>`;
+            }
+            
             tr.innerHTML = `
-                <td><span class="status-dot ${dotClass}"></span>${displayTitle}</td>
-                <td><span class="format-badge">${item.format}</span></td>
+                <td>
+                    <span class="status-dot ${dotClass}"></span>${displayTitle}
+                    ${subTitleHtml}
+                </td>
+                <td style="vertical-align: top;"><span class="format-badge">${item.format}</span></td>
             `;
             
             const originalIndex = catalogData.indexOf(item);
@@ -1338,10 +1337,8 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
         });
     }
 
-    // --- SEARCH INDEXING ENGINE ---
-    // Search is indexed by decade, keywords, title, director, actor, genre, alt title, synopsis, format, edition, type
     searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
+        const query = normalizeString(e.target.value);
         
         if (!query) {
             renderCatalog(catalogData);
@@ -1349,50 +1346,76 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
         }
 
         const filtered = catalogData.filter(item => {
+            let omdbDataString = "";
+            const imdbId = extractImdbId(item.imdbLink);
+            if (imdbId && window.omdbCache && window.omdbCache[imdbId]) {
+                const cached = window.omdbCache[imdbId];
+                omdbDataString = [cached.Director, cached.Actors, cached.Writer, cached.Genre, cached.Plot].join(" ");
+            }
+
             const indexString = [
                 item.title,
                 item.year,
-                item.sheetName, // Decade Tab (e.g., "90s", "80s")
-                item.keywords,
                 item.alternateTitle,
                 item.synopsis,
                 item.director,
+                item.writer,
                 item.actors,
                 item.genre,
                 item.format,
                 item.edition,
                 item.type,
-                item.status,
-                item.condition,
-                item.user,
-                item.details
-            ].map(v => (v || "").toLowerCase()).join(" ");
+                omdbDataString
+            ].map(v => (v || "")).join(" ");
 
-            return indexString.includes(query);
+            return normalizeString(indexString).includes(query);
         });
 
         renderCatalog(filtered, query);
     });
 
-
-    // =========================================================================
-    // TERMINAL ADMIN PORTAL & LOGISTICS CONTROLS
-    // =========================================================================
-
     function openAdminPanel() {
         adminOverlay.style.display = 'flex';
-        // Always reset login screen to visible when opening
-        document.getElementById('admin-login-container').style.display = 'flex';
-        document.getElementById('admin-username-input').value = "";
-        document.getElementById('admin-password-input').value = "";
-        document.getElementById('admin-username-input').focus();
+        
+        const creds = JSON.parse(localStorage.getItem(ADMIN_CREDS_KEY));
+        if (creds && creds.username && creds.password) {
+            document.getElementById('admin-login-container').style.display = 'none';
+            document.getElementById('admin-username-input').value = creds.username;
+            document.getElementById('admin-password-input').value = creds.password;
+            
+            if (!window.adminUsername) {
+                document.getElementById('admin-login-submit').click();
+            }
+        } else {
+            document.getElementById('admin-login-container').style.display = 'flex';
+            document.getElementById('admin-username-input').value = "";
+            document.getElementById('admin-password-input').value = "";
+            document.getElementById('admin-username-input').focus();
+            document.getElementById('login-error-msg').style.display = 'none';
+        }
         adminSearch.value = "";
     }
 
     function closeAdminPanel() {
         adminOverlay.style.display = 'none';
+    }
+    
+    function adminLogout() {
+        localStorage.removeItem(ADMIN_CREDS_KEY);
+        window.adminUsername = null;
+        window.adminPassword = null;
+        
+        document.getElementById('admin-login-container').style.display = 'flex';
         document.getElementById('admin-username-input').value = "";
         document.getElementById('admin-password-input').value = "";
+        
+        const errBox = document.getElementById('login-error-msg');
+        errBox.textContent = "ADMIN TERMINAL SECURELY LOGGED OUT.";
+        errBox.style.background = "#00FF00"; 
+        errBox.style.color = "#1A1A1A";
+        errBox.style.display = 'block';
+
+        adminWorkspace.innerHTML = `<div class="admin-placeholder">SELECT A TAPE FROM THE CATALOG SYSTEM<br>TO UPDATE THE LOGISTICS DATA</div>`;
     }
 
     function openSettingsFromAdmin() {
@@ -1404,18 +1427,20 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
         progressBarContainer.style.display = 'none';
     }
 
-    // Populates sidebar movie catalog inside Employee Terminal
+    function closeApiOverlay() {
+        apiOverlay.style.display = 'none';
+    }
+
     function renderAdminMovieList(movies) {
         adminMovieList.innerHTML = "";
         
-        // Sort alphabetically
-        const sorted = [...movies].sort((a, b) => a.title.localeCompare(b.title));
+        const sorted = [...movies].sort((a, b) => stripArticles(a.title).localeCompare(stripArticles(b.title)));
 
         sorted.forEach(movie => {
             const itemDiv = document.createElement('div');
             itemDiv.className = 'admin-movie-item';
             
-            let dotColor = '#00FF00'; // In stock
+            let dotColor = '#00FF00'; 
             const normStatus = (movie.status || "").toLowerCase().trim();
             if (normStatus === "checked out") dotColor = '#FFCC00';
             else if (normStatus === "damaged/lost") dotColor = '#FF00FF';
@@ -1429,7 +1454,7 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
                     ${movie.title} (${movie.year})
                 </div>
                 <span style="font-size:0.7em; background:#1A1A1A; color:#FFCC00; padding:2px 4px; font-family:monospace;">
-                    ${movie.sheetName}
+                    ${movie.format || "N/A"}
                 </span>
             `;
 
@@ -1437,46 +1462,34 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
                 document.querySelectorAll('.admin-movie-item').forEach(el => el.classList.remove('active'));
                 itemDiv.classList.add('active');
                 loadAdminForm(movie);
+                
+                if (window.innerWidth <= 768) {
+                    document.getElementById('admin-workspace').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             };
 
             adminMovieList.appendChild(itemDiv);
         });
     }
 
-    // Search bar filter inside employee portal
     adminSearch.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
+        const query = normalizeString(e.target.value);
         const filtered = catalogData.filter(movie => 
-            movie.title.toLowerCase().includes(query) || 
-            movie.sheetName.toLowerCase().includes(query)
+            normalizeString(movie.title).includes(query) || 
+            normalizeString(movie.format).includes(query)
         );
         renderAdminMovieList(filtered);
     });
 
-    // Renders the interactive logistics form for a chosen film
     function loadAdminForm(movie) {
         adminWorkspace.innerHTML = `
             <div class="admin-form-title">Update Logistics Info</div>
             
             <div style="background:#001A5E; color:#FFF; padding:10px 15px; border:3px solid #1A1A1A; margin-bottom:20px; font-weight:bold; text-transform:uppercase;">
-                Tape: <span style="color:#FFCC00;">${movie.title} (${movie.year})</span><br>
-                Shelf Location: <span style="color:#00FFFF;">${movie.sheetName} Tab, Row ${movie.rowIndex}</span>
+                Tape: <span style="color:#FFCC00;">${movie.title} (${movie.year})</span>
             </div>
 
             <div class="admin-form-grid">
-                <div class="admin-input-group">
-                    <label>Shelf Condition</label>
-                    <select id="admin-form-condition">
-                        <option value="Mint" ${movie.condition === "Mint" ? "selected" : ""}>Mint</option>
-                        <option value="Excellent" ${movie.condition === "Excellent" ? "selected" : ""}>Excellent</option>
-                        <option value="Good" ${movie.condition === "Good" ? "selected" : ""}>Good</option>
-                        <option value="Fair" ${movie.condition === "Fair" ? "selected" : ""}>Fair</option>
-                        <option value="Poor" ${movie.condition === "Poor" ? "selected" : ""}>Poor</option>
-                        <option value="Unplayable" ${movie.condition === "Unplayable" ? "selected" : ""}>Unplayable</option>
-                        <option value="Unspecified" ${movie.condition === "Unspecified" ? "selected" : ""}>Unspecified</option>
-                    </select>
-                </div>
-
                 <div class="admin-input-group">
                     <label>Stock Status</label>
                     <select id="admin-form-status">
@@ -1488,31 +1501,40 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
                         <option value="Request" ${movie.status === "Request" ? "selected" : ""}>Request</option>
                     </select>
                 </div>
-
+                
                 <div class="admin-input-group">
-                    <label>User</label>
+                    <label>User (Rented By)</label>
                     <input type="text" id="admin-form-user" value="${movie.user || ""}" placeholder="Customer name...">
                 </div>
 
-                <div class="admin-input-group">
+                <div class="admin-input-group admin-full-row">
                     <label>Due Date</label>
-                    <input type="date" id="admin-form-duedate" value="${movie.dueDate || ""}">
+                    <div style="display:flex; align-items:center; gap: 15px;">
+                        <input type="date" id="admin-form-duedate" value="${movie.dueDate || ""}" style="flex:1;">
+                        <label style="display:flex; align-items:center; gap:5px; text-transform:none; font-size:0.9em;">
+                            <input type="checkbox" id="admin-form-noduedate" style="width:auto;"> No Due Date
+                        </label>
+                    </div>
                 </div>
 
                 <div class="admin-input-group admin-full-row">
-                    <label>Notes and Log</label>
-                    <textarea id="admin-form-new-note" placeholder="Type a new note/log to add at the top..." style="margin-bottom: 10px; text-transform: none; font-weight: normal;"></textarea>
-                    <label style="font-size: 0.75em; color: #666; margin-bottom: 5px; text-transform: uppercase;">Historical Notes & Logs</label>
+                    <label>Private Notes and Log</label>
+                    <textarea id="admin-form-new-note" placeholder="Type a new private note to add at the top..." style="margin-bottom: 10px; text-transform: none; font-weight: normal;"></textarea>
+                    <label style="font-size: 0.75em; color: #666; margin-bottom: 5px; text-transform: uppercase;">Historical Notes</label>
                     <textarea id="admin-form-details" placeholder="No historical notes." readonly style="background-color: #EEE; min-height: 120px; text-transform: none; font-family: monospace; font-weight: normal;">${movie.details || ""}</textarea>
                 </div>
             </div>
 
-            <button class="admin-save-btn" onclick="saveAdminChanges('${movie.sheetName}', ${movie.rowIndex})">Save Changes to Cloud</button>
+            <div class="admin-save-container">
+                <button class="admin-save-btn" id="btn-save-continue" onclick="saveAdminChanges('${movie.sheetName}', ${movie.rowIndex}, false)">Save & Continue</button>
+                <button class="admin-save-btn secondary" id="btn-save-close" onclick="saveAdminChanges('${movie.sheetName}', ${movie.rowIndex}, true)">Save & Close</button>
+            </div>
         `;
 
         const statusSelect = document.getElementById('admin-form-status');
         const userInput = document.getElementById('admin-form-user');
         const duedateInput = document.getElementById('admin-form-duedate');
+        const noDueDateCheck = document.getElementById('admin-form-noduedate');
 
         const toggleRentalFields = () => {
             const isRented = statusSelect.value === "Checked Out";
@@ -1521,37 +1543,45 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
                 duedateInput.value = "";
                 userInput.disabled = true;
                 duedateInput.disabled = true;
+                noDueDateCheck.disabled = true;
+                noDueDateCheck.checked = false;
                 userInput.style.backgroundColor = "#EEE";
                 duedateInput.style.backgroundColor = "#EEE";
             } else {
                 userInput.disabled = false;
-                duedateInput.disabled = false;
+                noDueDateCheck.disabled = false;
                 userInput.style.backgroundColor = "#FFF";
-                duedateInput.style.backgroundColor = "#FFF";
                 
-                // Auto-suggest return date (3 days from now)
-                if (!duedateInput.value) {
-                    const returnDate = new Date();
-                    returnDate.setDate(returnDate.getDate() + 3);
-                    duedateInput.value = returnDate.toISOString().split('T')[0];
+                if (noDueDateCheck.checked) {
+                    duedateInput.value = "";
+                    duedateInput.disabled = true;
+                    duedateInput.style.backgroundColor = "#EEE";
+                } else {
+                    duedateInput.disabled = false;
+                    duedateInput.style.backgroundColor = "#FFF";
+                    
+                    if (!duedateInput.value) {
+                        const returnDate = new Date();
+                        returnDate.setDate(returnDate.getDate() + 7);
+                        duedateInput.value = returnDate.toISOString().split('T')[0];
+                    }
                 }
             }
         };
 
         statusSelect.onchange = toggleRentalFields;
-        toggleRentalFields(); // Init state
+        noDueDateCheck.onchange = toggleRentalFields;
+        toggleRentalFields(); 
     }
 
-    // Submits updates directly to Google Sheets via Apps Script Web App
-    window.saveAdminChanges = async function(sheetName, rowIndex) {
-        const condition = document.getElementById('admin-form-condition').value;
+    window.saveAdminChanges = async function(sheetName, rowIndex, closeAfter) {
         const status = document.getElementById('admin-form-status').value;
         const user = document.getElementById('admin-form-user').value.trim();
-        const dueDate = document.getElementById('admin-form-duedate').value;
+        const noDueDate = document.getElementById('admin-form-noduedate').checked;
+        const dueDate = noDueDate ? "" : document.getElementById('admin-form-duedate').value;
         
         const originalMovie = catalogData.find(m => m.sheetName === sheetName && m.rowIndex === rowIndex);
         
-        // Formatting today's date in local YYYY-MM-DD
         const now = new Date();
         const year = now.getFullYear();
         const month = String(now.getMonth() + 1).padStart(2, '0');
@@ -1560,30 +1590,26 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
         
         let newLogEntries = [];
         
-        // 1. Check if there is a new manual note typed by the user
         const newNoteInput = document.getElementById('admin-form-new-note');
         const newNoteVal = newNoteInput ? newNoteInput.value.trim() : "";
         if (newNoteVal) {
             newLogEntries.push(`[${todayStr}] ${newNoteVal}`);
         }
         
-        // 2. Check if status is changed to "In Stock" and there was a previous user to archive
         if (status === "In Stock" && originalMovie && originalMovie.user) {
-            let logStr = `[${todayStr}] Rented by: ${originalMovie.user}`;
+            let logStr = `[${todayStr}] Returned by: ${originalMovie.user}`;
             if (originalMovie.dueDate) {
                 logStr += ` (Due: ${originalMovie.dueDate})`;
             }
             newLogEntries.push(logStr);
         }
         
-        // 3. Combine with historical notes
         let finalDetails = originalMovie ? (originalMovie.details || "") : "";
         if (newLogEntries.length > 0) {
             const logsToPrepend = newLogEntries.join("\n");
             finalDetails = finalDetails ? logsToPrepend + "\n" + finalDetails : logsToPrepend;
         }
         
-        // 4. Handle resetting field names if status is In Stock
         let finalUser = user;
         let finalDueDate = dueDate;
         if (status === "In Stock") {
@@ -1596,22 +1622,21 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
             password: window.adminPassword,
             sheetName,
             rowIndex,
-            condition,
             status,
             user: finalUser,
             dueDate: finalDueDate,
             details: finalDetails
         };
 
-        adminLoadingScreen.style.display = 'flex';
+        const btnSaveCont = document.getElementById('btn-save-continue');
+        const btnSaveClose = document.getElementById('btn-save-close');
+        if(btnSaveCont) btnSaveCont.textContent = "SAVING...";
+        if(btnSaveClose) btnSaveClose.textContent = "SAVING...";
 
         try {
-            // Send standard POST fetch to Google Sheets Apps Script Web App URL
             const res = await fetch(webAppUrl, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8' // Crucial to prevent standard preflight OPTIONS request failures in Google Sheets API
-                },
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(payload)
             });
 
@@ -1621,48 +1646,65 @@ Please verify your Edge Network URL and check that GitHub Pages is broadcasting.
                 throw new Error(result.error || "Uplink server reported an error writing to cell.");
             }
 
-            // Sync successfully in local memory catalog
             const movieIndex = catalogData.findIndex(m => m.sheetName === sheetName && m.rowIndex === rowIndex);
             if (movieIndex !== -1) {
-                catalogData[movieIndex].condition = condition;
                 catalogData[movieIndex].status = status;
                 catalogData[movieIndex].inStock = (status === "In Stock");
                 catalogData[movieIndex].user = finalUser;
                 catalogData[movieIndex].dueDate = finalDueDate;
                 catalogData[movieIndex].details = finalDetails;
-                
-                // (Intentionally disabled to avoid Browser LocalStorage 5MB Quota crashes with 11,000 tapes)
-                // localStorage.setItem(SHEETS_DATA_CACHE_KEY, JSON.stringify(catalogData));
             }
 
-            // Re-render interfaces
             renderCatalog(catalogData);
             if (selectedMovieIndex !== null) {
                 showDetails(selectedMovieIndex);
             }
+            
+            if (btnSaveCont) {
+                btnSaveCont.textContent = "✔ SAVED!";
+                btnSaveCont.style.backgroundColor = "#00FF00";
+                btnSaveCont.style.color = "#1A1A1A";
+                
+                if (newNoteVal) {
+                    const detailsBox = document.getElementById('admin-form-details');
+                    const existing = detailsBox.value;
+                    detailsBox.value = `[${todayStr}] ${newNoteVal}\n` + existing;
+                    document.getElementById('admin-form-new-note').value = "";
+                }
+                
+                setTimeout(() => {
+                    if (btnSaveCont && btnSaveCont.textContent === "✔ SAVED!") {
+                        btnSaveCont.textContent = "Save & Continue";
+                    }
+                }, 2000);
+            }
 
-            adminLoadingScreen.style.display = 'none';
-            alert("LOGISTICAL DATABANKS UPDATED SECURELY!");
-            closeAdminPanel();
+            if (closeAfter) {
+                closeAdminPanel();
+            }
 
         } catch (err) {
             console.error("Failed to write updates to Google Sheet:", err);
-            adminLoadingScreen.style.display = 'none';
-            alert(`UPLINK FAILURE:
-${err.message}
-
-Please verify your Google Apps Script Web App is deployed correctly, has access enabled for 'Anyone', and that you are connected to the network.`);
+            
+            const errDiv = document.createElement('div');
+            errDiv.style = "color:#FFF; background:#FF0044; padding:10px; margin-top:15px; font-weight:bold; border:2px solid #1A1A1A; text-align:center;";
+            errDiv.textContent = `UPLINK FAILURE: ${err.message}`;
+            document.querySelector('.admin-save-container').appendChild(errDiv);
+            
+            if(btnSaveCont) btnSaveCont.textContent = "Save & Continue";
+            if(btnSaveClose) btnSaveClose.textContent = "Save & Close";
         }
     };
 
-
-    // Secure server-side login verification logic
     document.getElementById('admin-login-submit').addEventListener('click', async () => {
         const u = document.getElementById('admin-username-input').value.trim();
         const p = document.getElementById('admin-password-input').value;
+        const errBox = document.getElementById('login-error-msg');
         
         if (!u || !p) {
-            alert("PLEASE ENTER BOTH USERNAME AND PASSWORD.");
+            errBox.textContent = "PLEASE ENTER BOTH USERNAME AND PASSWORD.";
+            errBox.style.background = "#FF0044";
+            errBox.style.display = 'block';
             return;
         }
 
@@ -1670,27 +1712,22 @@ Please verify your Google Apps Script Web App is deployed correctly, has access 
         const origText = submitBtn.textContent;
         submitBtn.textContent = "AUTHENTICATING...";
         submitBtn.disabled = true;
+        errBox.style.display = 'none';
 
         try {
             const res = await fetch(webAppUrl, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8'
-                },
-                body: JSON.stringify({
-                    action: "login",
-                    username: u,
-                    password: p
-                })
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify({ action: "login", username: u, password: p })
             });
             const result = await res.json();
 
             if (result.status === "success" && result.authorized) {
-                // Cache credentials in session memory to authorize subsequent writes
                 window.adminUsername = u;
                 window.adminPassword = p;
+                
+                localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({username: u, password: p}));
 
-                // LOGISTICS HANDSHAKE: Merge private data into public UI 
                 if (result.privateLogs) {
                     catalogData.forEach(movie => {
                         let key = movie.sheetName + "_" + movie.rowIndex;
@@ -1705,30 +1742,28 @@ Please verify your Google Apps Script Web App is deployed correctly, has access 
                 document.getElementById('admin-login-container').style.display = 'none';
                 renderAdminMovieList(catalogData);
             } else {
-                alert("ACCESS DENIED: INVALID EMPLOYEE CREDENTIALS.");
+                errBox.textContent = "ACCESS DENIED: INVALID ADMIN CREDENTIALS.";
+                errBox.style.background = "#FF0044";
+                errBox.style.display = 'block';
             }
         } catch (err) {
             console.error("Authentication server error:", err);
-            alert("UPLINK ERROR: Unable to contact the authentication server. Please check your network and try again.");
+            errBox.textContent = "UPLINK ERROR: Unable to contact the authentication server.";
+            errBox.style.background = "#FF0044";
+            errBox.style.display = 'block';
         } finally {
             submitBtn.textContent = origText;
             submitBtn.disabled = false;
         }
     });
 
-    // Support pressing Enter key for password and username fields
     document.getElementById('admin-password-input').addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') {
-            document.getElementById('admin-login-submit').click();
-        }
+        if (e.key === 'Enter') document.getElementById('admin-login-submit').click();
     });
     document.getElementById('admin-username-input').addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') {
-            document.getElementById('admin-password-input').focus();
-        }
+        if (e.key === 'Enter') document.getElementById('admin-password-input').focus();
     });
 
-    // Start
     initSystem();
 
 </script>
