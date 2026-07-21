@@ -934,7 +934,7 @@
     // PLUGGABLE CONFIGURATION FALLBACKS
     // Employees can hardcode these below or paste them in the setup popup!
     // =========================================================================
-    const DEFAULT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycby8XbXGC2OT9d4fcnEj-y4Xc5KHkDvCHkY_u6pABobX9ibSuu9VRT_pGb6d0HwGAPrIpw/exec"; 
+    const DEFAULT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzHjTt9USzREnlhocaQpKFetI-f6ZWtfOubiKOxERt1HHG1YMQUdt05UaXkhik8B0oroQ/exec"; 
     const DEFAULT_OMDB_API_KEY = "f1984d12";
 
     // LocalStorage Keys
@@ -1048,19 +1048,49 @@
         }, 1200);
 
         try {
-            // Fetch Google Sheets content
-            const sheetsResponse = await fetch(webAppUrl);
-            const sheetsResult = await sheetsResponse.json();
+            let sheetsResult = null;
+            let fetchSuccess = false;
 
-            if (sheetsResult.status !== "success" || !sheetsResult.data) {
-                throw new Error(sheetsResult.error || "Sheets integration returned failed status.");
+            // Target URLs to attempt in sequence for maximum uplink resilience
+            const urlsToTry = [
+                webAppUrl,
+                DEFAULT_WEB_APP_URL,
+                `catalog.json?v=${new Date().getTime()}`
+            ];
+
+            for (const url of urlsToTry) {
+                if (!url) continue;
+                try {
+                    const resp = await fetch(url);
+                    if (!resp.ok) continue;
+                    const textData = await resp.text();
+                    const trimmed = textData.trim();
+                    if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
+                        const parsed = JSON.parse(trimmed);
+                        if (parsed && (parsed.status === "success" || Array.isArray(parsed.data))) {
+                            sheetsResult = parsed;
+                            fetchSuccess = true;
+                            if (url.startsWith("http")) {
+                                webAppUrl = url;
+                                localStorage.setItem(WEB_APP_URL_KEY, url);
+                            }
+                            break;
+                        }
+                    }
+                } catch (e) {
+                    console.warn("Failed to fetch or parse from uplink URL:", url, e);
+                }
+            }
+
+            if (!fetchSuccess || !sheetsResult || !sheetsResult.data) {
+                throw new Error("Edge network and Google Sheets uplink returned invalid JSON payload.");
             }
 
             clearInterval(loadingInterval);
             catalogData = sheetsResult.data;
             progressBar.style.width = '100%';
             loadingText.textContent = "Movie found!";
-            
+
             // Render list
             renderCatalog(catalogData);
 
