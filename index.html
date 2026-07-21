@@ -49,7 +49,7 @@
             box-shadow: 1px 1px 0px #FF00FF;
         }
 
-        /* --- Replicating the Blockbuster x Vaporwave Sign --- */
+        /* ---Vaporwave Sign --- */
         .header-sign {
             position: relative;
             margin: 30px auto 30px auto;
@@ -117,7 +117,7 @@
             color: #1A1A1A;
             font-family: 'Arial Black', sans-serif;
             font-size: 1.1em;
-            text-transform: none;
+            text-transform: uppercase;
             outline: none;
             transition: all 0.2s ease;
             box-shadow: 4px 4px 0px #00FFFF;
@@ -141,7 +141,7 @@
         @media (min-width: 768px) {
             .container { flex-direction: row; }
             .catalog { flex: 1.2; height: 650px; }
-            .details { flex: 0.8; position: sticky; top: 20px; }
+            .details { flex: 0.8; height: 650px; position: sticky; top: 20px; overflow-y: auto; }
         }
         
         .catalog { 
@@ -205,11 +205,11 @@
             vertical-align: middle;
         }
         
-        /* Vibrant neon status indicators */
+        /* Vibrant neon vaporwave status indicators */
         .status-instock { background-color: #00FF00; box-shadow: 0 0 8px #00FF00; }
-        .status-checkedout { background-color: #FFCC00; box-shadow: 0 0 8px #FFCC00; } 
-        .status-damaged { background-color: #FF00FF; box-shadow: 0 0 8px #FF00FF; } 
-        .status-onorder { background-color: #FF0044; box-shadow: 0 0 8px #FF0044; } 
+        .status-checkedout { background-color: #FFCC00; box-shadow: 0 0 8px #FFCC00; } /* yellow dropdown */
+        .status-damaged { background-color: #FF00FF; box-shadow: 0 0 8px #FF00FF; } /* orange/pink dropdown */
+        .status-onorder { background-color: #FF0044; box-shadow: 0 0 8px #FF0044; } /* dark red dropdown */
         .status-unavailable { background-color: #888888; box-shadow: 0 0 4px #888888; }
         .status-request { background-color: #00FFFF; box-shadow: 0 0 8px #00FFFF; }
 
@@ -234,8 +234,8 @@
         #detail-cover { 
             width: 180px; 
             height: 270px; 
-            min-height: 270px; 
-            flex-shrink: 0; 
+            min-height: 270px; /* CRITICAL FIX: Prevent vertical squeezing inside flexbox container */
+            flex-shrink: 0; /* CRITICAL FIX: Stop container from squeezing the poster height */
             background-color: #EEE; 
             border: 4px solid #1A1A1A; 
             margin-bottom: 15px; 
@@ -344,28 +344,15 @@
             font-size: 0.85em;
         }
         .spec-val {
-            color: #FF00FF;
-            background: #1A1A1A;
-            padding: 4px 8px;
-            border-radius: 2px;
-            border: 1px solid #FFCC00;
-            font-family: monospace;
-            display: inline-block;
-            word-break: break-all;
-            min-height: 14px;
-        }
-        .spec-val-alt {
-            color: #00FFFF;
-        }
-        .spec-val-text {
             color: #1A1A1A;
-            font-family: inherit;
-            font-size: 0.95em;
-            font-weight: bold;
+            background: transparent;
+            padding: 4px 8px;
+            border: 2px solid #1A1A1A;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 0.85em;
             display: inline-block;
-            word-break: break-all;
+            word-break: break-word;
             min-height: 14px;
-            text-transform: none;
         }
         .spec-full-width {
             grid-column: span 2;
@@ -845,7 +832,7 @@
             </div>
 
             <!-- Form Workspace -->
-            <div class="admin-workspace" id="admin-workspace">
+            <div class="admin-form-container" id="admin-workspace">
                 <div class="admin-placeholder">
                     SELECT A TAPE FROM THE CATALOG SYSTEM<br>TO UPDATE THE LOGISTICS DATA
                 </div>
@@ -859,7 +846,7 @@
     <span class="logo-video">Video</span>
 </header>
 
-<marquee id="system-marquee">/// ESTABLISHING COUPLER CHANNELS /// DATABANKS ONLINE /// BE KIND, REWIND /// ALWAYS DOUBLE-CHECK CUSTOMER DUE DATES ///</marquee>
+<marquee id="system-marquee">/// INITIALIZING... /// ESTABLISHING COUPLER CHANNELS /// BE KIND, REWIND ///</marquee>
 
 <div class="search-container">
     <input type="text" id="search-input" placeholder="SEARCH INVENTORY..." autocomplete="off">
@@ -891,23 +878,23 @@
         <div class="details-spec-grid" id="details-spec-grid" style="display:none;">
             <div class="spec-item">
                 <span class="spec-label">Format</span>
-                <span id="spec-format" class="spec-val-text"></span>
+                <span id="spec-format" class="spec-val"></span>
             </div>
             <div class="spec-item">
                 <span class="spec-label">Edition</span>
-                <span id="spec-edition" class="spec-val-text"></span>
+                <span id="spec-edition" class="spec-val"></span>
             </div>
             <div class="spec-item">
                 <span class="spec-label">Rating</span>
-                <span id="spec-rating" class="spec-val-text"></span>
+                <span id="spec-rating" class="spec-val"></span>
             </div>
             <div class="spec-item">
                 <span class="spec-label">Type</span>
-                <span id="spec-type" class="spec-val-text"></span>
+                <span id="spec-type" class="spec-val"></span>
             </div>
             <div class="spec-item spec-full-width">
                 <span class="spec-label">Alternate Title</span>
-                <span id="spec-alt-title" class="spec-val-text"></span>
+                <span id="spec-alt-title" class="spec-val"></span>
             </div>
             <div class="spec-item">
                 <span class="spec-label">Condition</span>
@@ -915,7 +902,11 @@
             </div>
             <div class="spec-item">
                 <span class="spec-label">Decade Tab</span>
-                <span id="spec-decade" class="spec-val spec-val-alt"></span>
+                <span id="spec-decade" class="spec-val"></span>
+            </div>
+            <div class="spec-item spec-full-width" id="spec-genre-container">
+                <span class="spec-label">Genre</span>
+                <span id="spec-genre" class="spec-val"></span>
             </div>
             <div class="spec-item spec-full-width" id="spec-rental-info-container" style="display:none;">
                 <span class="spec-label">Rental Status</span>
@@ -931,11 +922,25 @@
 
 <script>
     // =========================================================================
-    // PLUGGABLE CONFIGURATION FALLBACKS
-    // Employees can hardcode these below or paste them in the setup popup!
+    // ADMIN CONTROL PANEL (Edit text between the quotes below!)
     // =========================================================================
-    const DEFAULT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycby8XbXGC2OT9d4fcnEj-y4Xc5KHkDvCHkY_u6pABobX9ibSuu9VRT_pGb6d0HwGAPrIpw/exec"; 
-    const DEFAULT_OMDB_API_KEY = "a4977fa0";
+    
+    // This text displays in the scrolling news bar at the top of the site.
+    const STORE_NEWS_ANNOUNCEMENT = "LATE FEES WAIVED FOR THE WEEKEND /// NEW ARRIVALS IN HORROR ///";
+    
+    // These messages display one-by-one while the terminal initially connects.
+    const CUSTOM_LOADING_MESSAGES = [
+        "Rummaging through tapes...",
+        "Climbing over racks...",
+        "Looking through logs...",
+        "Dusting off the VCR..."
+    ];
+    
+    // =========================================================================
+    // PLUGGABLE CONFIGURATION FALLBACKS (DO NOT DELETE)
+    // =========================================================================
+    const DEFAULT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz7O52_OZXbRaFvVaNfOfk3IkFfwTut5A0pgLdFcuYDC_CewG9rUAPN5t3hEGBRnqgkgw/exec"; 
+    const DEFAULT_OMDB_API_KEY = "ceb2a6ff";
 
     // LocalStorage Keys
     const WEB_APP_URL_KEY = "retrovision_sheets_url";
@@ -958,6 +963,7 @@
     const loadingText = document.getElementById('loading-text');
     const progressBarContainer = document.getElementById('progress-bar-container');
     const progressBar = document.getElementById('progress-bar');
+    const marqueeElement = document.getElementById('system-marquee');
 
     const catalogBody = document.getElementById('catalog-body');
     const searchInput = document.getElementById('search-input');
@@ -976,6 +982,7 @@
     const specAltTitle = document.getElementById('spec-alt-title');
     const specCondition = document.getElementById('spec-condition');
     const specDecade = document.getElementById('spec-decade');
+    const specGenre = document.getElementById('spec-genre');
     const specRentalInfoContainer = document.getElementById('spec-rental-info-container');
     const specRentalInfo = document.getElementById('spec-rental-info');
     const specNotesContainer = document.getElementById('spec-notes-container');
@@ -990,6 +997,9 @@
 
     // --- SYSTEM INITIALIZATION ---
     function initSystem() {
+        // Initialize initial marquee string so it shows immediately
+        marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// ESTABLISHING COUPLER CHANNELS ///`;
+        
         // Load configurations from LocalStorage or Fallbacks
         webAppUrl = localStorage.getItem(WEB_APP_URL_KEY) || DEFAULT_WEB_APP_URL;
         omdbApiKey = localStorage.getItem(OMDB_API_KEY_KEY) || DEFAULT_OMDB_API_KEY;
@@ -1014,7 +1024,7 @@
             apiOverlay.style.display = 'flex';
             loadDatabaseFromSheets();
         } else {
-            alert("Please provide both the Google Sheets Apps Script URL and your OMDb API key.");
+            alert("Please provide both the Google Sheets Apps Script Web App URL and your OMDb API key.");
         }
     });
 
@@ -1022,13 +1032,8 @@
     async function loadDatabaseFromSheets() {
         loginBox.style.display = 'none';
         
-        // Setup alternating loading screen text
-        const loadingTexts = [
-            "Rummaging through tapes...",
-            "Climbing over racks...",
-            "Looking through logs...",
-            "Movie found!"
-        ];
+        // Setup alternating loading screen text tied to Edward's Control Panel
+        const loadingTexts = CUSTOM_LOADING_MESSAGES;
         let textIndex = 0;
         loadingText.textContent = loadingTexts[textIndex];
         loadingText.style.display = 'block';
@@ -1048,33 +1053,30 @@
         }, 1200);
 
         try {
-            // Fetch Google Sheets content
-            const sheetsResponse = await fetch(webAppUrl);
-            const sheetsResult = await sheetsResponse.json();
+            // EXFILTRATION PATCH: Fetch directly from the static edge network
+            const sheetsResponse = await fetch(`https://retro-vision-video.github.io/RetroVision-Edge/catalog.json?v=${new Date().getTime()}`);
+            const payload = await sheetsResponse.json();
 
-            if (sheetsResult.status !== "success" || !sheetsResult.data) {
-                throw new Error(sheetsResult.error || "Sheets integration returned failed status.");
+            if (payload.status !== "success" || !payload.data) {
+                throw new Error(payload.error || "Edge network returned an invalid envelope payload.");
             }
 
             clearInterval(loadingInterval);
-            catalogData = sheetsResult.data;
+            catalogData = payload.data; // OPEN THE ENVELOPE
             progressBar.style.width = '100%';
             loadingText.textContent = "Movie found!";
             
             // Render list
             renderCatalog(catalogData);
 
-            // Update marquee statistics
+            // Update marquee statistics & merge with Edward's custom news string
             const totalCount = catalogData.length;
-            const marqueeElement = document.getElementById('system-marquee');
-            
-            // Formulate Marquee with detailed numbers derived from status
             const statusSummary = {};
             catalogData.forEach(m => {
                 statusSummary[m.status] = (statusSummary[m.status] || 0) + 1;
             });
             const statusSummaryStr = Object.keys(statusSummary).map(k => `${k.toUpperCase()}: ${statusSummary[k]}`).join(" /// ");
-            marqueeElement.textContent = `/// DATABANKS SYNCED SECURELY /// TOTAL TAPES: ${totalCount} /// ${statusSummaryStr} /// BE KIND, REWIND /// EMPLOYEE TERMINAL DISPATCH PORT OPEN ///`;
+            marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// DATABANKS SYNCED SECURELY /// TOTAL TAPES: ${totalCount} /// ${statusSummaryStr} /// BE KIND, REWIND ///`;
 
             // Display first film if available
             if (catalogData.length > 0) {
@@ -1091,7 +1093,10 @@
         } catch (error) {
             clearInterval(loadingInterval);
             console.error("Critical Uplink Error:", error);
-            alert(`CRITICAL UPLINK FAILURE:\n${error.message}\n\nPlease verify your Google Apps Script Web App URL and check that it is deployed with access set to 'Anyone'.`);
+            alert(`CRITICAL UPLINK FAILURE:
+${error.message}
+
+Please verify your Edge Network URL and check that GitHub Pages is broadcasting.`);
             progressBarContainer.style.display = 'none';
             loginBox.style.display = 'block';
             loadingText.style.display = 'none';
@@ -1099,6 +1104,14 @@
     }
 
     // Extract IMDb ID from a standard URL link
+    function translateOmdbType(type) {
+        if (!type) return "Feature Film";
+        if (type === "movie") return "Feature Film";
+        if (type === "series") return "TV Series";
+        if (type === "episode") return "Episode";
+        return type.charAt(0).toUpperCase() + type.slice(1);
+    }
+
     function extractImdbId(link) {
         if (!link) return null;
         const match = link.match(/tt\d+/);
@@ -1144,6 +1157,7 @@
         specAltTitle.textContent = item.alternateTitle || "NONE LISTED";
         specCondition.textContent = (item.condition || "UNSPECIFIED").toUpperCase();
         specDecade.textContent = item.sheetName; // Decade Tab name!
+        specGenre.textContent = item.genre || "UNSPECIFIED";
         
         // Added columns K (user), L (dueDate), M (details) to details pane
         if (item.status === "Checked Out" && (item.user || item.dueDate)) {
@@ -1278,7 +1292,7 @@
             if (query.trim().length > 1) {
                 const suggestion = getSuggestion(query);
                 if (suggestion) {
-                    suggestionHtml = `<br><a class="suggestion-link" onclick="applySuggestion('${suggestion.replace(/'/g, "\\'")}')">DID YOU MEAN: ${suggestion.toUpperCase()}?</a>`;
+                    suggestionHtml = `<br><a class="suggestion-link" onclick="applySuggestion('${suggestion.replace(/'/g, "\'")}')">DID YOU MEAN: ${suggestion.toUpperCase()}?</a>`;
                 }
             }
             catalogBody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding: 40px 20px; font-weight:900; color:#FF0044; font-size:1.1em;">NO TAPES FOUND${suggestionHtml}</td></tr>`;
@@ -1324,195 +1338,38 @@
         });
     }
 
-    function normalizeString(str) {
-        if (!str) return "";
-        return str
-            .toString()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .toLowerCase()
-            .trim();
-    }
-
-    function normalizeSearchToken(str) {
-        if (!str) return "";
-        return str
-            .toString()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .toLowerCase()
-            .replace(/[^a-z0-9\s]/g, " ")
-            .replace(/\s+/g, " ")
-            .trim();
-    }
-
-    function expandRuntimeVariations(runtimeVal) {
-        if (!runtimeVal) return "";
-        const str = runtimeVal.toString().trim();
-        if (!str) return "";
-
-        let variations = [str];
-        let totalMinutes = 0;
-
-        const hM = str.match(/(?:(\d+)\s*(?:h|hr|hrs|hour|hours))?\s*(?:(\d+)\s*(?:m|min|mins|minute|minutes))?/i);
-        const hOnly = str.match(/^(\d+)\s*(?:h|hr|hrs|hour|hours)$/i);
-        const mOnly = str.match(/(\d+)/);
-
-        if (hM && (hM || hM)) {
-            const hrs = parseInt(hM || "0", 10);
-            const mins = parseInt(hM || "0", 10);
-            if (hrs > 0 || mins > 0) totalMinutes = hrs * 60 + mins;
-        } else if (hOnly) {
-            totalMinutes = parseInt(hOnly, 10) * 60;
-        } else if (mOnly) {
-            totalMinutes = parseInt(mOnly, 10);
-        }
-
-        if (totalMinutes > 0) {
-            const m = totalMinutes.toString();
-            variations.push(
-                m,
-                `${m}m`,
-                `${m}min`,
-                `${m} min`,
-                `${m}mins`,
-                `${m} mins`,
-                `${m}minute`,
-                `${m} minute`,
-                `${m}minutes`,
-                `${m} minutes`
-            );
-            if (totalMinutes >= 60) {
-                const hrs = Math.floor(totalMinutes / 60);
-                const mins = totalMinutes % 60;
-                variations.push(`${hrs}h ${mins}m`, `${hrs}h${mins}m`, `${hrs} hr ${mins} min`);
-            }
-        }
-        return variations.join(" ");
-    }
-
-    function buildItemSearchIndex(item) {
-        let omdbStr = "";
-        let omdbRuntimeExp = "";
-        const imdbId = extractImdbId(item.imdbLink);
-        if (imdbId && window.omdbCache && window.omdbCache[imdbId]) {
-            const cached = window.omdbCache[imdbId];
-            omdbStr = [
-                cached.Title,
-                cached.Year,
-                cached.Rated,
-                cached.Director,
-                cached.Actors,
-                cached.Writer,
-                cached.Genre,
-                cached.Plot,
-                cached.Type,
-                cached.Language,
-                cached.Country
-            ].filter(Boolean).join(" ");
-
-            if (cached.Runtime) {
-                omdbRuntimeExp = expandRuntimeVariations(cached.Runtime);
-            }
-        }
-
-        const itemRuntimeExp = expandRuntimeVariations(item.runtime);
-
-        const allFields = [
-            item.title,
-            item.year,
-            item.alternateTitle,
-            item.synopsis,
-            item.director,
-            item.writer,
-            item.actors,
-            item.genre,
-            item.format,
-            item.edition,
-            item.type,
-            item.status,
-            item.condition,
-            item.user,
-            item.details,
-            item.keywords,
-            item.sheetName,
-            item.runtime,
-            itemRuntimeExp,
-            omdbStr,
-            omdbRuntimeExp
-        ].filter(Boolean).join(" ");
-
-        const normalizedIndex = normalizeSearchToken(allFields);
-        const rawLowerIndex = allFields.toLowerCase();
-        return normalizedIndex + " " + rawLowerIndex;
-    }
-
-    function itemMatchesQuery(item, queryRaw) {
-        if (!queryRaw) return true;
-        const normQuery = normalizeSearchToken(queryRaw);
-        if (!normQuery) return true;
-
-        const indexText = buildItemSearchIndex(item);
-        const queryTokens = normQuery.split(/\s+/).filter(Boolean);
-
-        return queryTokens.every(token => {
-            if (indexText.includes(token)) return true;
-            const numMatch = token.match(/^(\d+)(min|mins|m|minutes|minute)?$/);
-            if (numMatch && numMatch) {
-                const num = numMatch;
-                if (indexText.includes(num)) return true;
-            }
-            return false;
-        });
-    }
-
-    function getSuggestion(query) {
-        let bestMatch = null;
-        let highestScore = 0;
-        const normQ = normalizeSearchToken(query);
-        if (!normQ || normQ.length < 2) return null;
-
-        catalogData.forEach(item => {
-            const title = normalizeSearchToken(item.title);
-            let score = 0;
-            for (let i = 0; i < normQ.length - 1; i++) {
-                const bigram = normQ.substring(i, i + 2);
-                if (title.includes(bigram)) score++;
-            }
-            if (title.startsWith(normQ.charAt(0))) score += 2;
-            if (score > highestScore && score > 2) {
-                highestScore = score;
-                bestMatch = item.title;
-            }
-        });
-        return bestMatch;
-    }
-
-    function applySuggestion(text) {
-        if (searchInput) {
-            searchInput.value = text;
-            searchInput.dispatchEvent(new Event("input"));
-        }
-    }
-
     // --- SEARCH INDEXING ENGINE ---
-    searchInput.addEventListener("input", (e) => {
-        let val = e.target.value;
-        if (val.length > 0) {
-            const selectionStart = e.target.selectionStart;
-            const selectionEnd = e.target.selectionEnd;
-            e.target.value = val.charAt(0).toUpperCase() + val.slice(1);
-            e.target.setSelectionRange(selectionStart, selectionEnd);
-        }
-        
-        const query = e.target.value.trim();
+    // Search is indexed by decade, keywords, title, director, actor, genre, alt title, synopsis, format, edition, type
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
         
         if (!query) {
             renderCatalog(catalogData);
             return;
         }
 
-        const filtered = catalogData.filter(item => itemMatchesQuery(item, query));
+        const filtered = catalogData.filter(item => {
+            const indexString = [
+                item.title,
+                item.year,
+                item.sheetName, // Decade Tab (e.g., "90s", "80s")
+                item.keywords,
+                item.alternateTitle,
+                item.synopsis,
+                item.director,
+                item.actors,
+                item.genre,
+                item.format,
+                item.edition,
+                item.type,
+                item.status,
+                item.condition,
+                item.user,
+                item.details
+            ].map(v => (v || "").toLowerCase()).join(" ");
+
+            return indexString.includes(query);
+        });
 
         renderCatalog(filtered, query);
     });
@@ -1660,6 +1517,8 @@
         const toggleRentalFields = () => {
             const isRented = statusSelect.value === "Checked Out";
             if (!isRented) {
+                userInput.value = "";
+                duedateInput.value = "";
                 userInput.disabled = true;
                 duedateInput.disabled = true;
                 userInput.style.backgroundColor = "#EEE";
@@ -1772,43 +1631,30 @@
                 catalogData[movieIndex].dueDate = finalDueDate;
                 catalogData[movieIndex].details = finalDetails;
                 
-                // Safely write catalog back to local storage cache to preserve state
-                try {
-                    localStorage.setItem(SHEETS_DATA_CACHE_KEY, JSON.stringify(catalogData));
-                } catch (storageErr) {
-                    console.warn("Storage quota exceeded when saving sheets cache. Skipping local cache update; using RAM.", storageErr);
-                }
+                // (Intentionally disabled to avoid Browser LocalStorage 5MB Quota crashes with 11,000 tapes)
+                // localStorage.setItem(SHEETS_DATA_CACHE_KEY, JSON.stringify(catalogData));
             }
 
             // Re-render interfaces
             renderCatalog(catalogData);
-            
-            // Auto-select and highlight this newly updated movie on the main catalog page!
-            if (movieIndex !== -1) {
-                showDetails(movieIndex);
-                setTimeout(() => {
-                    const rows = document.querySelectorAll('.media-row');
-                    rows.forEach(row => row.classList.remove('active'));
-                    rows.forEach(row => {
-                        // Find matching row by title content
-                        if (row.textContent.includes(catalogData[movieIndex].title)) {
-                            row.classList.add('active');
-                            row.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                        }
-                    });
-                }, 100);
+            if (selectedMovieIndex !== null) {
+                showDetails(selectedMovieIndex);
             }
 
             adminLoadingScreen.style.display = 'none';
-            alert("UPDATED!");
+            alert("LOGISTICAL DATABANKS UPDATED SECURELY!");
             closeAdminPanel();
 
         } catch (err) {
             console.error("Failed to write updates to Google Sheet:", err);
             adminLoadingScreen.style.display = 'none';
-            alert(`UPLINK FAILURE:\n${err.message}\n\nPlease verify your Google Apps Script Web App is deployed correctly, has access enabled for 'Anyone', and that you are connected to the network.`);
+            alert(`UPLINK FAILURE:
+${err.message}
+
+Please verify your Google Apps Script Web App is deployed correctly, has access enabled for 'Anyone', and that you are connected to the network.`);
         }
     };
+
 
     // Secure server-side login verification logic
     document.getElementById('admin-login-submit').addEventListener('click', async () => {
@@ -1843,6 +1689,18 @@
                 // Cache credentials in session memory to authorize subsequent writes
                 window.adminUsername = u;
                 window.adminPassword = p;
+
+                // LOGISTICS HANDSHAKE: Merge private data into public UI 
+                if (result.privateLogs) {
+                    catalogData.forEach(movie => {
+                        let key = movie.sheetName + "_" + movie.rowIndex;
+                        if (result.privateLogs[key]) {
+                            movie.user = result.privateLogs[key].user || "";
+                            movie.dueDate = result.privateLogs[key].dueDate || "";
+                            movie.details = result.privateLogs[key].details || "";
+                        }
+                    });
+                }
 
                 document.getElementById('admin-login-container').style.display = 'none';
                 renderAdminMovieList(catalogData);
