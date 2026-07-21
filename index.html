@@ -1353,9 +1353,15 @@
         document.getElementById('admin-login-container').style.display = 'flex';
         document.getElementById('admin-username-input').value = "";
         document.getElementById('admin-password-input').value = "";
-        document.getElementById('login-error-msg').style.display = 'none';
+        
+        // Custom DOM notification instead of standard browser alert
+        const errBox = document.getElementById('login-error-msg');
+        errBox.textContent = "EMPLOYEE TERMINAL SECURELY LOGGED OUT.";
+        errBox.style.background = "#00FF00"; // Green for success
+        errBox.style.color = "#1A1A1A";
+        errBox.style.display = 'block';
+
         adminWorkspace.innerHTML = `<div class="admin-placeholder">SELECT A TAPE FROM THE CATALOG SYSTEM<br>TO UPDATE THE LOGISTICS DATA</div>`;
-        alert("Employee securely logged out.");
     }
 
     function openSettingsFromAdmin() {
@@ -1614,9 +1620,14 @@
                 if (closeAfterSave) {
                     closeAdminPanel();
                 } else {
-                    // Refresh the form to show the newly added historical notes
-                    loadAdminForm(catalogData[movieIndex]);
-                    renderAdminMovieList(catalogData); // Update dots
+                    // Gracefully update the DOM textareas instead of redrawing the entire form to prevent flashes
+                    const updatedNewNote = document.getElementById('admin-form-new-note');
+                    const updatedHistory = document.getElementById('admin-form-details');
+                    if (updatedNewNote && updatedHistory) {
+                        updatedNewNote.value = "";
+                        updatedHistory.value = finalDetails;
+                    }
+                    renderAdminMovieList(catalogData); // Update list dots if status changed
                 }
             }, 1000);
 
@@ -1640,6 +1651,8 @@
         
         if (!u || !p) {
             errBox.textContent = "PLEASE ENTER BOTH USERNAME AND PASSWORD.";
+            errBox.style.background = "#FF0044";
+            errBox.style.color = "#FFF";
             errBox.style.display = "block";
             return;
         }
@@ -1681,11 +1694,15 @@
             } else {
                 localStorage.removeItem(ADMIN_CREDS_KEY);
                 errBox.textContent = "ACCESS DENIED: INVALID EMPLOYEE CREDENTIALS.";
+                errBox.style.background = "#FF0044";
+                errBox.style.color = "#FFF";
                 errBox.style.display = "block";
             }
         } catch (err) {
             console.error("Authentication server error:", err);
             errBox.textContent = "UPLINK ERROR: Unable to contact the authentication server.";
+            errBox.style.background = "#FF0044";
+            errBox.style.color = "#FFF";
             errBox.style.display = "block";
         } finally {
             submitBtn.textContent = origText;
