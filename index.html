@@ -20,36 +20,6 @@
             position: relative;
         }
 
-        /* Subtle Admin Link Floating at Top */
-        .admin-link {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            color: #001A5E;
-            background: #FFCC00;
-            border: 2px solid #1A1A1A;
-            padding: 6px 12px;
-            font-family: 'Arial Black', sans-serif;
-            font-size: 0.8em;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 3px 3px 0px #FF00FF;
-            cursor: pointer;
-            z-index: 10;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.1s;
-        }
-        .admin-link:hover {
-            background: #00FFFF;
-            box-shadow: 3px 3px 0px #FF00FF;
-        }
-        .admin-link:active {
-            transform: translate(2px, 2px);
-            box-shadow: 1px 1px 0px #FF00FF;
-        }
-
-        /* ---Vaporwave Sign --- */
         .header-sign {
             position: relative;
             margin: 30px auto 30px auto;
@@ -88,7 +58,6 @@
             text-shadow: 2px 2px 0 #00FFFF;
         }
 
-        /* --- UI Elements --- */
         marquee { 
             background-color: #001A5E; 
             color: #FFCC00; 
@@ -129,7 +98,6 @@
             box-shadow: 4px 4px 0px #FF00FF;
         }
 
-        /* Responsive Container */
         .container { 
             display: flex; 
             flex-direction: column; 
@@ -189,7 +157,6 @@
         .media-row:hover { background-color: #00FFFF; color: #1A1A1A; }
         .media-row.active { background-color: #FF00FF; color: #FFFFFF; }
         
-        /* Indented subtitle info for list */
         .sub-title-info {
             display: block;
             margin-left: 20px;
@@ -212,7 +179,6 @@
             white-space: nowrap;
         }
 
-        /* --- Stock Status Indicators --- */
         .status-dot {
             display: inline-block;
             width: 12px;
@@ -223,7 +189,6 @@
             vertical-align: middle;
         }
         
-        /* Vibrant neon vaporwave status indicators */
         .status-instock { background-color: #00FF00; box-shadow: 0 0 8px #00FF00; }
         .status-checkedout { background-color: #FFCC00; box-shadow: 0 0 8px #FFCC00; } 
         .status-damaged { background-color: #FF00FF; box-shadow: 0 0 8px #FF00FF; } 
@@ -269,7 +234,6 @@
         }
         #detail-cover img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* Styled Apology Cover for missing posters */
         .apology-cover {
             width: 100%;
             height: 100%;
@@ -346,7 +310,6 @@
             width: 100%;
         }
 
-        /* --- Details Grid Spec Requirements --- */
         .details-spec-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -385,7 +348,6 @@
             grid-column: span 2;
         }
 
-        /* --- API Key & Google Sheet Config Overlay --- */
         #api-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -505,7 +467,6 @@
             transition: width 0.1s;
         }
 
-        /* --- Admin Panel Modal (Employee Portal) --- */
         #admin-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -763,7 +724,6 @@
             padding: 20px;
         }
 
-        /* Settings Icon in Admin Panel */
         .settings-config-btn {
             background: #FFCC00;
             color: #001A5E;
@@ -781,7 +741,34 @@
             box-shadow: 0px 0px 0 #FF00FF;
         }
 
-        /* --- Mobile Overrides --- */
+        .footer-info {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-family: 'Arial Black', sans-serif;
+            color: #1A1A1A;
+            font-size: 0.9em;
+        }
+        
+        .footer-info p {
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        
+        .innocuous-admin-link {
+            color: #999;
+            font-family: monospace;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 0.8em;
+            transition: color 0.2s;
+        }
+        
+        .innocuous-admin-link:hover {
+            color: #FF00FF;
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .admin-box { max-height: 95vh; margin: 10px; border-width: 4px; box-shadow: 4px 4px 0px #00FFFF, 8px 8px 0px #FFCC00; }
             .admin-header { flex-direction: column; gap: 12px; padding: 15px 10px; }
@@ -798,8 +785,6 @@
     </style>
 </head>
 <body>
-
-<a class="admin-link" onclick="openAdminPanel()">[ Employee Portal ]</a>
 
 <div id="api-overlay" style="display:none;">
     <div class="api-box" id="login-box">
@@ -829,7 +814,7 @@
     <div class="admin-box">
         <div id="admin-login-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; width: 100%; position: absolute; top: 0; left: 0; background: #001A5E; z-index: 110; box-sizing: border-box; padding: 20px;">
             <div class="api-box" style="border-color: #FF00FF; width: 100%; max-width: 400px; box-shadow: 6px 6px 0px #FF00FF, 12px 12px 0px #00FFFF;">
-                <h2 style="color: #001A5E; text-shadow: 2px 2px 0 #FFCC00; font-family: 'Arial Black', sans-serif; text-align: center; margin-top: 0; text-transform: uppercase;">EMPLOYEE ACCESS</h2>
+                <h2 style="color: #001A5E; text-shadow: 2px 2px 0 #FFCC00; font-family: 'Arial Black', sans-serif; text-align: center; margin-top: 0; text-transform: uppercase;">ADMIN ACCESS</h2>
                 <p style="color: #333; font-size: 0.85em; text-align: center; font-weight: bold; margin-bottom: 20px;">AUTHORIZATION REQUIRED FOR LOGISTICS CONTROLS</p>
                 
                 <div id="login-error-msg" style="display:none; color: #FFF; background: #FF0044; padding: 8px; font-weight: bold; font-size: 0.8em; margin-bottom: 15px; border: 2px solid #1A1A1A;"></div>
@@ -855,7 +840,7 @@
         <div class="admin-header">
             <div>
                 <span class="admin-title-sign">RetroVision</span>
-                <span class="admin-subtitle">Employee Terminal v4.1</span>
+                <span class="admin-subtitle">Admin Terminal v4.1</span>
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
                 <button class="settings-config-btn" onclick="openSettingsFromAdmin()">[ Setup ]</button>
@@ -963,7 +948,19 @@
     </div>
 </div>
 
+<div class="footer-info">
+    <p>Browse the collection in person at 492 East 13th Avenue, Suite 101, Eugene, Or.</p>
+    <a class="innocuous-admin-link" onclick="openAdminPanel()">Admin Portal</a>
+</div>
+
 <script>
+    // =========================================================================
+    // =========================================================================
+    //                    !!! ATTENTION EDWARD !!!
+    //           EDIT THE SCROLLING TEXT AND MESSAGES BELOW
+    // =========================================================================
+    // =========================================================================
+    
     const STORE_NEWS_ANNOUNCEMENT = "LATE FEES WAIVED FOR THE WEEKEND /// NEW ARRIVALS IN HORROR ///";
     
     const CUSTOM_LOADING_MESSAGES = [
@@ -972,7 +969,14 @@
         "Dusting off the VCR...",
         "Checking returned videos..."
     ];
-    
+
+    // =========================================================================
+    // =========================================================================
+    //                   END OF EDWARD'S SETTINGS
+    //               PLEASE DO NOT EDIT BELOW THIS LINE
+    // =========================================================================
+    // =========================================================================
+
     const DEFAULT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz7O52_OZXbRaFvVaNfOfk3IkFfwTut5A0pgLdFcuYDC_CewG9rUAPN5t3hEGBRnqgkgw/exec"; 
     const DEFAULT_OMDB_API_KEY = "ceb2a6ff";
 
@@ -1053,7 +1057,6 @@
         }
     });
 
-    // Diacritic normalizer for flawless searching (ñ -> n, é -> e)
     function normalizeString(str) {
         if (!str) return "";
         return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
@@ -1106,7 +1109,6 @@
             clearInterval(loadingInterval);
             console.error("Critical Uplink Error:", error);
             
-            // Custom DOM error to avoid alert()
             const errBox = document.createElement('div');
             errBox.style = "color:#FF0000; background:#FFF; border:4px solid #FF0000; padding:15px; margin-top:20px; font-weight:bold;";
             errBox.innerHTML = `CRITICAL UPLINK FAILURE<br><br>${error.message}`;
@@ -1176,7 +1178,6 @@
 
         specFormat.textContent = item.format;
         
-        // Hide Edition entirely if none provided
         if (item.edition) {
             specEdition.textContent = item.edition;
             specEditionContainer.style.display = 'block';
@@ -1184,16 +1185,13 @@
             specEditionContainer.style.display = 'none';
         }
 
-        // Instantly load data populated by backend Cron job
         specGenre.textContent = item.genre || "UNSPECIFIED";
         specRuntime.textContent = item.runtime || "N/A";
         specDirector.textContent = item.director || "N/A";
         specWriter.textContent = item.writer || "N/A";
         specActors.textContent = item.actors || "N/A";
         
-        // Use innerHTML so bold/italics rich text formats correctly
         detailDesc.innerHTML = item.synopsis || "Syncing databanks for film details...";
-        
         detailCover.innerHTML = `<div class="apology-cover"><h4>RETROVISION</h4><p>SYNCING SPECS...</p></div>`;
 
         const isDirectImage = item.imdbLink && (item.imdbLink.match(/\.(jpeg|jpg|gif|png|webp)/i) != null || !item.imdbLink.includes("imdb.com") && item.imdbLink.startsWith("http"));
@@ -1257,7 +1255,6 @@
         const displayType = item.type || (isValid ? translateOmdbType(omdbData.Type) : "Feature Film");
         detailMeta.textContent = `RATING: ${displayRating} | TYPE: ${displayType}`;
         
-        // Sheet data takes priority if it exists, otherwise fall back to OMDb Plot
         if (!item.synopsis && isValid) {
             detailDesc.innerHTML = omdbData.Plot;
         }
@@ -1356,7 +1353,6 @@
                 omdbDataString = [cached.Director, cached.Actors, cached.Writer, cached.Genre, cached.Plot].join(" ");
             }
 
-            // Scrubbed private tracking fields (condition, user, details, sheetName/location)
             const indexString = [
                 item.title,
                 item.year,
@@ -1381,14 +1377,12 @@
     function openAdminPanel() {
         adminOverlay.style.display = 'flex';
         
-        // Persistent Login Check
         const creds = JSON.parse(localStorage.getItem(ADMIN_CREDS_KEY));
         if (creds && creds.username && creds.password) {
             document.getElementById('admin-login-container').style.display = 'none';
             document.getElementById('admin-username-input').value = creds.username;
             document.getElementById('admin-password-input').value = creds.password;
             
-            // Auto-trigger auth only if window.adminUsername isn't set yet for this session
             if (!window.adminUsername) {
                 document.getElementById('admin-login-submit').click();
             }
@@ -1416,8 +1410,8 @@
         document.getElementById('admin-password-input').value = "";
         
         const errBox = document.getElementById('login-error-msg');
-        errBox.textContent = "EMPLOYEE TERMINAL SECURELY LOGGED OUT.";
-        errBox.style.background = "#00FF00"; // Green for success
+        errBox.textContent = "ADMIN TERMINAL SECURELY LOGGED OUT.";
+        errBox.style.background = "#00FF00"; 
         errBox.style.color = "#1A1A1A";
         errBox.style.display = 'block';
 
@@ -1666,7 +1660,6 @@
                 showDetails(selectedMovieIndex);
             }
             
-            // In-Place DOM Feedback
             if (btnSaveCont) {
                 btnSaveCont.textContent = "✔ SAVED!";
                 btnSaveCont.style.backgroundColor = "#00FF00";
@@ -1693,7 +1686,6 @@
         } catch (err) {
             console.error("Failed to write updates to Google Sheet:", err);
             
-            // Display error cleanly without alerts
             const errDiv = document.createElement('div');
             errDiv.style = "color:#FFF; background:#FF0044; padding:10px; margin-top:15px; font-weight:bold; border:2px solid #1A1A1A; text-align:center;";
             errDiv.textContent = `UPLINK FAILURE: ${err.message}`;
@@ -1734,7 +1726,6 @@
                 window.adminUsername = u;
                 window.adminPassword = p;
                 
-                // Set persistent local session
                 localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({username: u, password: p}));
 
                 if (result.privateLogs) {
@@ -1751,7 +1742,7 @@
                 document.getElementById('admin-login-container').style.display = 'none';
                 renderAdminMovieList(catalogData);
             } else {
-                errBox.textContent = "ACCESS DENIED: INVALID EMPLOYEE CREDENTIALS.";
+                errBox.textContent = "ACCESS DENIED: INVALID ADMIN CREDENTIALS.";
                 errBox.style.background = "#FF0044";
                 errBox.style.display = 'block';
             }
