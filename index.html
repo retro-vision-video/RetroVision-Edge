@@ -686,27 +686,19 @@
             padding: 20px;
             font-weight: bold;
             color: #1A1A1A;
-            border-top: 4px dashed #FF00FF;
-            background: rgba(255, 255, 255, 0.7);
         }
 
         .footer-admin-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: #001A5E;
-            background: #FFCC00;
-            border: 2px solid #1A1A1A;
-            padding: 5px 10px;
-            font-family: 'Arial Black', sans-serif;
-            font-size: 0.8em;
+            display: block;
+            margin-top: 10px;
+            color: #1A1A1A;
+            font-size: 0.7em;
             text-decoration: none;
             cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 2px 2px 0px #00FFFF;
-            transition: all 0.1s;
+            opacity: 0.4;
+            transition: opacity 0.2s;
         }
-        .footer-admin-link:hover { background: #00FFFF; box-shadow: 2px 2px 0px #FF00FF; }
-        .footer-admin-link:active { transform: translate(2px, 2px); box-shadow: 0px 0px 0px #FF00FF; }
+        .footer-admin-link:hover { opacity: 1; text-decoration: underline; }
 
         /* --- Mobile Overrides --- */
         @media (max-width: 768px) {
@@ -890,7 +882,7 @@
 
 <div class="footer-container">
     Browse the collection in person at 492 East 13th Avenue, Suite 101, Eugene, Or.<br>
-    <a class="footer-admin-link" onclick="openAdminPanel()">[ Admin Portal ]</a>
+    <a class="footer-admin-link" onclick="openAdminPanel()">Admin Portal</a>
 </div>
 
 <script>
