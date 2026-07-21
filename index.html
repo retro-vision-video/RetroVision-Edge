@@ -1341,9 +1341,10 @@
     }
 
     searchInput.addEventListener('input', (e) => {
-        const query = normalizeString(e.target.value);
+        const rawQuery = normalizeString(e.target.value);
+        const searchTerms = rawQuery.split(/\s+/).filter(t => t.length > 0);
         
-        if (!query) {
+        if (searchTerms.length === 0) {
             renderCatalog(catalogData);
             return;
         }
@@ -1372,10 +1373,13 @@
                 omdbDataString
             ].map(v => (v || "")).join(" ");
 
-            return normalizeString(indexString).includes(query);
+            const normalizedIndex = normalizeString(indexString);
+            
+            // Check if EVERY typed term exists somewhere in this movie's data
+            return searchTerms.every(term => normalizedIndex.includes(term));
         });
 
-        renderCatalog(filtered, query);
+        renderCatalog(filtered, rawQuery);
     });
 
     function openAdminPanel() {
