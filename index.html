@@ -1405,12 +1405,13 @@
             else if (normStatus === "unavailable") dotColor = '#888888';
             else if (normStatus === "request") dotColor = '#00FFFF';
             
+            // Format indicator fix applied here
             itemDiv.innerHTML = `
                 <div>
                     <span style="color:${dotColor}; margin-right:8px;">●</span>
                     ${movie.title} (${movie.year})
                 </div>
-                <span style="font-size:0.7em; background:#1A1A1A; color:#FFCC00; padding:2px 4px; font-family:monospace;">
+                <span class="format-badge" style="font-size: 0.7em;">
                     ${movie.format || "N/A"}
                 </span>
             `;
@@ -1447,6 +1448,7 @@
                 movie.alternateTitle,
                 movie.genre,
                 movie.status,
+                movie.condition,
                 movie.user
             ].map(v => (v || "")).join(" ");
             const haystack = normalizeString(indexString);
@@ -1476,6 +1478,18 @@
                     </select>
                 </div>
                 
+                <!-- Added condition block -->
+                <div class="admin-input-group">
+                    <label>Video Condition</label>
+                    <select id="admin-form-condition">
+                        <option value="Excellent" ${movie.condition === "Excellent" ? "selected" : ""}>Excellent</option>
+                        <option value="Good" ${movie.condition === "Good" ? "selected" : ""}>Good</option>
+                        <option value="Fair" ${movie.condition === "Fair" ? "selected" : ""}>Fair</option>
+                        <option value="Poor" ${movie.condition === "Poor" ? "selected" : ""}>Poor</option>
+                        <option value="Damaged" ${movie.condition === "Damaged" ? "selected" : ""}>Damaged</option>
+                    </select>
+                </div>
+
                 <div class="admin-input-group">
                     <label>User (Rented By)</label>
                     <input type="text" id="admin-form-user" value="${movie.user || ""}" placeholder="Customer name...">
@@ -1551,9 +1565,26 @@
     window.saveAdminChanges = async function(sheetName, rowIndex, closeAfter) {
         const status = document.getElementById('admin-form-status').value;
         const user = document.getElementById('admin-form-user').value.trim();
+        const condition = document.getElementById('admin-form-condition').value; // Added condition retrieval
         const noDueDate = document.getElementById('admin-form-noduedate').checked;
         const dueDate = noDueDate ? "" : document.getElementById('admin-form-duedate').value;
         
+        // Checkout Validation Logic Added Here
+        if (status === "Checked Out" && user === "") {
+            // Remove previous error if it exists to avoid stacking
+            const existingErr = document.getElementById('checkout-validation-error');
+            if (existingErr) existingErr.remove();
+
+            const errDiv = document.createElement('div');
+            errDiv.id = 'checkout-validation-error';
+            errDiv.style = "color:#FFF; background:#FF0044; padding:10px; margin-bottom:15px; font-weight:bold; border:2px solid #1A1A1A; text-align:center; width:100%; box-sizing:border-box;";
+            errDiv.textContent = "VALIDATION ERROR: You must enter a Customer Name to check out a movie.";
+            
+            const saveContainer = document.querySelector('.admin-save-container');
+            saveContainer.parentNode.insertBefore(errDiv, saveContainer);
+            return;
+        }
+
         const originalMovie = catalogData.find(m => m.sheetName === sheetName && m.rowIndex === rowIndex);
         
         const now = new Date();
@@ -1597,6 +1628,7 @@
             sheetName,
             rowIndex,
             status,
+            condition, // Included in payload 
             user: finalUser,
             dueDate: finalDueDate,
             details: finalDetails
@@ -1623,6 +1655,7 @@
             const movieIndex = catalogData.findIndex(m => m.sheetName === sheetName && m.rowIndex === rowIndex);
             if (movieIndex !== -1) {
                 catalogData[movieIndex].status = status;
+                catalogData[movieIndex].condition = condition; // Update local cache
                 catalogData[movieIndex].inStock = (status === "In Stock");
                 catalogData[movieIndex].user = finalUser;
                 catalogData[movieIndex].dueDate = finalDueDate;
@@ -1709,6 +1742,7 @@
                             movie.user = result.privateLogs[key].user || "";
                             movie.dueDate = result.privateLogs[key].dueDate || "";
                             movie.details = result.privateLogs[key].details || "";
+                            movie.condition = result.privateLogs[key].condition || "";
                         }
                     });
                 }
