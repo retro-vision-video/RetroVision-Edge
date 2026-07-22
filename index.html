@@ -1030,7 +1030,11 @@
             const sheetsResponse = await fetch(`catalog.json?v=${new Date().getTime()}`);
             if (!sheetsResponse.ok) throw new Error("HTTP error " + sheetsResponse.status);
             
-            const payload = await sheetsResponse.json();
+            // Bypass server header botch jobs and decode raw bytes as strict UTF-8
+            const buffer = await sheetsResponse.arrayBuffer();
+            const decoder = new TextDecoder('utf-8');
+            const jsonText = decoder.decode(buffer);
+            const payload = JSON.parse(jsonText);
 
             if (payload.status !== "success" || !payload.data) {
                 throw new Error(payload.error || "Edge network returned an invalid envelope payload.");
@@ -1093,7 +1097,8 @@
         
         let subHtml = "";
         if (item.alternateTitle || item.edition) {
-            if (item.alternateTitle) subHtml += `FOREIGN / ALT TITLE: ${item.alternateTitle}<br>`;
+            if (item.alternateTitle) subHtml += `${item.alternateTitle}<br>`;
+            if (item.edition) subHtml += `${item.edition}`;
         }
         detailSubTitles.innerHTML = subHtml;
         detailSubTitles.style.display = subHtml ? 'block' : 'none';
@@ -1253,8 +1258,8 @@
             let subTitleHtml = "";
             if (item.alternateTitle || item.edition) {
                 subTitleHtml = `<div class="sub-title-info">`;
-                if (item.alternateTitle) subTitleHtml += `ALT: ${item.alternateTitle}<br>`;
-                if (item.edition) subTitleHtml += `EDITION: ${item.edition}`;
+                if (item.alternateTitle) subTitleHtml += `${item.alternateTitle}<br>`;
+                if (item.edition) subTitleHtml += `${item.edition}`;
                 subTitleHtml += `</div>`;
             }
             
