@@ -789,7 +789,7 @@
     <span class="logo-video">Video</span>
 </header>
 
-<marquee id="system-marquee">/// INITIALIZING... /// REWINDING TAPES /// GRABBING POPCORN ///</marquee>
+<marquee id="system-marquee"></marquee>
 
 <div class="search-container">
     <input type="text" id="search-input" placeholder="SEARCH INVENTORY..." autocomplete="off">
@@ -871,30 +871,40 @@
 </div>
 
 <script>
-    // =========================================================================
-    // =========================================================================
-    //       BOSSES SECTION - EDIT TEXT HERE (DO NOT DELETE THE QUOTES!)
-    // =========================================================================
-    // =========================================================================
+    // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+    // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+    // 
+    //                    THE BOSSES SECTION
+    // 
+    //        ONLY EDIT THE TEXT INSIDE THE QUOTES! DO NOT DELETE QUOTES!
+    // 
+    // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+    // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 
+    // --- 1. STORE ANNOUNCEMENTS & WELCOME PANEL ---
     const STORE_NEWS_ANNOUNCEMENT = "LATE FEES WAIVED FOR THE WEEKEND /// NEW ARRIVALS IN HORROR ///";
-
     const WELCOME_TITLE = "WELCOME TO RETROVISION";
-
     const WELCOME_TEXT = "Browse our catalog by selecting a tape from the list. Don't forget to grab some popcorn!";
 
-    // =========================================================================
-    // =========================================================================
-    //       END OF BOSSES SECTION - DO NOT EDIT BELOW THIS LINE!
-    // =========================================================================
-    // =========================================================================
+    // --- 2. SCROLLING TICKER (MARQUEE) PHRASES ---
+    const TICKER_INITIALIZING = "INITIALIZING...";
+    const TICKER_REWINDING = "REWINDING TAPES";
+    const TICKER_POPCORN = "GRABBING POPCORN";
+    const TICKER_SYNCED = "DATABANKS SYNCED SECURELY";
+    const TICKER_TOTAL_TAPES = "TOTAL TAPES:";
 
+    // --- 3. LOADING SCREEN QUOTES ---
+    // (Make sure to add a comma after each line except the last one!)
     const CUSTOM_LOADING_MESSAGES = [
         "Rummaging through tapes...",
         "Climbing over racks...",
         "Dusting off the VCR...",
         "Checking returned videos..."
     ];
+
+    // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+    //                 END OF BOSSES SECTION - DO NOT TOUCH BELOW
+    // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
     
     const DEFAULT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxbI06epp8P9rcMl6OQL72WZ2-OzqpTwrrGZcWlPsc0KOog9zwt66Vulg4r6dJciAfEYw/exec"; 
     const DEFAULT_OMDB_API_KEY = "a4977fa0";
@@ -947,7 +957,7 @@
     const adminLoadingScreen = document.getElementById('admin-loading-screen');
 
     function initSystem() {
-        marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// REWINDING TAPES ///`;
+        marqueeElement.textContent = `/// ${TICKER_INITIALIZING} /// ${STORE_NEWS_ANNOUNCEMENT} /// ${TICKER_REWINDING} ///`;
         
         // Populate the boss config settings directly into the UI
         document.getElementById('welcome-title').textContent = WELCOME_TITLE;
@@ -1033,7 +1043,7 @@
             renderCatalog(catalogData);
 
             const totalCount = catalogData.length;
-            marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// DATABANKS SYNCED SECURELY /// TOTAL TAPES: ${totalCount} /// GRABBING POPCORN ///`;
+            marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// ${TICKER_SYNCED} /// ${TICKER_TOTAL_TAPES} ${totalCount} /// ${TICKER_POPCORN} ///`;
 
             apiOverlay.style.display = 'none';
 
