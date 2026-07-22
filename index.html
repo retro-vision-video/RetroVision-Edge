@@ -61,11 +61,11 @@
             text-shadow: 2px 2px 0 #00FFFF;
         }
 
-        /* --- UI Elements --- */
-        marquee { 
+        /* --- Sovereign Ticker Upgrade --- */
+        .marquee-container {
             background-color: #001A5E; 
             color: #FFCC00; 
-            padding: 10px; 
+            padding: 10px 0; 
             font-size: 1em; 
             border-top: 3px solid #FF00FF; 
             border-bottom: 3px solid #00FFFF; 
@@ -74,6 +74,21 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee-scroll 25s linear infinite;
+        }
+
+        @keyframes marquee-scroll {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
         }
 
         .search-container {
@@ -789,7 +804,9 @@
     <span class="logo-video">Video</span>
 </header>
 
-<marquee id="system-marquee"></marquee>
+<div class="marquee-container">
+    <span class="marquee-content" id="system-marquee"></span>
+</div>
 
 <div class="search-container">
     <input type="text" id="search-input" placeholder="SEARCH INVENTORY..." autocomplete="off">
