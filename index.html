@@ -901,7 +901,7 @@
     // --- 1. STORE ANNOUNCEMENTS & WELCOME PANEL ---
     const STORE_NEWS_ANNOUNCEMENT = "WELCOME TO RETROVISION///// NEW ARRIVALS IN HORROR///// NEW ARRIVALS IN ACTION ////";
     const WELCOME_TITLE = "WELCOME TO RETROVISION";
-    const WELCOME_TEXT = "Browse our catalog by scrolling a tape from the list to the left or by using the search bar above. Search by title, writer, director, genre or runtime. Or feel free to show up, grab a popcorn and browse in person~";
+    const WELCOME_TEXT = "Browse our catalog by scrolling the list to the left or using the search bar above. Search by title, writer, director, genre or runtime.";
 
     // --- 2. SCROLLING TICKER (MARQUEE) PHRASES ---
     const TICKER_INITIALIZING = "INITIALIZING...";
@@ -1767,7 +1767,7 @@
                 document.getElementById('admin-login-container').style.display = 'none';
                 renderAdminMovieList(catalogData);
             } else {
-                errBox.textContent = "ACCESS DENIED: INVALID AUTHORIZATION.";
+                errBox.textContent = "ACCESS DENIED: I'M AFRAID I CAN'T LET YOU DO THAT DAVE...";
                 errBox.style.background = "#FF0044";
                 errBox.style.display = 'block';
             }
