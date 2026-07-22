@@ -899,7 +899,7 @@
     // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 
     // --- 1. STORE ANNOUNCEMENTS & WELCOME PANEL ---
-    const STORE_NEWS_ANNOUNCEMENT = "//////WELCOME TO RETROVISION///// NEW ARRIVALS IN HORROR/////// NEW ARRIVALS IN ACTION //////";
+    const STORE_NEWS_ANNOUNCEMENT = "///// WELCOME TO RETROVISION ///// NEW ARRIVALS IN HORROR /////// NEW ARRIVALS IN ACTION //////";
     const WELCOME_TITLE = "WELCOME TO RETROVISION";
     const WELCOME_TEXT = "Browse our catalog by scrolling the list to the left or using the search bar above. Search by title, writer, director, genre or runtime.";
 
@@ -1381,7 +1381,7 @@
         document.getElementById('admin-password-input').value = "";
         
         const errBox = document.getElementById('login-error-msg');
-        errBox.textContent = "ADMIN TERMINAL LOGGED OUT... KNOCK KNOCK, NEO.";
+        errBox.textContent = "ADMIN TERMINAL SUCCESSFULLY LOGGED OUT. KNOCK KNOCK, NEO.";
         errBox.style.background = "#00FF00"; 
         errBox.style.color = "#1A1A1A";
         errBox.style.display = 'block';
@@ -1595,7 +1595,7 @@
             const errDiv = document.createElement('div');
             errDiv.id = 'checkout-validation-error';
             errDiv.style = "color:#FFF; background:#FF0044; padding:10px; margin-bottom:15px; font-weight:bold; border:2px solid #1A1A1A; text-align:center; width:100%; box-sizing:border-box;";
-            errDiv.textContent = "VALIDATION ERROR: You must enter a Customer Name to check out a movie.";
+            errDiv.textContent = "ERROR: You must enter a Customer Name to check out a movie.";
             
             const saveContainer = document.querySelector('.admin-save-container');
             saveContainer.parentNode.insertBefore(errDiv, saveContainer);
@@ -1767,7 +1767,7 @@
                 document.getElementById('admin-login-container').style.display = 'none';
                 renderAdminMovieList(catalogData);
             } else {
-                errBox.textContent = "ACCESS DENIED: I'M SORRY DAVE, I'M AFRAID I CAN'T DO THAT.";
+                errBox.textContent = "DENIED: I'M SORRY DAVE, I'M AFRAID I CAN'T DO THAT.";
                 errBox.style.background = "#FF0044";
                 errBox.style.display = 'block';
             }
