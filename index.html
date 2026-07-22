@@ -899,7 +899,7 @@
     // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 
     // --- 1. STORE ANNOUNCEMENTS & WELCOME PANEL ---
-    const STORE_NEWS_ANNOUNCEMENT = "WELCOME TO RETROVISION///// NEW ARRIVALS IN HORROR///// NEW ARRIVALS IN ACTION ////";
+    const STORE_NEWS_ANNOUNCEMENT = "//////WELCOME TO RETROVISION///// NEW ARRIVALS IN HORROR/////// NEW ARRIVALS IN ACTION //////";
     const WELCOME_TITLE = "WELCOME TO RETROVISION";
     const WELCOME_TEXT = "Browse our catalog by scrolling the list to the left or using the search bar above. Search by title, writer, director, genre or runtime.";
 
@@ -907,7 +907,7 @@
     const TICKER_INITIALIZING = "INITIALIZING...";
     const TICKER_REWINDING = "// BACKING UP ///";
     const TICKER_POPCORN = "BE KIND, REWIND.";
-    const TICKER_SYNCED = "CODE RUNNING SMOOTHLY ////// DATA SUCCESSFULLY BACKED UP ///// THERE IS NO SPOON ////// SEARCH BY TITLE ////// SEARCH BY DIRECTOR///";
+    const TICKER_SYNCED = "CODE RUNNING SMOOTHLY ////// DATA SUCCESSFULLY BACKED UP /////// THERE IS NO SPOON~ ////// SEARCH BY TITLE ////// SEARCH BY DIRECTOR/////";
     const TICKER_TOTAL_TAPES = "TOTAL TAPES:";
 
     // --- 3. LOADING SCREEN QUOTES ---
@@ -1381,7 +1381,7 @@
         document.getElementById('admin-password-input').value = "";
         
         const errBox = document.getElementById('login-error-msg');
-        errBox.textContent = "ADMIN TERMINAL SECURELY LOGGED OUT.";
+        errBox.textContent = "ADMIN TERMINAL LOGGED OUT... KNOCK KNOCK, NEO.";
         errBox.style.background = "#00FF00"; 
         errBox.style.color = "#1A1A1A";
         errBox.style.display = 'block';
@@ -1767,7 +1767,7 @@
                 document.getElementById('admin-login-container').style.display = 'none';
                 renderAdminMovieList(catalogData);
             } else {
-                errBox.textContent = "ACCESS DENIED: I'M AFRAID I CAN'T LET YOU DO THAT DAVE...";
+                errBox.textContent = "ACCESS DENIED: I'M SORRY DAVE, I'M AFRAID I CAN'T DO THAT.";
                 errBox.style.background = "#FF0044";
                 errBox.style.display = 'block';
             }
