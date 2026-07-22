@@ -666,20 +666,6 @@
             padding: 20px;
         }
 
-        .settings-config-btn {
-            background: #FFCC00;
-            color: #001A5E;
-            border: 2px solid #1A1A1A;
-            padding: 5px 10px;
-            font-family: monospace;
-            font-size: 0.8em;
-            cursor: pointer;
-            box-shadow: 2px 2px 0 #FF00FF;
-            text-transform: uppercase;
-            margin-right: 10px;
-        }
-        .settings-config-btn:active { transform: translate(2px, 2px); box-shadow: 0px 0px 0 #FF00FF; }
-
         .footer-container {
             text-align: center;
             margin-top: 40px;
@@ -775,7 +761,6 @@
                 <span class="admin-subtitle">Admin Terminal v4.2</span>
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
-                <button class="settings-config-btn" onclick="openSettingsFromAdmin()">[ Setup ]</button>
                 <button class="admin-logout-btn" onclick="adminLogout()">LOGOUT</button>
                 <button class="admin-close-btn" onclick="closeAdminPanel()">EXIT TERMINAL</button>
             </div>
@@ -881,7 +866,7 @@
 </div>
 
 <div class="footer-container">
-    Browse the collection in person at 492 East 13th Avenue, Suite 101, Eugene, Or.<br>
+    Browse the collection in person at 492 East 13th Avenue, Suite 101, Eugene, OR<br>
     <a class="footer-admin-link" onclick="openAdminPanel()">Admin Portal</a>
 </div>
 
@@ -1355,6 +1340,8 @@
 
     function closeAdminPanel() {
         adminOverlay.style.display = 'none';
+        const existingErr = document.getElementById('checkout-validation-error');
+        if (existingErr) existingErr.remove();
     }
     
     function adminLogout() {
@@ -1525,6 +1512,9 @@
         const noDueDateCheck = document.getElementById('admin-form-noduedate');
 
         const toggleRentalFields = () => {
+            const existingErr = document.getElementById('checkout-validation-error');
+            if (existingErr) existingErr.remove();
+
             const isRented = statusSelect.value === "Checked Out";
             if (!isRented) {
                 userInput.value = "";
