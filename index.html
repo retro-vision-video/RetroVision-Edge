@@ -997,7 +997,12 @@
 
     function normalizeString(str) {
         if (!str) return "";
-        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+        let text = String(str);
+        // Strip HTML tags to prevent rich-text formatting from fusing words
+        text = text.replace(/<[^>]*>?/gm, ' ');
+        // Keep ALL special characters and diacritics exactly as typed.
+        // Just lowercase and collapse multi-spaces into a single space.
+        return text.toLowerCase().replace(/\s+/g, ' ').trim();
     }
 
     async function loadDatabaseFromSheets() {
@@ -1421,10 +1426,27 @@
 
     adminSearch.addEventListener('input', (e) => {
         const query = normalizeString(e.target.value);
-        const filtered = catalogData.filter(movie => 
-            normalizeString(movie.title).includes(query) || 
-            normalizeString(movie.format).includes(query)
-        );
+        if (!query) {
+            renderAdminMovieList(catalogData);
+            return;
+        }
+        const queryParts = query.split(/\s+/).filter(p => p.length > 0);
+        const filtered = catalogData.filter(movie => {
+            const indexString = [
+                movie.title,
+                movie.year,
+                movie.format,
+                movie.director,
+                movie.writer,
+                movie.actors,
+                movie.alternateTitle,
+                movie.genre,
+                movie.status,
+                movie.user
+            ].map(v => (v || "")).join(" ");
+            const haystack = normalizeString(indexString);
+            return queryParts.every(part => haystack.includes(part));
+        });
         renderAdminMovieList(filtered);
     });
 
