@@ -909,6 +909,7 @@
     const TICKER_POPCORN = "/////// BE KIND, REWIND. /////";
     const TICKER_SYNCED = "/////// THIS VIDEO RENTAL SERVICE IS CURRENTLY AVAILABLE ONLY TO METRO/ART HOUSE ELITE MEMBERS ///////// DAILY RENTALS FOR NON-MEMBERS COMING SOON! ////////////// CANCEL NETFLIX ////////////// RENT LASERDISCS * VHS TAPES * DVDs * BLU-RAYS * 4K UHD BLU-RAYS ///////////// VHS & DVD PLAYERS AVAILABLE FOR PURCHASE IN-STORE /////////////  VISIT US AT 492 E 13TH AVE, SUITE 101 ANYTIME THE ART HOUSE IS OPEN ///////";
     const TICKER_TOTAL_TAPES = "TOTAL TAPES:";
+    const TICKER_CHECKED_OUT = "CHECKED OUT";
 
     // --- 3. LOADING SCREEN QUOTES ---
     // (Make sure to add a comma after each line except the last one!)
@@ -1060,7 +1061,8 @@
             renderCatalog(catalogData);
 
             const totalCount = catalogData.length;
-            marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// ${TICKER_SYNCED} /// ${TICKER_TOTAL_TAPES} ${totalCount} /// ${TICKER_POPCORN} ///`;
+            const checkedOutCount = catalogData.filter(item => (item.status || "").toLowerCase().trim() === "checked out").length;
+            marqueeElement.textContent = `/// ${STORE_NEWS_ANNOUNCEMENT} /// ${TICKER_SYNCED} /// ${TICKER_TOTAL_TAPES} ${totalCount} /// ${checkedOutCount} ${TICKER_CHECKED_OUT} /// ${TICKER_POPCORN} ///`;
 
             apiOverlay.style.display = 'none';
 
