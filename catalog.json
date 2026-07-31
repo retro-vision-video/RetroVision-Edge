@@ -209280,11 +209280,11 @@
       "imdbLink": "https://www.imdb.com/title/tt3250404",
       "condition": "Mint",
       "status": "In Stock",
-      "director": "",
-      "writer": "",
-      "actors": "",
-      "genre": "",
-      "runtime": ""
+      "director": "Guillaume Lubrano",
+      "writer": "Jim Alexander",
+      "actors": "Michael Biehn, Dan Cade, James Marsters",
+      "genre": "Action, Sci-Fi",
+      "runtime": "22 min"
     },
     {
       "sheetName": "2010s",
@@ -225544,11 +225544,11 @@
       "imdbLink": "https://www.imdb.com/title/tt8321092",
       "condition": "Unspecified",
       "status": "In Stock",
-      "director": "",
-      "writer": "",
+      "director": "Marc Waszkiewicz",
+      "writer": "Lea Jones",
       "actors": "",
-      "genre": "",
-      "runtime": ""
+      "genre": "Documentary",
+      "runtime": "74 min"
     },
     {
       "sheetName": "2010s",
@@ -232524,5 +232524,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-07-31T16:06:41.686Z"
+  "last_updated": "2026-07-31T16:54:18.114Z"
 }
