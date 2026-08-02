@@ -12618,6 +12618,63 @@
       "runtime": "102 min"
     },
     {
+      "sheetName": "pre-1960",
+      "rowIndex": 666,
+      "format": "DVD",
+      "title": "Roman Holiday",
+      "year": "1953",
+      "edition": "",
+      "alternateTitle": "",
+      "type": "Feature",
+      "synopsis": "Overwhelmed by her suffocating schedule, touring European princess Ann takes off for a night while in Rome. When a sedative she took from her doctor kicks in, however, she falls asleep on a park bench and is found by an American reporter, Joe Bradley, who takes her back to his apartment for safety. At work the next morning, Joe finds out Ann's regal identity and bets his editor he can get exclusive interview with her, but romance soon gets in the way.",
+      "imdbLink": "https://www.imdb.com/title/tt0046250",
+      "condition": "Unspecified",
+      "status": "In Stock",
+      "director": "William Wyler",
+      "writer": "Dalton Trumbo, Ian McLellan Hunter, John Dighton",
+      "actors": "Gregory Peck, Audrey Hepburn, Eddie Albert",
+      "genre": "Comedy, Drama, Romance",
+      "runtime": "118 min"
+    },
+    {
+      "sheetName": "pre-1960",
+      "rowIndex": 667,
+      "format": "Blu-ray",
+      "title": "Nights of Cabiria",
+      "year": "1957",
+      "edition": "The Criterion Collection",
+      "alternateTitle": "Le notti di Cabiria",
+      "type": "Feature",
+      "synopsis": "A waifish prostitute wanders the streets of Rome looking for true love but finds only heartbreak.",
+      "imdbLink": "https://www.imdb.com/title/tt0050783",
+      "condition": "Mint",
+      "status": "Checked Out",
+      "director": "Federico Fellini",
+      "writer": "Federico Fellini, Ennio Flaiano, Tullio Pinelli",
+      "actors": "Giulietta Masina, François Périer, Franca Marzi",
+      "genre": "Drama",
+      "runtime": "110 min"
+    },
+    {
+      "sheetName": "pre-1960",
+      "rowIndex": 668,
+      "format": "Blu-ray",
+      "title": "The Seventh Seal",
+      "year": "1957",
+      "edition": "The Criterion Collection",
+      "alternateTitle": "Det sjunde inseglet",
+      "type": "Feature",
+      "synopsis": "When disillusioned Swedish knight Antonius Block returns home from the Crusades to find his country in the grips of the Black Death, he challenges Death to a chess match for his life. Tormented by the belief that God does not exist, Block sets off on a journey, meeting up with traveling players Jof and his wife, Mia, and becoming determined to evade Death long enough to commit one redemptive act while he still lives.",
+      "imdbLink": "https://www.imdb.com/title/tt0050976",
+      "condition": "Mint",
+      "status": "In Stock",
+      "director": "Ingmar Bergman",
+      "writer": "Ingmar Bergman",
+      "actors": "Max von Sydow, Gunnar Björnstrand, Bengt Ekerot",
+      "genre": "Drama, Fantasy",
+      "runtime": "96 min"
+    },
+    {
       "sheetName": "1960s",
       "rowIndex": 2,
       "format": "Blu-ray",
@@ -34598,6 +34655,25 @@
       "writer": "Elisa Briganti, Dardano Sacchetti",
       "actors": "Tisa Farrow, Ian McCulloch, Richard Johnson",
       "genre": "Horror",
+      "runtime": "91 min"
+    },
+    {
+      "sheetName": "1970s",
+      "rowIndex": 688,
+      "format": "DVD",
+      "title": "Harold and Maude",
+      "year": "1971",
+      "edition": "",
+      "alternateTitle": "",
+      "type": "Feature",
+      "synopsis": "The young Harold lives in his own world of suicide-attempts and funeral visits to avoid the misery of his current family and home environment. Harold meets an 80-year-old woman named Maude who also lives in her own world yet one in which she is having the time of her life. When the two opposites meet they realize that their differences don’t matter and they become best friends and love each other.",
+      "imdbLink": "https://www.imdb.com/title/tt0067185",
+      "condition": "Mint",
+      "status": "Checked Out",
+      "director": "Hal Ashby",
+      "writer": "Colin Higgins",
+      "actors": "Ruth Gordon, Bud Cort, Vivian Pickles",
+      "genre": "Comedy, Drama, Romance",
       "runtime": "91 min"
     },
     {
@@ -229826,5 +229902,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-02T01:20:34.060Z"
+  "last_updated": "2026-08-02T01:31:18.562Z"
 }
