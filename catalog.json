@@ -21624,6 +21624,63 @@
       "runtime": "138 min"
     },
     {
+      "sheetName": "1960s",
+      "rowIndex": 473,
+      "format": "DVD",
+      "title": "From Russia with Love",
+      "year": "1963",
+      "edition": "",
+      "alternateTitle": "",
+      "type": "Feature",
+      "synopsis": "Agent 007 is back in the second installment of the James Bond series, this time battling a secret crime organization known as SPECTRE. Russians Rosa Klebb and Kronsteen are out to snatch a decoding device known as the Lektor, using the ravishing Tatiana to lure Bond into helping them. Bond willingly travels to meet Tatiana in Istanbul, where he must rely on his wits to escape with his life in a series of deadly encounters with the enemy.",
+      "imdbLink": "https://www.imdb.com/title/tt0057076",
+      "condition": "Mint",
+      "status": "In Stock",
+      "director": "Terence Young",
+      "writer": "Richard Maibaum, Johanna Harwood, Ian Fleming",
+      "actors": "Sean Connery, Robert Shaw, Lotte Lenya",
+      "genre": "Action, Adventure, Thriller",
+      "runtime": "115 min"
+    },
+    {
+      "sheetName": "1960s",
+      "rowIndex": 474,
+      "format": "DVD",
+      "title": "The Haunting",
+      "year": "1963",
+      "edition": "",
+      "alternateTitle": "",
+      "type": "Feature",
+      "synopsis": "Dr. Markway, doing research to prove the existence of ghosts, investigates Hill House, a large, eerie mansion with a lurid history of violent death and insanity.",
+      "imdbLink": "https://www.imdb.com/title/tt0057129",
+      "condition": "Unspecified",
+      "status": "In Stock",
+      "director": "Robert Wise",
+      "writer": "Nelson Gidding, Shirley Jackson",
+      "actors": "Julie Harris, Claire Bloom, Richard Johnson",
+      "genre": "Horror",
+      "runtime": "112 min"
+    },
+    {
+      "sheetName": "1960s",
+      "rowIndex": 475,
+      "format": "DVD",
+      "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+      "year": "1964",
+      "edition": "",
+      "alternateTitle": "",
+      "type": "Feature",
+      "synopsis": "After the insane General Jack D. Ripper initiates a nuclear strike on the Soviet Union, a war room full of politicians, generals and a Russian diplomat all frantically try to stop the nuclear strike.",
+      "imdbLink": "https://www.imdb.com/title/tt0057012",
+      "condition": "Mint",
+      "status": "In Stock",
+      "director": "Stanley Kubrick",
+      "writer": "Stanley Kubrick, Terry Southern, Peter George",
+      "actors": "Peter Sellers, George C. Scott, Sterling Hayden",
+      "genre": "Comedy, War",
+      "runtime": "95 min"
+    },
+    {
       "sheetName": "1970s",
       "rowIndex": 2,
       "format": "DVD",
@@ -229902,5 +229959,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-02T05:27:34.816Z"
+  "last_updated": "2026-08-02T05:46:50.964Z"
 }
