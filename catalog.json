@@ -126248,8 +126248,8 @@
       "type": "Feature",
       "synopsis": "Hancock is a down-and-out superhero who's forced to employ a PR expert to help repair his image when the public grows weary of all the damage he's inflicted during his lifesaving heroics. The agent's idea of imprisoning the antihero to make the world miss him proves successful, but will Hancock stick to his new sense of purpose or slip back into old habits?",
       "imdbLink": "https://www.imdb.com/title/tt0448157",
-      "condition": "Excellent",
-      "status": "In Stock",
+      "condition": "Good",
+      "status": "Checked Out",
       "director": "Peter Berg",
       "writer": "Vy Vincent Ngo, Vince Gilligan",
       "actors": "Will Smith, Charlize Theron, Jason Bateman",
@@ -229902,5 +229902,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-02T03:51:05.803Z"
+  "last_updated": "2026-08-02T04:10:12.118Z"
 }
