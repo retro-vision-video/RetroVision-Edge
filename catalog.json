@@ -12599,6 +12599,25 @@
       "runtime": "19 min"
     },
     {
+      "sheetName": "pre-1960",
+      "rowIndex": 665,
+      "format": "Blu-ray",
+      "title": "Notorious",
+      "year": "1946",
+      "edition": "The Criterion Collection",
+      "alternateTitle": "",
+      "type": "Feature",
+      "synopsis": "In order to help bring Nazis to justice, U.S. government agent T.R. Devlin recruits Alicia Huberman, the American daughter of a convicted German war criminal, as a spy. As they begin to fall for one another, Alicia is instructed to win the affections of Alexander Sebastian, a Nazi hiding out in Brazil. When Sebastian becomes serious about his relationship with Alicia, the stakes get higher, and Devlin must watch her slip further undercover.",
+      "imdbLink": "https://www.imdb.com/title/tt0038787",
+      "condition": "Good",
+      "status": "In Stock",
+      "director": "Alfred Hitchcock",
+      "writer": "Ben Hecht, John Taintor Foote, Alfred Hitchcock",
+      "actors": "Cary Grant, Ingrid Bergman, Claude Rains",
+      "genre": "Drama, Film-Noir, Mystery",
+      "runtime": "102 min"
+    },
+    {
       "sheetName": "1960s",
       "rowIndex": 2,
       "format": "Blu-ray",
@@ -229807,5 +229826,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-02T00:46:43.221Z"
+  "last_updated": "2026-08-02T01:20:34.060Z"
 }
