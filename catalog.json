@@ -125850,7 +125850,7 @@
       "synopsis": "Werner Herzog's documentary film about the \"Grizzly Man\" Timothy Treadwell and what the thirteen summers in a National Park in Alaska were like in one man's attempt to protect the grizzly bears. The film is full of unique images and a look into the spirit of a man who sacrificed himself for nature.",
       "imdbLink": "https://www.imdb.com/title/tt0427312",
       "condition": "Good",
-      "status": "In Stock",
+      "status": "Checked Out",
       "director": "Werner Herzog",
       "writer": "Werner Herzog",
       "actors": "Timothy Treadwell, Amie Huguenard, Werner Herzog",
@@ -229902,5 +229902,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-02T04:10:12.118Z"
+  "last_updated": "2026-08-02T04:39:31.957Z"
 }
