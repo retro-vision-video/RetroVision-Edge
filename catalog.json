@@ -6529,8 +6529,8 @@
       "type": "Feature",
       "synopsis": "The spoiled young heir to the decaying Amberson fortune comes between his widowed mother and the man she has always loved.",
       "imdbLink": "https://www.imdb.com/title/tt0035015",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Orson Welles, Fred Fleck, Robert Wise",
       "writer": "Booth Tarkington, Orson Welles, Joseph Cotten",
       "actors": "Tim Holt, Joseph Cotten, Dolores Costello",
@@ -7536,8 +7536,8 @@
       "type": "Feature",
       "synopsis": "Advertising man Roger Thornhill is mistaken for a spy, triggering a deadly cross-country chase.",
       "imdbLink": "https://www.imdb.com/title/tt0053125",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Alfred Hitchcock",
       "writer": "Ernest Lehman",
       "actors": "Cary Grant, Eva Marie Saint, James Mason",
@@ -32046,8 +32046,8 @@
       "type": "Feature",
       "synopsis": "A psychologist is sent to a space station orbiting a planet called Solaris to investigate the death of a doctor and the mental problems of cosmonauts on the station. He soon discovers that the water on the planet is a type of brain which brings out repressed memories and obsessions.",
       "imdbLink": "https://www.imdb.com/title/tt0069293",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Andrei Tarkovsky",
       "writer": "Stanislaw Lem, Fridrikh Gorenshteyn, Andrei Tarkovsky",
       "actors": "Natalya Bondarchuk, Donatas Banionis, Jüri Järvet",
@@ -152506,8 +152506,8 @@
       "type": "Feature",
       "synopsis": "Astronauts search for solutions to save a dying Earth by searching on Mars, only to have the mission go terribly awry.",
       "imdbLink": "https://www.imdb.com/title/tt0199753",
-      "condition": "Good",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Antony Hoffman",
       "writer": "Chuck Pfarrer, Jonathan Lemkin",
       "actors": "Val Kilmer, Carrie-Anne Moss, Tom Sizemore",
@@ -230738,5 +230738,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-06T03:56:29.398Z"
+  "last_updated": "2026-08-06T05:07:39.804Z"
 }
