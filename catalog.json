@@ -24371,7 +24371,7 @@
       "synopsis": "Several bourgeois friends planning to get together for dinner experience a succession of highly unusual occurrences that interfere with their expected dining enjoyment.",
       "imdbLink": "https://www.imdb.com/title/tt0068361/?ref_=nv_sr_srsg_0_tt_5_nm_3_in_0_q_The%20Discreet%20Charm%20of%20the%20Bourgeoisie",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Luis Buñuel",
       "writer": "Luis Buñuel, Jean-Claude Carrière",
       "actors": "Fernando Rey, Delphine Seyrig, Paul Frankeur",
@@ -49071,7 +49071,7 @@
       "synopsis": "A nebbish of a morgue attendant gets shunted back to the night shift where he is shackled with an obnoxious neophyte partner who dreams of the \"one great idea\" for success. His life takes a bizarre turn when a prostitute neighbor complains about the loss of her pimp. His partner, upon hearing the situation, suggests that they fill that opening themselves using the morgue at night.",
       "imdbLink": "https://www.imdb.com/title/tt0084412",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Ron Howard",
       "writer": "Lowell Ganz, Babaloo Mandel",
       "actors": "Henry Winkler, Michael Keaton, Shelley Long",
@@ -230738,5 +230738,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-09T22:50:20.890Z"
+  "last_updated": "2026-08-09T23:59:31.824Z"
 }
