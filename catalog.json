@@ -43598,8 +43598,8 @@
       "type": "Feature",
       "synopsis": "A young teenager named Mikey Walsh finds an old treasure map in his father's attic. Hoping to save their homes from demolition, Mikey and his friends Data Wang, Chunk Cohen, and Mouth Devereaux run off on a big quest to find the secret stash of Pirate One-Eyed Willie.",
       "imdbLink": "https://www.imdb.com/title/tt0089218",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Richard Donner",
       "writer": "Chris Columbus, Steven Spielberg",
       "actors": "Sean Astin, Josh Brolin, Jeff Cohen",
@@ -73201,7 +73201,7 @@
       "synopsis": "Martin Blank is a hitman for hire. When he starts to develop a conscience, he botches a couple of routine jobs. On the advice of his secretary and his psychiatrist, he decides to attend his ten-year high school reunion in Grosse Pointe, Michigan.",
       "imdbLink": "https://www.imdb.com/title/tt0119229",
       "condition": "Excellent",
-      "status": "In Stock",
+      "status": "Checked Out",
       "director": "George Armitage",
       "writer": "Tom Jankiewicz, D.V. DeVincentis, Steve Pink",
       "actors": "John Cusack, Minnie Driver, Dan Aykroyd",
@@ -230738,5 +230738,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-14T02:00:24.186Z"
+  "last_updated": "2026-08-14T02:33:56.616Z"
 }
