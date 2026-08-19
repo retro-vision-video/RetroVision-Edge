@@ -79736,8 +79736,8 @@
       "type": "Feature",
       "synopsis": "A detailed look into the process of filming of Robert Altman's masterpiece \"Short Cuts\".",
       "imdbLink": "https://www.imdb.com/title/tt0107455",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "John Dorr, Mike Kaplan",
       "writer": "",
       "actors": "Robert Altman, Tim Robbins, Fred Ward",
@@ -235241,5 +235241,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-19T03:45:19.818Z"
+  "last_updated": "2026-08-19T03:55:23.177Z"
 }
