@@ -12932,8 +12932,8 @@
       "type": "Feature",
       "synopsis": "Guido Anselmi, a film director, finds himself creatively barren at the peak of his career. Urged by his doctors to rest, Anselmi heads for a luxurious resort, but a sorry group gathers—his producer, staff, actors, wife, mistress, and relatives—each one begging him to get on with the show. In retreat from their dependency, he fantasizes about past women and dreams of his childhood.",
       "imdbLink": "https://www.imdb.com/title/tt0056801",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Federico Fellini",
       "writer": "Federico Fellini, Ennio Flaiano, Tullio Pinelli",
       "actors": "Marcello Mastroianni, Anouk Aimée, Claudia Cardinale",
@@ -235241,5 +235241,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-22T23:41:01.098Z"
+  "last_updated": "2026-08-22T23:50:06.166Z"
 }
