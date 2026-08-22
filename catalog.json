@@ -44264,7 +44264,7 @@
       "synopsis": "A young teenager named Mikey Walsh finds an old treasure map in his father's attic. Hoping to save their homes from demolition, Mikey and his friends Data Wang, Chunk Cohen, and Mouth Devereaux run off on a big quest to find the secret stash of Pirate One-Eyed Willie.",
       "imdbLink": "https://www.imdb.com/title/tt0089218",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Richard Donner",
       "writer": "Chris Columbus, Steven Spielberg",
       "actors": "Sean Astin, Josh Brolin, Jeff Cohen",
@@ -74303,7 +74303,7 @@
       "synopsis": "Martin Blank is a hitman for hire. When he starts to develop a conscience, he botches a couple of routine jobs. On the advice of his secretary and his psychiatrist, he decides to attend his ten-year high school reunion in Grosse Pointe, Michigan.",
       "imdbLink": "https://www.imdb.com/title/tt0119229",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "George Armitage",
       "writer": "Tom Jankiewicz, D.V. DeVincentis, Steve Pink",
       "actors": "John Cusack, Minnie Driver, Dan Aykroyd",
@@ -85398,8 +85398,8 @@
       "type": "Feature",
       "synopsis": "Mark Hunter, a lonely high school student, uses his shortwave radio to moonlight as the popular pirate DJ \"Hard Harry.\" When his show gets blamed for a teen committing suicide, the students clash with high school faculty and the authorities.",
       "imdbLink": "https://www.imdb.com/title/tt0100436",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Allan Moyle",
       "writer": "Allan Moyle",
       "actors": "Christian Slater, Samantha Mathis, Anthony Luke Lucero",
@@ -229437,8 +229437,8 @@
       "type": "Feature",
       "synopsis": "Shy 14-year-old Duncan goes on summer vacation with his mother, her overbearing boyfriend, and her boyfriend's daughter. Having a rough time fitting in, Duncan finds an unexpected friend in Owen, manager of the Water Wizz water park.",
       "imdbLink": "https://www.imdb.com/title/tt1727388",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Nat Faxon, Jim Rash",
       "writer": "Nat Faxon, Jim Rash",
       "actors": "Steve Carell, Toni Collette, Allison Janney",
@@ -235241,5 +235241,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-22T01:00:24.677Z"
+  "last_updated": "2026-08-22T01:21:19.030Z"
 }
