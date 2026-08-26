@@ -3755,8 +3755,8 @@
       "type": "Feature",
       "synopsis": "Cabaret star Zazu intervenes when young lovers are sundered by their parents' feud.",
       "imdbLink": "https://www.imdb.com/title/tt0032459",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Jacques de Baroncelli",
       "writer": "Michel Duran",
       "actors": "Lucien Baroux, Micheline Presle, Saturnin Fabre",
@@ -143063,8 +143063,8 @@
       "type": "Feature",
       "synopsis": "The irreverent host of a political satire talk show decides to run for president and expose corruption in Washington. His stunt goes further than he expects when he actually wins the election, but a software engineer suspects that a computer glitch is responsible for his surprising victory.",
       "imdbLink": "https://www.imdb.com/title/tt0483726",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Barry Levinson",
       "writer": "Barry Levinson",
       "actors": "Robin Williams, Christopher Walken, Laura Linney",
@@ -235241,5 +235241,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-26T02:52:04.171Z"
+  "last_updated": "2026-08-26T03:12:08.951Z"
 }
