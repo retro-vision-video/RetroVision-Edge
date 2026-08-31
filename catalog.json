@@ -24884,7 +24884,7 @@
       "synopsis": "After being punished for getting into trouble, a mischievous young man is sent to train under a brutal, but slovenly old beggar, who teaches him the secret of the Drunken Fist.",
       "imdbLink": "https://www.imdb.com/title/tt0080179",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Yuen Woo-Ping",
       "writer": "Lung Hsiao, See-Yuen Ng",
       "actors": "Jackie Chan, Siu-Tin Yuen, Jeong-lee Hwang",
@@ -39209,8 +39209,8 @@
       "type": "Feature",
       "synopsis": "Clue finds six colorful dinner guests gathered at the mansion of their host, Mr. Boddy -- who turns up dead after his secret is exposed: He was blackmailing all of them. With the killer among them, the guests and Boddy's chatty butler must suss out the culprit before the body count rises.",
       "imdbLink": "https://www.imdb.com/title/tt0088930",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Jonathan Lynn",
       "writer": "John Landis, Jonathan Lynn, Anthony E. Pratt",
       "actors": "Eileen Brennan, Tim Curry, Madeline Kahn",
@@ -73334,7 +73334,7 @@
       "synopsis": "In a future society in the era of indefinite eugenics, humans are set on a life course depending on their DNA. Young Vincent Freeman is born with a condition that would prevent him from space travel, yet is determined to infiltrate the GATTACA space program.",
       "imdbLink": "https://www.imdb.com/title/tt0119177",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Andrew Niccol",
       "writer": "Andrew Niccol",
       "actors": "Ethan Hawke, Uma Thurman, Jude Law",
@@ -235241,5 +235241,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-31T01:47:05.988Z"
+  "last_updated": "2026-08-31T02:31:01.945Z"
 }
