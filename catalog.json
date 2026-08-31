@@ -85265,8 +85265,8 @@
       "type": "Feature",
       "synopsis": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
       "imdbLink": "https://www.imdb.com/title/tt0110912",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Quentin Tarantino",
       "writer": "Quentin Tarantino, Roger Avary",
       "actors": "John Travolta, Uma Thurman, Samuel L. Jackson",
@@ -85399,7 +85399,7 @@
       "synopsis": "Mark Hunter, a lonely high school student, uses his shortwave radio to moonlight as the popular pirate DJ \"Hard Harry.\" When his show gets blamed for a teen committing suicide, the students clash with high school faculty and the authorities.",
       "imdbLink": "https://www.imdb.com/title/tt0100436",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Allan Moyle",
       "writer": "Allan Moyle",
       "actors": "Christian Slater, Samantha Mathis, Anthony Luke Lucero",
@@ -229438,7 +229438,7 @@
       "synopsis": "Shy 14-year-old Duncan goes on summer vacation with his mother, her overbearing boyfriend, and her boyfriend's daughter. Having a rough time fitting in, Duncan finds an unexpected friend in Owen, manager of the Water Wizz water park.",
       "imdbLink": "https://www.imdb.com/title/tt1727388",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Nat Faxon, Jim Rash",
       "writer": "Nat Faxon, Jim Rash",
       "actors": "Steve Carell, Toni Collette, Allison Janney",
@@ -235241,5 +235241,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-08-31T00:50:43.596Z"
+  "last_updated": "2026-08-31T01:47:05.988Z"
 }
