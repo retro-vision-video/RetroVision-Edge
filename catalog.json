@@ -40748,8 +40748,8 @@
       "type": "Feature",
       "synopsis": "Salvatore \"Sal\" Fragione is the Italian owner of a pizzeria in Brooklyn. A neighborhood local, Buggin' Out, becomes upset when he sees that the pizzeria's Wall of Fame exhibits only Italian actors. Buggin' Out believes a pizzeria in a black neighborhood should showcase black actors, but Sal disagrees. The wall becomes a symbol of racism and hate to Buggin' Out and to other people in the neighborhood, and tensions rise.",
       "imdbLink": "https://www.imdb.com/title/tt0097216",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Spike Lee",
       "writer": "Spike Lee",
       "actors": "Danny Aiello, Ossie Davis, Ruby Dee",
@@ -79528,7 +79528,7 @@
       "synopsis": "A tormented jazz musician finds himself lost in an enigmatic story involving murder, surveillance, gangsters, doppelgängers, and an impossible transformation inside a prison cell.",
       "imdbLink": "https://www.imdb.com/title/tt0116922",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "David Lynch",
       "writer": "David Lynch, Barry Gifford",
       "actors": "Bill Pullman, Patricia Arquette, John Roselius",
@@ -216498,8 +216498,8 @@
       "type": "Feature",
       "synopsis": "In 1950s London, renowned British dressmaker Reynolds Woodcock comes across Alma, a young, strong-willed woman, who soon becomes ever present in his life as his muse and lover.",
       "imdbLink": "https://www.imdb.com/title/tt5776858",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Paul Thomas Anderson",
       "writer": "Paul Thomas Anderson",
       "actors": "Vicky Krieps, Daniel Day-Lewis, Lesley Manville",
@@ -235241,5 +235241,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-09-03T01:51:43.684Z"
+  "last_updated": "2026-09-03T02:53:02.025Z"
 }
