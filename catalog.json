@@ -123133,7 +123133,7 @@
       "synopsis": "Five hundred years in the future, a renegade crew aboard a small spacecraft tries to survive as they travel the unknown parts of the galaxy and evade warring factions as well as authority agents out to get them.",
       "imdbLink": "https://www.imdb.com/title/tt0579539",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Joss Whedon",
       "writer": "Joss Whedon, Tim Minear, Jose Molina",
       "actors": "Nathan Fillion, Gina Torres, Alan Tudyk",
@@ -123171,7 +123171,7 @@
       "synopsis": "Five hundred years in the future, a renegade crew aboard a small spacecraft tries to survive as they travel the unknown parts of the galaxy and evade warring factions as well as authority agents out to get them.",
       "imdbLink": "https://www.imdb.com/title/tt0579539",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Joss Whedon",
       "writer": "Joss Whedon, Tim Minear, Jose Molina",
       "actors": "Nathan Fillion, Gina Torres, Alan Tudyk",
@@ -123208,8 +123208,8 @@
       "type": "TV Series",
       "synopsis": "Five hundred years in the future, a renegade crew aboard a small spacecraft tries to survive as they travel the unknown parts of the galaxy and evade warring factions as well as authority agents out to get them.",
       "imdbLink": "https://www.imdb.com/title/tt0579539",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Joss Whedon",
       "writer": "Joss Whedon, Tim Minear, Jose Molina",
       "actors": "Nathan Fillion, Gina Torres, Alan Tudyk",
@@ -123228,7 +123228,7 @@
       "synopsis": "Five hundred years in the future, a renegade crew aboard a small spacecraft tries to survive as they travel the unknown parts of the galaxy and evade warring factions as well as authority agents out to get them.",
       "imdbLink": "https://www.imdb.com/title/tt0579539",
       "condition": "Fair",
-      "status": "In Stock",
+      "status": "Checked Out",
       "director": "Joss Whedon",
       "writer": "Joss Whedon, Tim Minear, Jose Molina",
       "actors": "Nathan Fillion, Gina Torres, Alan Tudyk",
@@ -235241,5 +235241,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-09-03T00:51:38.635Z"
+  "last_updated": "2026-09-03T01:32:02.704Z"
 }
