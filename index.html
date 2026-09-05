@@ -592,6 +592,16 @@
         }
         .admin-movie-item:hover { background: #00FFFF; color: #1A1A1A; }
         .admin-movie-item.active { background: #FF00FF; color: #FFF; }
+        
+        .admin-sub-title-info {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 4px;
+            font-weight: 600;
+            margin-left: 18px;
+        }
+        .admin-movie-item:hover .admin-sub-title-info { color: #1A1A1A; }
+        .admin-movie-item.active .admin-sub-title-info { color: #FFCC00; }
 
         .admin-form-container {
             flex: 1;
@@ -1421,11 +1431,21 @@
             else if (normStatus === "unavailable") dotColor = '#888888';
             else if (normStatus === "request") dotColor = '#00FFFF';
             
-            // Format indicator fix applied here
+            let subTitleHtml = "";
+            if (movie.alternateTitle || movie.edition) {
+                subTitleHtml = `<div class="admin-sub-title-info">`;
+                if (movie.alternateTitle) subTitleHtml += `${movie.alternateTitle}<br>`;
+                if (movie.edition) subTitleHtml += `${movie.edition}`;
+                subTitleHtml += `</div>`;
+            }
+
             itemDiv.innerHTML = `
                 <div>
-                    <span style="color:${dotColor}; margin-right:8px;">●</span>
-                    ${movie.title} (${movie.year})
+                    <div>
+                        <span style="color:${dotColor}; margin-right:8px;">●</span>
+                        ${movie.title} (${movie.year})
+                    </div>
+                    ${subTitleHtml}
                 </div>
                 <span class="format-badge" style="font-size: 0.7em;">
                     ${movie.format || "N/A"}
@@ -1474,11 +1494,20 @@
     });
 
     function loadAdminForm(movie) {
+        let subTitleHtmlForm = "";
+        if (movie.alternateTitle || movie.edition) {
+            subTitleHtmlForm = `<div style="font-size: 0.75em; color: #00FFFF; margin-top: 5px; text-transform: none;">`;
+            if (movie.alternateTitle) subTitleHtmlForm += `AKA: ${movie.alternateTitle}<br>`;
+            if (movie.edition) subTitleHtmlForm += `EDITION: ${movie.edition}`;
+            subTitleHtmlForm += `</div>`;
+        }
+
         adminWorkspace.innerHTML = `
             <div class="admin-form-title">Update Logistics Info</div>
             
             <div style="background:#001A5E; color:#FFF; padding:10px 15px; border:3px solid #1A1A1A; margin-bottom:20px; font-weight:bold; text-transform:uppercase;">
                 Tape: <span style="color:#FFCC00;">${movie.title} (${movie.year})</span>
+                ${subTitleHtmlForm}
             </div>
 
             <div class="admin-form-grid">
@@ -1655,8 +1684,12 @@
 
         const btnSaveCont = document.getElementById('btn-save-continue');
         const btnSaveClose = document.getElementById('btn-save-close');
-        if(btnSaveCont) btnSaveCont.textContent = "SAVING...";
-        if(btnSaveClose) btnSaveClose.textContent = "SAVING...";
+        
+        if (closeAfter) {
+            if (btnSaveClose) btnSaveClose.textContent = "SAVING...";
+        } else {
+            if (btnSaveCont) btnSaveCont.textContent = "SAVING...";
+        }
 
         try {
             const res = await fetch(webAppUrl, {
@@ -1665,7 +1698,7 @@
                 body: JSON.stringify(payload)
             });
 
-            // --- DETOURNEMENT PATCH: OVERRIDE GOOGLE'S THROTTLING ---
+            // ---PATCH---
             let result = { status: "success" }; 
             const contentType = res.headers.get("content-type");
             
@@ -1699,7 +1732,7 @@
                 showDetails(selectedMovieIndex);
             }
             
-            if (btnSaveCont) {
+            if (!closeAfter && btnSaveCont) {
                 btnSaveCont.textContent = "✔ SAVED!";
                 btnSaveCont.style.backgroundColor = "#00FF00";
                 btnSaveCont.style.color = "#1A1A1A";
