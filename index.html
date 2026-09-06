@@ -984,6 +984,22 @@
     const adminSearch = document.getElementById('admin-search');
     const adminLoadingScreen = document.getElementById('admin-loading-screen');
 
+    // Helper: Formats arbitrary date strings cleanly into YYYY-MM-DD
+    function formatCleanDate(dateVal) {
+        if (!dateVal) return "";
+        const str = String(dateVal).trim();
+        if (str.toLowerCase() === "null" || str.toLowerCase() === "undefined") return "";
+        if (/^\d{4}-\d{2}-\d{2}$/.test(str)) return str;
+        const parsed = new Date(str);
+        if (!isNaN(parsed.getTime())) {
+            const y = parsed.getFullYear();
+            const m = String(parsed.getMonth() + 1).padStart(2, '0');
+            const d = String(parsed.getDate()).padStart(2, '0');
+            return `${y}-${m}-${d}`;
+        }
+        return str;
+    }
+
     function initSystem() {
         marqueeElement.textContent = `/// ${TICKER_INITIALIZING} /// ${STORE_NEWS_ANNOUNCEMENT} /// ${TICKER_REWINDING} ///`;
         
@@ -1537,13 +1553,13 @@
 
                 <div class="admin-input-group">
                     <label>User (Rented By)</label>
-                    <input type="text" id="admin-form-user" value="${movie.user || ""}" placeholder="Customer name...">
+                    <input type="text" id="admin-form-user" value="${(movie.user && movie.user.toLowerCase() !== 'null') ? movie.user : ''}" placeholder="Customer name...">
                 </div>
 
                 <div class="admin-input-group admin-full-row">
                     <label>Due Date</label>
                     <div style="display:flex; align-items:center; gap: 15px;">
-                        <input type="date" id="admin-form-duedate" value="${movie.dueDate || ""}" style="flex:1;">
+                        <input type="date" id="admin-form-duedate" value="${formatCleanDate(movie.dueDate)}" style="flex:1;">
                         <label style="display:flex; align-items:center; gap:5px; text-transform:none; font-size:0.9em;">
                             <input type="checkbox" id="admin-form-noduedate" style="width:auto;"> No Due Date
                         </label>
@@ -1599,7 +1615,10 @@
                     if (!duedateInput.value) {
                         const returnDate = new Date();
                         returnDate.setDate(returnDate.getDate() + 7);
-                        duedateInput.value = returnDate.toISOString().split('T')[0];
+                        const rY = returnDate.getFullYear();
+                        const rM = String(returnDate.getMonth() + 1).padStart(2, '0');
+                        const rD = String(returnDate.getDate()).padStart(2, '0');
+                        duedateInput.value = `${rY}-${rM}-${rD}`;
                     }
                 }
             }
@@ -1643,16 +1662,35 @@
         
         let newLogEntries = [];
         
+        // 1. Manual note typed by user
         const newNoteInput = document.getElementById('admin-form-new-note');
         const newNoteVal = newNoteInput ? newNoteInput.value.trim() : "";
         if (newNoteVal) {
             newLogEntries.push(`[${todayStr}] ${newNoteVal}`);
         }
         
-        if (status === "In Stock" && originalMovie && originalMovie.user) {
-            let logStr = `[${todayStr}] Returned by: ${originalMovie.user}`;
-            if (originalMovie.dueDate) {
-                logStr += ` (Due: ${originalMovie.dueDate})`;
+        // 2. Log Checkout Event
+        const isValidCurrentRenter = user && user.toLowerCase() !== "null" && user.toLowerCase() !== "undefined";
+        if (status === "Checked Out" && isValidCurrentRenter) {
+            const isNewCheckout = !originalMovie || originalMovie.status !== "Checked Out" || originalMovie.user !== user;
+            if (isNewCheckout) {
+                const cleanDue = formatCleanDate(dueDate);
+                let logStr = `[${todayStr}] Rented by: ${user}`;
+                if (cleanDue) {
+                    logStr += ` (Due: ${cleanDue})`;
+                }
+                newLogEntries.push(logStr);
+            }
+        }
+
+        // 3. Log Return Event (when returned to In Stock)
+        const prevUser = (originalMovie && originalMovie.user ? originalMovie.user.trim() : "");
+        const isValidPrevUser = prevUser && prevUser.toLowerCase() !== "null" && prevUser.toLowerCase() !== "undefined";
+        if (status === "In Stock" && isValidPrevUser && (originalMovie.status === "Checked Out" || originalMovie.user)) {
+            const cleanDue = formatCleanDate(originalMovie.dueDate);
+            let logStr = `[${todayStr}] Returned by: ${prevUser}`;
+            if (cleanDue) {
+                logStr += ` (Due: ${cleanDue})`;
             }
             newLogEntries.push(logStr);
         }
