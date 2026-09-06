@@ -1682,11 +1682,28 @@
             details: finalDetails
         };
 
+        // Optimistically apply logistics updates to catalog memory immediately
+        const movieIndex = catalogData.findIndex(m => m.sheetName === sheetName && m.rowIndex === rowIndex);
+        if (movieIndex !== -1) {
+            catalogData[movieIndex].status = status;
+            catalogData[movieIndex].condition = condition; // Update local cache
+            catalogData[movieIndex].inStock = (status === "In Stock");
+            catalogData[movieIndex].user = finalUser;
+            catalogData[movieIndex].dueDate = finalDueDate;
+            catalogData[movieIndex].details = finalDetails;
+        }
+
+        renderCatalog(catalogData);
+        if (selectedMovieIndex !== null) {
+            showDetails(selectedMovieIndex);
+        }
+
         const btnSaveCont = document.getElementById('btn-save-continue');
         const btnSaveClose = document.getElementById('btn-save-close');
         
+        // Immediately close modal on Save & Close to prevent locking the UI
         if (closeAfter) {
-            if (btnSaveClose) btnSaveClose.textContent = "SAVING...";
+            closeAdminPanel();
         } else {
             if (btnSaveCont) btnSaveCont.textContent = "SAVING...";
         }
@@ -1716,21 +1733,6 @@
             if (result.status !== "success") {
                 throw new Error(result.error || "Uplink server reported an error writing to cell.");
             }
-
-            const movieIndex = catalogData.findIndex(m => m.sheetName === sheetName && m.rowIndex === rowIndex);
-            if (movieIndex !== -1) {
-                catalogData[movieIndex].status = status;
-                catalogData[movieIndex].condition = condition; // Update local cache
-                catalogData[movieIndex].inStock = (status === "In Stock");
-                catalogData[movieIndex].user = finalUser;
-                catalogData[movieIndex].dueDate = finalDueDate;
-                catalogData[movieIndex].details = finalDetails;
-            }
-
-            renderCatalog(catalogData);
-            if (selectedMovieIndex !== null) {
-                showDetails(selectedMovieIndex);
-            }
             
             if (!closeAfter && btnSaveCont) {
                 btnSaveCont.textContent = "✔ SAVED!";
@@ -1751,20 +1753,21 @@
                 }, 2000);
             }
 
-            if (closeAfter) {
-                closeAdminPanel();
-            }
-
         } catch (err) {
             console.error("Failed to write updates to Google Sheet:", err);
             
-            const errDiv = document.createElement('div');
-            errDiv.style = "color:#FFF; background:#FF0044; padding:10px; margin-top:15px; font-weight:bold; border:2px solid #1A1A1A; text-align:center;";
-            errDiv.textContent = `UPLINK FAILURE: ${err.message}`;
-            document.querySelector('.admin-save-container').appendChild(errDiv);
-            
-            if(btnSaveCont) btnSaveCont.textContent = "Save & Continue";
-            if(btnSaveClose) btnSaveClose.textContent = "Save & Close";
+            if (!closeAfter) {
+                const errDiv = document.createElement('div');
+                errDiv.style = "color:#FFF; background:#FF0044; padding:10px; margin-top:15px; font-weight:bold; border:2px solid #1A1A1A; text-align:center;";
+                errDiv.textContent = `UPLINK FAILURE: ${err.message}`;
+                const saveCont = document.querySelector('.admin-save-container');
+                if (saveCont) saveCont.appendChild(errDiv);
+                
+                if(btnSaveCont) btnSaveCont.textContent = "Save & Continue";
+                if(btnSaveClose) btnSaveClose.textContent = "Save & Close";
+            } else {
+                console.warn("Background sheet sync encountered an error:", err.message);
+            }
         }
     };
 
