@@ -1813,7 +1813,6 @@
                     catalogData.forEach(movie => {
                         let key = movie.sheetName + "_" + movie.rowIndex;
                         if (result.privateLogs[key]) {
-                            // FIX: Overwrite the stale catalog status with the live sheet status so the UI retains the renter name
                             if (result.privateLogs[key].status) {
                                 movie.status = result.privateLogs[key].status;
                             }
