@@ -13827,11 +13827,11 @@
       "imdbLink": "https://www.imdb.com/title/tt0523208",
       "condition": "Unspecified",
       "status": "In Stock",
-      "director": "",
-      "writer": "",
-      "actors": "",
-      "genre": "",
-      "runtime": ""
+      "director": "William Asher",
+      "writer": "Bernard Slade",
+      "actors": "Elizabeth Montgomery, Dick York, Agnes Moorehead",
+      "genre": "Comedy, Family, Fantasy",
+      "runtime": "30 min"
     },
     {
       "sheetName": "1960s",
@@ -13846,11 +13846,11 @@
       "imdbLink": "https://www.imdb.com/title/tt0523208",
       "condition": "Unspecified",
       "status": "In Stock",
-      "director": "",
-      "writer": "",
-      "actors": "",
-      "genre": "",
-      "runtime": ""
+      "director": "William Asher",
+      "writer": "Bernard Slade",
+      "actors": "Elizabeth Montgomery, Dick York, Agnes Moorehead",
+      "genre": "Comedy, Family, Fantasy",
+      "runtime": "30 min"
     },
     {
       "sheetName": "1960s",
@@ -48768,11 +48768,11 @@
       "imdbLink": "https://www.imdb.com/title/tt27161218/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%2520Meier%2520Chronicles",
       "condition": "Unspecified",
       "status": "In Stock",
-      "director": "",
-      "writer": "",
-      "actors": "",
-      "genre": "",
-      "runtime": ""
+      "director": "Lee Elders",
+      "writer": "Lee Elders",
+      "actors": "Hans Benz, Jacobus Bertschinger, Eva Bieri",
+      "genre": "Documentary",
+      "runtime": "85 min"
     },
     {
       "sheetName": "1980s",
@@ -52526,15 +52526,15 @@
       "edition": "",
       "alternateTitle": "Arena S11:E01",
       "type": "TV Series",
-      "synopsis": "",
+      "synopsis": "Documentary looking at the short but brilliant career of legendary rock 'n' roll star Buddy Holly. Features interviews with contemporaries and fans including Paul McCartney.",
       "imdbLink": "https://www.imdb.com/title/tt0260768/?ref_=fn_all_ttl_1",
       "condition": "Unspecified",
       "status": "In Stock",
-      "director": "",
+      "director": "Richard Spence",
       "writer": "",
-      "actors": "",
-      "genre": "",
-      "runtime": ""
+      "actors": "Larry Holley, Travis Holley, Sonny Curtis",
+      "genre": "Documentary",
+      "runtime": "86 min"
     },
     {
       "sheetName": "1980s",
@@ -54338,8 +54338,8 @@
       "director": "",
       "writer": "",
       "actors": "",
-      "genre": "",
-      "runtime": ""
+      "genre": "Music",
+      "runtime": "4 min"
     },
     {
       "sheetName": "1980s",
@@ -119087,11 +119087,11 @@
       "imdbLink": "https://www.imdb.com/title/tt0815513/?ref_=tt_epspo_ep_1",
       "condition": "Unspecified",
       "status": "In Stock",
-      "director": "",
-      "writer": "",
-      "actors": "",
-      "genre": "",
-      "runtime": ""
+      "director": "Peter Avanzino, Dwayne Carey-Hill",
+      "writer": "Dave Jeser, Matt Silverstein, Reed Agnew",
+      "actors": "Adam Carolla, Jess Harnell, Abbey McBride",
+      "genre": "Animation, Comedy",
+      "runtime": "22 min"
     },
     {
       "sheetName": "2000s",
@@ -235241,5 +235241,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-09-07T05:52:57.040Z"
+  "last_updated": "2026-09-07T06:46:41.963Z"
 }
