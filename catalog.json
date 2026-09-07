@@ -13865,11 +13865,11 @@
       "imdbLink": "https://www.imdb.com/title/tt0523208",
       "condition": "Unspecified",
       "status": "In Stock",
-      "director": "",
-      "writer": "",
-      "actors": "",
-      "genre": "",
-      "runtime": ""
+      "director": "William Asher",
+      "writer": "Bernard Slade",
+      "actors": "Elizabeth Montgomery, Dick York, Agnes Moorehead",
+      "genre": "Comedy, Family, Fantasy",
+      "runtime": "30 min"
     },
     {
       "sheetName": "1960s",
@@ -13884,11 +13884,11 @@
       "imdbLink": "https://www.imdb.com/title/tt0523208",
       "condition": "Unspecified",
       "status": "In Stock",
-      "director": "",
-      "writer": "",
-      "actors": "",
-      "genre": "",
-      "runtime": ""
+      "director": "William Asher",
+      "writer": "Bernard Slade",
+      "actors": "Elizabeth Montgomery, Dick York, Agnes Moorehead",
+      "genre": "Comedy, Family, Fantasy",
+      "runtime": "30 min"
     },
     {
       "sheetName": "1960s",
@@ -235241,5 +235241,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-09-07T06:49:38.572Z"
+  "last_updated": "2026-09-07T07:47:32.571Z"
 }
