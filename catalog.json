@@ -113709,7 +113709,7 @@
       "synopsis": "A psychotherapist journeys inside a comatose serial killer in the hopes of saving his latest victim.",
       "imdbLink": "https://www.imdb.com/title/tt0209958",
       "condition": "Fair",
-      "status": "In Stock",
+      "status": "Checked Out",
       "director": "Tarsem Singh",
       "writer": "Mark Protosevich",
       "actors": "Jennifer Lopez, Vince Vaughn, Vincent D'Onofrio",
@@ -160410,8 +160410,8 @@
       "type": "Feature",
       "synopsis": "When the renegade crew of Serenity agrees to hide a fugitive on their ship, they find themselves in an action-packed battle between the relentless military might of a totalitarian regime who will destroy anything – or anyone – to get the girl back and the bloodthirsty creatures who roam the uncharted areas of space. But... the greatest danger of all may be on their ship.",
       "imdbLink": "https://www.imdb.com/title/tt0379786",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Joss Whedon",
       "writer": "Joss Whedon",
       "actors": "Nathan Fillion, Gina Torres, Chiwetel Ejiofor",
@@ -239782,5 +239782,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-09-12T03:20:46.593Z"
+  "last_updated": "2026-09-12T03:24:00.757Z"
 }
