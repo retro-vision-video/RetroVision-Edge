@@ -3794,7 +3794,7 @@
       "synopsis": "Cabaret star Zazu intervenes when young lovers are sundered by their parents' feud.",
       "imdbLink": "https://www.imdb.com/title/tt0032459",
       "condition": "Excellent",
-      "status": "In Stock",
+      "status": "Checked Out",
       "director": "Jacques de Baroncelli",
       "writer": "Michel Duran",
       "actors": "Lucien Baroux, Micheline Presle, Saturnin Fabre",
@@ -239782,5 +239782,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-09-17T21:48:05.621Z"
+  "last_updated": "2026-09-17T21:48:36.002Z"
 }
