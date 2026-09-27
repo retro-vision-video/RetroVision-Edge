@@ -125374,8 +125374,8 @@
       "type": "Shorts Collection",
       "synopsis": "The Found Footage Festival is an American film festival and live comedy event featuring unusual and humorous found footage clips and films.",
       "imdbLink": "",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "",
       "writer": "",
       "actors": "",
@@ -239782,5 +239782,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-09-27T22:41:04.530Z"
+  "last_updated": "2026-09-27T22:41:44.381Z"
 }
