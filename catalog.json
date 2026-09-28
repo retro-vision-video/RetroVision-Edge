@@ -37234,7 +37234,7 @@
       "synopsis": "Batman must face his most ruthless nemesis when a deformed madman calling himself \"The Joker\" seizes control of Gotham's criminal underworld.",
       "imdbLink": "https://www.imdb.com/title/tt0096895",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Tim Burton",
       "writer": "Bob Kane, Sam Hamm, Warren Skaaren",
       "actors": "Michael Keaton, Jack Nicholson, Kim Basinger",
@@ -97540,7 +97540,7 @@
       "synopsis": "Clarence marries hooker Alabama, steals cocaine from her pimp, and tries to sell it in Hollywood, while the owners of the coke try to reclaim it.",
       "imdbLink": "https://www.imdb.com/title/tt0108399",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Tony Scott",
       "writer": "Quentin Tarantino, Roger Avary",
       "actors": "Christian Slater, Patricia Arquette, Dennis Hopper",
@@ -192843,8 +192843,8 @@
       "type": "Feature",
       "synopsis": "With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.",
       "imdbLink": "https://www.imdb.com/title/tt1853728",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Quentin Tarantino",
       "writer": "Quentin Tarantino",
       "actors": "Jamie Foxx, Christoph Waltz, Leonardo DiCaprio",
@@ -239782,5 +239782,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-09-28T02:53:29.418Z"
+  "last_updated": "2026-09-28T03:27:25.423Z"
 }
