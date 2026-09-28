@@ -153552,7 +153552,7 @@
       "synopsis": "The true story of pianist Władysław Szpilman's experiences in Warsaw during the Nazi occupation. When the Jews of the city find themselves forced into a ghetto, Szpilman finds work playing in a café; and when his family is deported in 1942, he stays behind, works for a while as a laborer, and eventually goes into hiding in the ruins of the war-torn city.",
       "imdbLink": "https://www.imdb.com/title/tt0253474",
       "condition": "Poor",
-      "status": "In Stock",
+      "status": "Checked Out",
       "director": "Roman Polanski",
       "writer": "Ronald Harwood, Wladyslaw Szpilman",
       "actors": "Adrien Brody, Thomas Kretschmann, Frank Finlay",
@@ -239782,5 +239782,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-09-28T03:46:49.313Z"
+  "last_updated": "2026-09-28T03:47:28.350Z"
 }
