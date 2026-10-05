@@ -41850,8 +41850,8 @@
       "type": "Feature",
       "synopsis": "Portland, Oregon, 1971. Bob Hughes is the charismatic leader of a peculiar quartet, formed by his wife, Dianne, and another couple, Rick and Nadine, who skillfully steal from drugstores and hospital medicine cabinets in order to appease their insatiable need for drugs. But neither fun nor luck last forever.",
       "imdbLink": "https://www.imdb.com/title/tt0097240",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Gus Van Sant",
       "writer": "James Fogle, Gus Van Sant, Daniel Yost",
       "actors": "Matt Dillon, Kelly Lynch, James Le Gros",
@@ -239782,5 +239782,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-10-05T01:31:37.404Z"
+  "last_updated": "2026-10-05T01:42:06.305Z"
 }
