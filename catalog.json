@@ -50685,8 +50685,8 @@
       "type": "Feature",
       "synopsis": "On Elm Street, Nancy Thompson and a group of her friends (comprising Tina Gray, Rod Lane and Glen Lantz) are being tormented by a clawed killer in their dreams named Fred Krueger. Nancy must think quickly, as Fred tries to pick them off one by one. When he has you in your sleep, who is there to save you?",
       "imdbLink": "https://www.imdb.com/title/tt0087800/?ref_=nv_sr_srsg_3_tt_7_nm_1_in_0_q_A%20Nightmare%20on%20Elm%20Street",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Wes Craven",
       "writer": "Wes Craven",
       "actors": "Heather Langenkamp, Johnny Depp, Robert Englund",
@@ -239782,5 +239782,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-10-07T03:32:41.011Z"
+  "last_updated": "2026-10-07T03:46:35.957Z"
 }
