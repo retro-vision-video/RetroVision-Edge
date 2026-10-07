@@ -50742,8 +50742,8 @@
       "type": "Multi-Feature",
       "synopsis": "A Nightmare on Elm Street 2: Freddy's Revenge: A teenage boy is haunted in his dreams by deceased child murderer Freddy Krueger, who is out to possess him in order to continue his reign of terror in the real world.<br>A Nightmare on Elm Street 3: Dream Warriors: A psychiatrist, familiar with the knife-wielding dream demon Freddy Krueger, helps teens at a mental hospital battle the killer who is invading their dreams.",
       "imdbLink": "https://www.imdb.com/title/tt0089686/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_A%20Nightmare%20on%20Elm%20Street%202%3A%20Freddy%27s%20Revenge",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Jack Sholder",
       "writer": "David Chaskin, Wes Craven",
       "actors": "Robert Englund, Mark Patton, Kim Myers",
@@ -239782,5 +239782,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-10-07T03:48:29.161Z"
+  "last_updated": "2026-10-07T03:48:40.328Z"
 }
