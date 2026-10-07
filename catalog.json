@@ -6663,7 +6663,7 @@
       "synopsis": "The spoiled young heir to the decaying Amberson fortune comes between his widowed mother and the man she has always loved.",
       "imdbLink": "https://www.imdb.com/title/tt0035015",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Orson Welles, Fred Fleck, Robert Wise",
       "writer": "Booth Tarkington, Orson Welles, Joseph Cotten",
       "actors": "Tim Holt, Joseph Cotten, Dolores Costello",
@@ -33073,7 +33073,7 @@
       "synopsis": "A psychologist is sent to a space station orbiting a planet called Solaris to investigate the death of a doctor and the mental problems of cosmonauts on the station. He soon discovers that the water on the planet is a type of brain which brings out repressed memories and obsessions.",
       "imdbLink": "https://www.imdb.com/title/tt0069293",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Andrei Tarkovsky",
       "writer": "Stanislaw Lem, Fridrikh Gorenshteyn, Andrei Tarkovsky",
       "actors": "Natalya Bondarchuk, Donatas Banionis, Jüri Järvet",
@@ -239782,5 +239782,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-10-07T03:29:44.432Z"
+  "last_updated": "2026-10-07T03:30:09.579Z"
 }
