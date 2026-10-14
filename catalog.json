@@ -223700,7 +223700,7 @@
       "synopsis": "An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.",
       "imdbLink": "https://www.imdb.com/title/tt5580390",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Guillermo del Toro",
       "writer": "Guillermo del Toro, Vanessa Taylor",
       "actors": "Sally Hawkins, Octavia Spencer, Michael Shannon",
@@ -229647,7 +229647,7 @@
       "synopsis": "The impressionistic story of a Texas family in the 1950s. The film follows the life journey of the eldest son, Jack, through the innocence of childhood to his disillusioned adult years as he tries to reconcile a complicated relationship with his father. Jack finds himself a lost soul in the modern world, seeking answers to the origins and meaning of life while questioning the existence of faith.",
       "imdbLink": "https://www.imdb.com/title/tt0478304",
       "condition": "Excellent",
-      "status": "In Stock",
+      "status": "Checked Out",
       "director": "Terrence Malick",
       "writer": "Terrence Malick",
       "actors": "Brad Pitt, Sean Penn, Jessica Chastain",
@@ -239782,5 +239782,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-10-13T23:49:11.255Z"
+  "last_updated": "2026-10-14T00:41:05.006Z"
 }
