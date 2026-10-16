@@ -241770,11 +241770,11 @@
       "imdbLink": "https://www.imdb.com/title/tt43349200/?ref_=nv_sr_srsg_0_tt_4_nm_0_in_0_q_The%20Cult%20of%20AGFA%20Trailer%20Show",
       "condition": "Excellent",
       "status": "Checked Out",
-      "director": "",
+      "director": "Bret Berg, Joseph A. Ziemba",
       "writer": "",
-      "actors": "",
-      "genre": "",
-      "runtime": ""
+      "actors": "Clint Eastwood, Jodie Foster, Charlton Heston",
+      "genre": "Action, Comedy, Drama",
+      "runtime": "77 min"
     },
     {
       "sheetName": "2020s",
@@ -245558,5 +245558,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-10-16T03:49:37.808Z"
+  "last_updated": "2026-10-16T05:47:58.596Z"
 }
