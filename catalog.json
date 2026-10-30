@@ -48500,8 +48500,8 @@
       "type": "Feature",
       "synopsis": "Set in the 1930s, an honest, goodhearted man is forced to turn to a life of crime to finance his neurotic mother's skyrocketing medical bills.",
       "imdbLink": "https://www.imdb.com/title/tt0087507/?ref_=nv_sr_srsg_0_tt_2_nm_1_in_0_q_Johnny%20Dangerously",
-      "condition": "Excellent",
-      "status": "Checked Out",
+      "condition": "Unspecified",
+      "status": "In Stock",
       "director": "Amy Heckerling",
       "writer": "Norman Steinberg, Bernie Kukoff, Harry Colomby",
       "actors": "Michael Keaton, Joe Piscopo, Marilu Henner",
@@ -245558,5 +245558,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-10-30T00:21:10.851Z"
+  "last_updated": "2026-10-30T00:21:30.780Z"
 }
