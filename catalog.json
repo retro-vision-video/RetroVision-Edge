@@ -19430,8 +19430,8 @@
       "type": "Feature",
       "synopsis": "A compilation film designed to evoke nostalgia for the shared entertainment experiences of early baby boomers, \"The Movie Orgy\" includes clips from television programs and B-movies of the 1950s and 1960s, as well as commercials, music clips, newsreels, blooper outtakes, satiric short films and promotional and government films. The effect is something like a simulation of a lazy Saturday of channel surfing or a long double (or triple) matinee at the movies. The film is primarily structured around extended clips from Attack of the 50 Foot Woman (1958) and Speed Crazy (1959); as it progresses, segments primarily culled from about a dozen other films and programs are increasingly intercut to create the effect of a single disjointed story in which numerous monsters and assorted social menaces seem to inflict themselves simultaneously on various American cities and towns. This principal focus is occasionally interrupted by commercial breaks and other assorted side features.",
       "imdbLink": "https://www.imdb.com/title/tt0270523/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Movie%20Orgy",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Joe Dante",
       "writer": "",
       "actors": "Ann-Margret, Ngo Dinh Diem, Dwight D. Eisenhower",
@@ -48500,8 +48500,8 @@
       "type": "Feature",
       "synopsis": "Set in the 1930s, an honest, goodhearted man is forced to turn to a life of crime to finance his neurotic mother's skyrocketing medical bills.",
       "imdbLink": "https://www.imdb.com/title/tt0087507/?ref_=nv_sr_srsg_0_tt_2_nm_1_in_0_q_Johnny%20Dangerously",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Amy Heckerling",
       "writer": "Norman Steinberg, Bernie Kukoff, Harry Colomby",
       "actors": "Michael Keaton, Joe Piscopo, Marilu Henner",
@@ -245558,5 +245558,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-10-29T23:52:10.747Z"
+  "last_updated": "2026-10-30T00:21:10.851Z"
 }
