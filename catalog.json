@@ -89806,8 +89806,8 @@
       "type": "Feature",
       "synopsis": "A mysterious video has been linked to a number of deaths, and when an inquisitive journalist finds the tape and views it herself, she sets in motion a chain of events that puts her own life in danger.",
       "imdbLink": "https://www.imdb.com/title/tt0178868",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Hideo Nakata",
       "writer": "Hiroshi Takahashi, Kôji Suzuki",
       "actors": "Nanako Matsushima, Miki Nakatani, Yûko Takeuchi",
@@ -157636,8 +157636,8 @@
       "type": "Feature",
       "synopsis": "Two doctors find their graveyard shift inundated with townspeople ravaged by sores. Among the wounded is Cherry Darling, a dancer whose leg was ripped from her body. As the invalids quickly become enraged aggressors, Cherry and her ex-boyfriend El Wray lead a team of accidental warriors into the night.",
       "imdbLink": "https://www.imdb.com/title/tt1077258",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Robert Rodriguez",
       "writer": "Robert Rodriguez",
       "actors": "Rose McGowan, Freddy Rodríguez, Josh Brolin",
@@ -245558,5 +245558,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-10-31T23:49:37.500Z"
+  "last_updated": "2026-11-01T00:49:16.203Z"
 }
