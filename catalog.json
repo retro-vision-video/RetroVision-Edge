@@ -50157,9 +50157,9 @@
       "status": "In Stock",
       "director": "",
       "writer": "",
-      "actors": "",
-      "genre": "",
-      "runtime": ""
+      "actors": "Luther Vandross, Lisa Fischer, Ava Cherry",
+      "genre": "Music",
+      "runtime": "90 min"
     },
     {
       "sheetName": "1980s",
@@ -245558,5 +245558,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-11-01T21:51:34.456Z"
+  "last_updated": "2026-11-01T22:49:09.079Z"
 }
