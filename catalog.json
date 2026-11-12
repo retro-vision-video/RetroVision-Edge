@@ -108332,7 +108332,7 @@
       "synopsis": "Level-headed son Michael Bluth takes over family affairs after his father is imprisoned. But the rest of his spoiled, dysfunctional family are making his job unbearable.",
       "imdbLink": "https://www.imdb.com/title/tt0515236",
       "condition": "Excellent",
-      "status": "In Stock",
+      "status": "Checked Out",
       "director": "Anthony Russo, Joe Russo",
       "writer": "Mitchell Hurwitz",
       "actors": "Jason Bateman, Portia de Rossi, Will Arnett",
@@ -159669,8 +159669,8 @@
       "type": "Feature",
       "synopsis": "A retired FBI agent with psychological gifts is assigned to help track down \"The Tooth Fairy\", a mysterious serial killer. Aiding him is imprisoned forensic psychiatrist Dr. Hannibal \"The Cannibal\" Lecter.",
       "imdbLink": "https://www.imdb.com/title/tt0289765",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Brett Ratner",
       "writer": "Thomas Harris, Ted Tally",
       "actors": "Anthony Hopkins, Edward Norton, Ralph Fiennes",
@@ -245558,5 +245558,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-11-12T02:41:37.547Z"
+  "last_updated": "2026-11-12T02:42:32.823Z"
 }
