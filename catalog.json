@@ -94405,7 +94405,7 @@
       "synopsis": "A wacky free-for-all comedy about the riotous rivalry between snobby skiers and knuckle-dragging snowboarders.",
       "imdbLink": "https://www.imdb.com/title/tt0117676",
       "condition": "Excellent",
-      "status": "In Stock",
+      "status": "Checked Out",
       "director": "John Shepphird",
       "writer": "Rudy Rupak, James Salisko",
       "actors": "Jim Varney, Corey Haim, Brigitte Nielsen, Joe Flaherty",
@@ -165521,8 +165521,8 @@
       "type": "Feature",
       "synopsis": "At an exclusive, secluded North American ski resort up on Mount Rocky Summit, brutal slashing, severing and beheading on a group of teenagers are taking place and are believed to be the work of a mysterious skier dressed in black.",
       "imdbLink": "https://www.imdb.com/title/tt0282163/?ref_=nv_sr_srsg_0_tt_6_nm_2_in_0_q_Shredder",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Greg Huson",
       "writer": "Greg Huson, Craig Donald Carlson",
       "actors": "Scott Weinger, Lindsey McKeon, Juleah Weikel",
@@ -245558,5 +245558,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-11-12T05:23:16.210Z"
+  "last_updated": "2026-11-12T05:24:59.226Z"
 }
