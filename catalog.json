@@ -35466,8 +35466,8 @@
       "type": "Feature",
       "synopsis": "An American newcomer to a prestigious German ballet academy comes to realize that the school is a front for something sinister amid a series of grisly murders.",
       "imdbLink": "https://www.imdb.com/title/tt0076786",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Dario Argento",
       "writer": "Dario Argento, Daria Nicolodi, Thomas De Quincey",
       "actors": "Jessica Harper, Stefania Casini, Flavio Bucci",
@@ -245558,5 +245558,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-11-14T23:51:20.908Z"
+  "last_updated": "2026-11-15T00:21:37.268Z"
 }
