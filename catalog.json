@@ -88115,8 +88115,8 @@
       "type": "Feature",
       "synopsis": "Events in the life of a Hollywood studio executive unfold with the same unrealistic positive coincidences, ultimately culminating to a \"happy ending,\" much like the movie scripts with which he works day in and out, after he accidentally murders someone.",
       "imdbLink": "https://www.imdb.com/title/tt0105151/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_The%20Player",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Robert Altman",
       "writer": "Michael Tolkin",
       "actors": "Tim Robbins, Greta Scacchi, Fred Ward",
@@ -245558,5 +245558,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-11-16T02:42:06.708Z"
+  "last_updated": "2026-11-16T02:47:42.299Z"
 }
