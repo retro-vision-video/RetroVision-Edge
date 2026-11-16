@@ -118287,8 +118287,8 @@
       "type": "Feature",
       "synopsis": "Cab driver Max picks up a man who offers him $600 to drive him around. But the promise of easy money sours when Max realizes his fare is an assassin.",
       "imdbLink": "https://www.imdb.com/title/tt0369339",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Michael Mann",
       "writer": "Stuart Beattie",
       "actors": "Tom Cruise, Jamie Foxx, Jada Pinkett Smith",
@@ -159727,7 +159727,7 @@
       "synopsis": "Astronauts search for solutions to save a dying Earth by searching on Mars, only to have the mission go terribly awry.",
       "imdbLink": "https://www.imdb.com/title/tt0199753",
       "condition": "Excellent",
-      "status": "In Stock",
+      "status": "Checked Out",
       "director": "Antony Hoffman",
       "writer": "Chuck Pfarrer, Jonathan Lemkin",
       "actors": "Val Kilmer, Carrie-Anne Moss, Tom Sizemore",
@@ -245558,5 +245558,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-11-16T00:06:44.644Z"
+  "last_updated": "2026-11-16T00:09:08.507Z"
 }
