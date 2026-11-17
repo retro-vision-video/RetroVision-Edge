@@ -143120,8 +143120,8 @@
       "type": "Feature",
       "synopsis": "It's the 1940s, and the notorious Axe Gang terrorizes Shanghai. Small-time criminals Sing and Bone hope to join, but they only manage to make lots of very dangerous enemies. Fortunately for them, kung fu masters and hidden strength can be found in unlikely places. Now they just have to take on the entire Axe Gang.",
       "imdbLink": "https://www.imdb.com/title/tt0373074",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Stephen Chow",
       "writer": "Stephen Chow, Kan-Cheung Tsang, Xin Huo",
       "actors": "Stephen Chow, Wah Yuen, Qiu Yuen",
@@ -216651,7 +216651,7 @@
       "synopsis": "After being set-up and betrayed by the man who hired him to assassinate a Texas Senator, an ex-Federale launches a brutal rampage of revenge against his former boss.",
       "imdbLink": "https://www.imdb.com/title/tt0985694",
       "condition": "Good",
-      "status": "In Stock",
+      "status": "Checked Out",
       "director": "Ethan Maniquis, Robert Rodriguez",
       "writer": "Robert Rodriguez, Álvaro Rodríguez",
       "actors": "Danny Trejo, Michelle Rodriguez, Robert De Niro",
@@ -245577,5 +245577,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-11-17T04:49:11.154Z"
+  "last_updated": "2026-11-17T04:57:29.543Z"
 }
