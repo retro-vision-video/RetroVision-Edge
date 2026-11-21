@@ -12495,8 +12495,8 @@
       "type": "Feature",
       "synopsis": "A retired San Francisco detective suffering from acrophobia investigates the strange activities of an old friend's wife, all the while becoming dangerously obsessed with her.",
       "imdbLink": "https://www.imdb.com/title/tt0052357",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Alfred Hitchcock",
       "writer": "Alec Coppel, Samuel A. Taylor, Pierre Boileau",
       "actors": "James Stewart, Kim Novak, Barbara Bel Geddes",
@@ -245577,5 +245577,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-11-21T02:39:46.450Z"
+  "last_updated": "2026-11-21T02:41:52.028Z"
 }
