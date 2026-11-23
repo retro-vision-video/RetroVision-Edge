@@ -64441,8 +64441,8 @@
       "type": "Feature",
       "synopsis": "As a swingin' fashion photographer by day and a groovy British superagent by night, Austin Powers is the '60s' most shagadelic spy, baby! But can he stop megalomaniac Dr. Evil after the bald villain freezes himself and unthaws in the '90s? With the help of sexy sidekick Vanessa Kensington, he just might.",
       "imdbLink": "https://www.imdb.com/title/tt0118655",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Jay Roach",
       "writer": "Mike Myers",
       "actors": "Mike Myers, Elizabeth Hurley, Michael York",
@@ -108370,7 +108370,7 @@
       "synopsis": "Level-headed son Michael Bluth takes over family affairs after his father is imprisoned. But the rest of his spoiled, dysfunctional family are making his job unbearable.",
       "imdbLink": "https://www.imdb.com/title/tt0515253",
       "condition": "Excellent",
-      "status": "In Stock",
+      "status": "Checked Out",
       "director": "Lee Shallat Chemel",
       "writer": "Mitchell Hurwitz, Richard Rosenstock",
       "actors": "Jason Bateman, Portia de Rossi, Will Arnett",
@@ -245577,5 +245577,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-11-23T00:50:42.336Z"
+  "last_updated": "2026-11-23T02:41:48.683Z"
 }
