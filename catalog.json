@@ -67083,7 +67083,7 @@
       "synopsis": "One day at work, unsuccessful puppeteer Craig finds a portal into the head of actor John Malkovich. The portal soon becomes a passion for anybody who enters its mad and controlling world of overtaking another human body.",
       "imdbLink": "https://www.imdb.com/title/tt0120601",
       "condition": "Good",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Spike Jonze",
       "writer": "Charlie Kaufman",
       "actors": "John Cusack, Cameron Diaz, Catherine Keener",
@@ -79243,7 +79243,7 @@
       "synopsis": "Anton is a cheerful but exceedingly non-ambitious 17-year-old stoner who lives to stay buzzed, watch TV, and moon over Molly, the beautiful girl who lives next door. However, it turns out that the old cliché about idle hands being the devil's playground has a kernel of truth after all.",
       "imdbLink": "https://www.imdb.com/title/tt0138510",
       "condition": "Excellent",
-      "status": "Checked Out",
+      "status": "In Stock",
       "director": "Rodman Flender",
       "writer": "Terri Hughes Burton, Ron Milbauer",
       "actors": "Devon Sawa, Seth Green, Elden Henson",
@@ -245577,5 +245577,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-11-24T04:51:48.436Z"
+  "last_updated": "2026-11-24T05:03:38.819Z"
 }
