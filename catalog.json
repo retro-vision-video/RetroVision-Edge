@@ -22470,8 +22470,8 @@
       "type": "Multi-Feature",
       "synopsis": "The Tomb of Ligeia (1964): A man's obsession with his dead wife drives a wedge between him and his new bride.<br>The Last Man on Earth (1964): When a disease turns all of humanity into the living dead, the last man on earth becomes a reluctant vampire hunter.",
       "imdbLink": "https://www.imdb.com/title/tt0059821/?ref_=nv_sr_srsg_0_tt_7_nm_0_in_0_q_Tomb%20of%20Ligeia",
-      "condition": "Unspecified",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Roger Corman",
       "writer": "Edgar Allan Poe, Robert Towne, Paul Mayersberg",
       "actors": "Vincent Price, Elizabeth Shepherd, John Westbrook",
@@ -203616,8 +203616,8 @@
       "type": "Feature",
       "synopsis": "In the near future, Major is the first of her kind: a human saved from a terrible crash, then cyber-enhanced to be a perfect soldier devoted to stopping the world's most dangerous criminals.",
       "imdbLink": "https://www.imdb.com/title/tt1219827",
-      "condition": "Mint",
-      "status": "In Stock",
+      "condition": "Excellent",
+      "status": "Checked Out",
       "director": "Rupert Sanders",
       "writer": "Shirow Masamune, Jamie Moss, William Wheeler",
       "actors": "Scarlett Johansson, Pilou Asbæk, Takeshi Kitano",
@@ -245577,5 +245577,5 @@
       "runtime": "242 min"
     }
   ],
-  "last_updated": "2026-11-28T05:56:51.143Z"
+  "last_updated": "2026-11-28T06:15:30.052Z"
 }
